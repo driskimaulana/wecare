@@ -7,6 +7,6 @@ Dikerjakan oleh :&emsp;Hafizh Lutfi Hidayat (2006945 / C1'2020)
 Joblist :
 
 *W1 - 11 Oktober 2022*
-- [ ] UI Elder - Home
+- [x] UI Elder - Home
 - [ ] UI Elder - Add connection (QR Code)
 - [ ] UI Relative - Set schedule
