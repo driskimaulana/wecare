@@ -3,11 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/drawable-v21/app_widget_background.xml" value="0.196" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/drawable-v21/app_widget_inner_view_background.xml" value="0.196" />
         <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/drawable/ic_qr.xml" value="0.2075" />
         <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/drawable/ic_qrcode_connection.xml" value="0.2075" />
         <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/drawable/rounded_btn.xml" value="0.2065" />
         <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/activity_elder_account_connection.xml" value="0.2" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/activity_elder_home.xml" value="0.25" />
         <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/activity_main.xml" value="0.16" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/elder_widget.xml" value="0.2" />
       </map>
     </option>
   </component>

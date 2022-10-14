@@ -10,3 +10,4 @@ Joblist :
 - [x] UI Elder - Home
 - [x] UI Elder - Add connection (QR Code)
 - [ ] UI Relative - Set schedule
+- [x] UI Elder - Widget
