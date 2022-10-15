@@ -7,10 +7,12 @@
     android:background="#16558F"
     tools:context=".ElderHome">
 
-    <ImageView
-        android:id="@+id/imageView"
+    <ImageButton
+        android:id="@+id/btn_qrcode"
         android:layout_width="61dp"
         android:layout_height="63dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:onClick="qrBtnClicked"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.953"
