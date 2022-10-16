@@ -1,8 +1,8 @@
 # Mobile Application Development Kelompok 4
 
-## *Branch - ***dev_hafizh****
+## WeCare - Fall detection app on android
 
-Dikerjakan oleh :&emsp;Hafizh Lutfi Hidayat (2006945 / C1'2020)
+Fork ini dikerjakan oleh :&emsp;Hafizh Lutfi Hidayat (2006945 / C1'2020)
 
 Joblist :
 
