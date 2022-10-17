@@ -47,15 +47,14 @@
                 android:layout_height="24dp"
                 android:layout_marginTop="10dp"
                 android:text="78 tahun"
-                android:textStyle="bold"
                 android:textColor="@color/blue"
                 android:textSize="5.4pt"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@+id/elder_name"
                 app:layout_constraintStart_toStartOf="@+id/elder_name"
                 app:layout_constraintTop_toBottomOf="@+id/elder_name" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -64,11 +63,11 @@
         android:id="@+id/title_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
         android:text="Lokasi Saat Ini"
         android:textColor="@color/blue"
-        android:textStyle="bold"
         android:textSize="7.5pt"
-        android:layout_marginTop="150dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/name_container"
         app:layout_constraintStart_toStartOf="@+id/name_container"
         app:layout_constraintTop_toBottomOf="@+id/name_container" />
@@ -77,13 +76,13 @@
         android:id="@+id/imageView"
         android:layout_width="320dp"
         android:layout_height="234dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/title_location"
+        app:layout_constraintStart_toStartOf="@id/title_location"
+        app:layout_constraintTop_toBottomOf="@id/title_location"
         app:srcCompat="@mipmap/map_foreground"
         tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="302dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintStart_toStartOf="@id/title_location"
-        app:layout_constraintEnd_toEndOf="@+id/title_location"
-        app:layout_constraintTop_toBottomOf="@id/title_location"/>
+        tools:layout_editor_absoluteY="302dp" />
 
     <Button
         android:id="@+id/button"

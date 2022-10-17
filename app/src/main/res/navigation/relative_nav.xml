@@ -16,7 +16,7 @@
         tools:layout="@layout/fragment_dashboard" />
     <fragment
         android:id="@+id/healthEducationFragment"
-        android:name="com.kelompok4.wecare.HealthEducationFragment"
+        android:name="com.kelompok4.wecare.view.relative.HealthEducationFragment"
         android:label="fragment_health_education"
         tools:layout="@layout/fragment_health_education" />
 </navigation>

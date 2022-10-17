@@ -1,12 +1,13 @@
-package com.kelompok4.wecare;
+package com.kelompok4.wecare.view.relative;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.fragment.app.Fragment;
+
+import com.kelompok4.wecare.R;
 
 /**
  * A simple {@link Fragment} subclass.

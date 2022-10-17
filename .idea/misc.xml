@@ -5,10 +5,14 @@
       <map>
         <entry key="..\:/wecare/app/src/main/res/drawable/ic_article.xml" value="0.1" />
         <entry key="..\:/wecare/app/src/main/res/drawable/map_background.xml" value="0.194" />
+        <entry key="..\:/wecare/app/src/main/res/drawable/shape_dashboard_container.xml" value="0.2075" />
         <entry key="..\:/wecare/app/src/main/res/drawable/shape_name_container.xml" value="0.192" />
         <entry key="..\:/wecare/app/src/main/res/drawable/shape_sidebar_button.xml" value="0.2065" />
         <entry key="..\:/wecare/app/src/main/res/layout/activity_home_screen.xml" value="0.1" />
+        <entry key="..\:/wecare/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/wecare/app/src/main/res/layout/activity_relative_main.xml" value="0.2" />
+        <entry key="..\:/wecare/app/src/main/res/layout/checkup_history_item.xml" value="0.5" />
+        <entry key="..\:/wecare/app/src/main/res/layout/fall_history_item.xml" value="0.4160714285714286" />
         <entry key="..\:/wecare/app/src/main/res/layout/fragment_dashboard.xml" value="0.2" />
         <entry key="..\:/wecare/app/src/main/res/layout/fragment_health_education.xml" value="0.2" />
         <entry key="..\:/wecare/app/src/main/res/layout/fragment_home_screen.xml" value="0.2" />
