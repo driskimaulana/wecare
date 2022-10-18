@@ -3,6 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/drawable/diamond_rectangle.xml" value="0.2545" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/drawable/ic_back_background.xml" value="0.239" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/drawable/ic_back_foreground.xml" value="0.239" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/drawable/ic_baseline_priority_high_24.xml" value="0.2525" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/drawable/rectangle.xml" value="0.366" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/activity_panduan_kesehatan.xml" value="0.33" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/activity_pengaturan_elder.xml" value="0.33" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/activity_pengaturan_user.xml" value="0.33" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
         <entry key="..\:/wecare/app/src/main/res/drawable/ic_article.xml" value="0.1" />
         <entry key="..\:/wecare/app/src/main/res/drawable/map_background.xml" value="0.194" />
         <entry key="..\:/wecare/app/src/main/res/drawable/shape_dashboard_container.xml" value="0.2075" />
