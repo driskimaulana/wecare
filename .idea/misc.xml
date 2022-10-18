@@ -5,7 +5,11 @@
       <map>
         <entry key="..\:/Codings/Android/WeCareApp/app/src/main/res/drawable/background_input.xml" value="0.1" />
         <entry key="..\:/Codings/Android/WeCareApp/app/src/main/res/drawable/google_btn.xml" value="0.1" />
-        <entry key="..\:/Codings/Android/WeCareApp/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/Codings/Android/WeCareApp/app/src/main/res/drawable/ic_close.xml" value="0.1" />
+        <entry key="..\:/Codings/Android/WeCareApp/app/src/main/res/layout/activity_introduction.xml" value="0.25" />
+        <entry key="..\:/Codings/Android/WeCareApp/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Codings/Android/WeCareApp/app/src/main/res/layout/activity_scanner.xml" value="0.1" />
+        <entry key="..\:/Codings/Android/WeCareApp/app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
       </map>
     </option>
   </component>
