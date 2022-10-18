@@ -3,6 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Codings/Android/WeCareApp/app/src/main/res/drawable/background_input.xml" value="0.1" />
+        <entry key="..\:/Codings/Android/WeCareApp/app/src/main/res/drawable/google_btn.xml" value="0.1" />
+        <entry key="..\:/Codings/Android/WeCareApp/app/src/main/res/drawable/ic_close.xml" value="0.1" />
+        <entry key="..\:/Codings/Android/WeCareApp/app/src/main/res/layout/activity_introduction.xml" value="0.25" />
+        <entry key="..\:/Codings/Android/WeCareApp/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Codings/Android/WeCareApp/app/src/main/res/layout/activity_scanner.xml" value="0.1" />
+        <entry key="..\:/Codings/Android/WeCareApp/app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
         <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/drawable/diamond_rectangle.xml" value="0.2545" />
         <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/drawable/ic_back_background.xml" value="0.239" />
         <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/drawable/ic_back_foreground.xml" value="0.239" />
