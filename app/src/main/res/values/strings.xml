@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">wecare</string>
+    <string name="hallo">Hallo,</string>
+    <string name="selamat_datang">Selamat Datang</string>
+    <string name="example_mail_com">example@mail.com</string>
+    <string name="password23">Password23</string>
+    <string name="login">Login</string>
+    <string name="google">Google</string>
+    <string name="google_icon">Google Icon</string>
+    <string name="login_illustration">Login Illustration</string>
 </resources>
