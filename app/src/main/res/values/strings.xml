@@ -9,4 +9,29 @@
     <string name="google_icon">Google Icon</string>
     <string name="login_illustration">Login Illustration</string>
     <string name="daftar_akun">Daftar Akun</string>
+    <string name="alert">Alert</string>
+    <string name="terjatuh">Seseorang Terjatuh!</string>
+    <string name="lihatLokasi">Lihat Lokasi</string>
+    <string name="panduanKesehatan">Panduan Kesehatan</string>
+    <string name="pengaturanElder">Pengaturan Elder</string>
+    <string name="pengaturanSaya">Pengaturan Saya</string>
+    <string name="nama">Nama</string>
+    <string name="fulan">Fulan</string>
+    <string name="changePicture">Change Picture</string>
+    <string name="tanggalLahir">Tanggal Lahir</string>
+    <string name="golonganDarah">Golongan Darah</string>
+    <string name="setVirtualFence">Set Virtual Fence</string>
+    <string name="setPanduanKesehatan">Set Panduan Kesehatan</string>
+    <string name="newMedicalCheckup">Medical Check-up Baru</string>
+    <string name="dateDummy">01/01/1991</string>
+    <string name="goldarDummy">A</string>
+    <string name="email">Email</string>
+    <string name="emailDummy">Example@example.com</string>
+    <string name="updatePassword">Update Password</string>
+    <string name="update">Update</string>
+    <string name="abaikanNotifikasi">Abaikan Notifikasi</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>
