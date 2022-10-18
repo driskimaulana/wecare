@@ -13,19 +13,18 @@
         android:supportsRtl="true"
         tools:targetApi="31">
         <activity
-            android:name=".RelativeSetSchedule"
+            android:name=".view.relative.RelativeSetSchedule"
             android:exported="true"
             android:theme="@style/Theme.Wecare">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.elder.ElderHome" />
+                <!-- ^ TODO: PLACEHOLDER, CHANGE LATER! -->
         </activity>
 
         <receiver
-            android:name=".ElderWidget"
+            android:name=".Widget"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -37,7 +36,7 @@
         </receiver>
 
         <activity
-            android:name=".ElderAccountConnection"
+            android:name=".view.elder.ElderAccountConnection"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Wecare.NoActionBar">
@@ -50,17 +49,17 @@
 
         </activity>
         <activity
-            android:name=".ElderHome"
+            android:name=".view.elder.ElderHome"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Wecare.NoActionBar">
 
             <!-- debug -->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

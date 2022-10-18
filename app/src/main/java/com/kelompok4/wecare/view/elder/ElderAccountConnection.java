@@ -1,8 +1,10 @@
-package com.kelompok4.wecare;
+package com.kelompok4.wecare.view.elder;
+
+import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
+import com.kelompok4.wecare.R;
 
 public class ElderAccountConnection extends AppCompatActivity {
 

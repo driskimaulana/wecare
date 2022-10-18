@@ -3,17 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Hafizh/.gradle/caches/transforms-3/5d666d306352f7fdca8df50525096bc2/transformed/appcompat-1.5.1/res/layout/support_simple_spinner_dropdown_item.xml" value="0.17346014492753623" />
         <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/drawable-v21/app_widget_background.xml" value="0.196" />
         <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/drawable-v21/app_widget_inner_view_background.xml" value="0.196" />
         <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/drawable/btn_sos_rounded.xml" value="0.196" />
         <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/drawable/ic_qr.xml" value="0.2075" />
         <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/drawable/ic_qrcode_connection.xml" value="0.2075" />
         <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/drawable/rounded_btn.xml" value="0.2065" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/drawable/rounded_corner.xml" value="0.196" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout-w1240dp/content_scrolling.xml" value="0.1" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout-w1240dp/relative_set_schedule_content_scrolling.xml" value="0.1" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout-w936dp/content_scrolling.xml" value="0.14" />
         <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/activity_elder_account_connection.xml" value="0.2" />
         <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/activity_elder_home.xml" value="0.25" />
         <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/activity_main.xml" value="0.16" />
-        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/content_scrolling.xml" value="0.25" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/activity_relative_set_schedule.xml" value="0.22" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/content_scrolling.xml" value="0.22" />
         <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/elder_widget.xml" value="0.2" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/relative_set_schedule_content_scrolling.xml" value="0.2" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/menu/menu_relative_set_schedule.xml" value="0.2" />
       </map>
     </option>
   </component>

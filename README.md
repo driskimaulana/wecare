@@ -9,5 +9,5 @@ Joblist :
 *W1 - 11 Oktober 2022*
 - [x] UI Elder - Home
 - [x] UI Elder - Add connection (QR Code)
-- [ ] UI Relative - Set schedule
+- [x] UI Relative - Set schedule
 - [x] UI Elder - Widget

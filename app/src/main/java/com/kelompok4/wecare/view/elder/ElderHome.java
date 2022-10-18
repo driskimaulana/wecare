@@ -1,12 +1,13 @@
-package com.kelompok4.wecare;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.kelompok4.wecare.view.elder;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.kelompok4.wecare.databinding.ActivityElderHomeBinding;
+import com.kelompok4.wecare.view.relative.RelativeSetSchedule;
 
 public class ElderHome extends AppCompatActivity {
     private ActivityElderHomeBinding binding;
@@ -22,6 +23,11 @@ public class ElderHome extends AppCompatActivity {
 
     public void qrBtnClicked(View v) {
         Intent intent =  new Intent(this, ElderAccountConnection.class);
+        startActivity(intent);
+    }
+
+    public void sosBtnClicked(View v) {
+        Intent intent =  new Intent(this, RelativeSetSchedule.class);
         startActivity(intent);
     }
 }

@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#16558F"
-    tools:context=".ElderAccountConnection">
+    tools:context=".view.elder.ElderAccountConnection">
 
     <TextView
         android:id="@+id/txt_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Scan QR code dibawah ini"
+        android:text="@string/scan_qr_code_dibawah_ini"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -29,14 +29,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_top"
-        app:srcCompat="@mipmap/img_qrcode_foreground" />
+        app:srcCompat="@mipmap/img_qrcode_foreground"
+        android:contentDescription="@string/btn_qrcode_description" />
 
     <TextView
         android:id="@+id/txt_bottom"
         android:layout_width="365dp"
         android:layout_height="98dp"
         android:layout_marginTop="32dp"
-        android:text="Hubungkan akun dengan menambahkan Elder baru pada akun Relative"
+        android:text="@string/hubungkan_akun_dengan_menambahkan_elder_baru_pada_akun_relative"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
