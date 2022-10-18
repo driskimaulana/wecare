@@ -20,4 +20,5 @@
     <string name="emailDummy">Example@example.com</string>
     <string name="updatePassword">Update Password</string>
     <string name="update">Update</string>
+    <string name="abaikanNotifikasi">Abaikan Notifikasi</string>
 </resources>
