@@ -16,6 +16,27 @@
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+        <entry key="..\:/wecare/app/src/main/res/drawable/ic_article.xml" value="0.1" />
+        <entry key="..\:/wecare/app/src/main/res/drawable/map_background.xml" value="0.194" />
+        <entry key="..\:/wecare/app/src/main/res/drawable/shape_dashboard_container.xml" value="0.2075" />
+        <entry key="..\:/wecare/app/src/main/res/drawable/shape_name_container.xml" value="0.192" />
+        <entry key="..\:/wecare/app/src/main/res/drawable/shape_sidebar_button.xml" value="0.2065" />
+        <entry key="..\:/wecare/app/src/main/res/layout/activity_home_screen.xml" value="0.1" />
+        <entry key="..\:/wecare/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/wecare/app/src/main/res/layout/activity_relative_main.xml" value="0.2" />
+        <entry key="..\:/wecare/app/src/main/res/layout/checkup_history_item.xml" value="0.5" />
+        <entry key="..\:/wecare/app/src/main/res/layout/fall_history_item.xml" value="0.4160714285714286" />
+        <entry key="..\:/wecare/app/src/main/res/layout/fragment_dashboard.xml" value="0.2" />
+        <entry key="..\:/wecare/app/src/main/res/layout/fragment_health_education.xml" value="0.2" />
+        <entry key="..\:/wecare/app/src/main/res/layout/fragment_home_screen.xml" value="0.2" />
+        <entry key="..\:/wecare/app/src/main/res/layout/sidebar_profile.xml" value="0.16" />
+        <entry key="..\:/wecare/app/src/main/res/menu/relative_nav_menu.xml" value="0.2" />
+        <entry key="..\:/wecare/app/src/main/res/menu/relative_sidebar_menu.xml" value="0.25" />
+        <entry key="..\:/wecare/app/src/main/res/mipmap-anydpi-v26/map.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
