@@ -11,3 +11,6 @@ Joblist :
 - [x] UI Elder - Add connection (QR Code)
 - [x] UI Relative - Set schedule
 - [x] UI Elder - Widget
+
+*W2 - 18 Oktober 2022*
+- [ ] Transfer from Activity based app to Fragment
