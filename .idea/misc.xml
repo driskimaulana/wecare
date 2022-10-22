@@ -3,51 +3,36 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Codings/Android/WeCareApp/app/src/main/res/drawable/background_input.xml" value="0.1" />
-        <entry key="..\:/Codings/Android/WeCareApp/app/src/main/res/drawable/google_btn.xml" value="0.1" />
-        <entry key="..\:/Codings/Android/WeCareApp/app/src/main/res/drawable/ic_close.xml" value="0.1" />
-        <entry key="..\:/Codings/Android/WeCareApp/app/src/main/res/layout/activity_introduction.xml" value="0.25" />
-        <entry key="..\:/Codings/Android/WeCareApp/app/src/main/res/layout/activity_login.xml" value="0.25" />
-        <entry key="..\:/Codings/Android/WeCareApp/app/src/main/res/layout/activity_scanner.xml" value="0.1" />
-        <entry key="..\:/Codings/Android/WeCareApp/app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
+        <entry key="..\:/Users/Hafizh/.gradle/caches/transforms-3/5d666d306352f7fdca8df50525096bc2/transformed/appcompat-1.5.1/res/layout/support_simple_spinner_dropdown_item.xml" value="0.17346014492753623" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/drawable-v21/app_widget_background.xml" value="0.196" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/drawable-v21/app_widget_inner_view_background.xml" value="0.196" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/drawable/btn_sos_rounded.xml" value="0.196" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/drawable/ic_qr.xml" value="0.2075" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/drawable/ic_qrcode_connection.xml" value="0.2075" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/drawable/rounded_btn.xml" value="0.2065" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/drawable/rounded_corner.xml" value="0.196" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/drawable/shape_name_container.xml" value="0.1" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/drawable/shape_sidebar_button.xml" value="0.1" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout-w1240dp/content_scrolling.xml" value="0.1" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout-w1240dp/relative_set_schedule_content_scrolling.xml" value="0.1" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout-w936dp/content_scrolling.xml" value="0.14" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/activity_elder_account_connection.xml" value="0.2" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/activity_elder_home.xml" value="0.2" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/activity_login.xml" value="0.16417272338606242" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/activity_main.xml" value="0.16" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/activity_pengaturan_elder.xml" value="0.1" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/activity_pengaturan_user.xml" value="0.1" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/activity_relative_main.xml" value="0.1" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/activity_relative_set_schedule.xml" value="0.22" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/content_scrolling.xml" value="0.22" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/elder_widget.xml" value="0.2" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/relative_set_schedule_content_scrolling.xml" value="0.2" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/menu/menu_relative_set_schedule.xml" value="0.2" />
       </map>
     </option>
   </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
-        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/drawable/diamond_rectangle.xml" value="0.2545" />
-        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/drawable/ic_back_background.xml" value="0.239" />
-        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/drawable/ic_back_foreground.xml" value="0.239" />
-        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/drawable/ic_baseline_priority_high_24.xml" value="0.2525" />
-        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/drawable/rectangle.xml" value="0.366" />
-        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/activity_panduan_kesehatan.xml" value="0.33" />
-        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/activity_pengaturan_elder.xml" value="0.33" />
-        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/activity_pengaturan_user.xml" value="0.33" />
-      </map>
-    </option>
-  </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
-        <entry key="..\:/wecare/app/src/main/res/drawable/ic_article.xml" value="0.1" />
-        <entry key="..\:/wecare/app/src/main/res/drawable/map_background.xml" value="0.194" />
-        <entry key="..\:/wecare/app/src/main/res/drawable/shape_dashboard_container.xml" value="0.2075" />
-        <entry key="..\:/wecare/app/src/main/res/drawable/shape_name_container.xml" value="0.192" />
-        <entry key="..\:/wecare/app/src/main/res/drawable/shape_sidebar_button.xml" value="0.2065" />
-        <entry key="..\:/wecare/app/src/main/res/layout/activity_home_screen.xml" value="0.1" />
-        <entry key="..\:/wecare/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/wecare/app/src/main/res/layout/activity_relative_main.xml" value="0.2" />
-        <entry key="..\:/wecare/app/src/main/res/layout/checkup_history_item.xml" value="0.5" />
-        <entry key="..\:/wecare/app/src/main/res/layout/fall_history_item.xml" value="0.4160714285714286" />
-        <entry key="..\:/wecare/app/src/main/res/layout/fragment_dashboard.xml" value="0.2" />
-        <entry key="..\:/wecare/app/src/main/res/layout/fragment_health_education.xml" value="0.2" />
-        <entry key="..\:/wecare/app/src/main/res/layout/fragment_home_screen.xml" value="0.2" />
-        <entry key="..\:/wecare/app/src/main/res/layout/sidebar_profile.xml" value="0.16" />
-        <entry key="..\:/wecare/app/src/main/res/menu/relative_nav_menu.xml" value="0.2" />
-        <entry key="..\:/wecare/app/src/main/res/menu/relative_sidebar_menu.xml" value="0.25" />
-        <entry key="..\:/wecare/app/src/main/res/mipmap-anydpi-v26/map.xml" value="0.1" />
-      </map>
-    </option>
-  </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

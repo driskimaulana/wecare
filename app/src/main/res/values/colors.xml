@@ -7,9 +7,16 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="diamond">#B8E3FF</color>
-    <color name="blueCola">#0583D2</color>
-    <color name="yaleBlue">#16558F</color>
-    <color name="sky_blue">#B8E3FF</color>
+    <color name="red">#FFFF0000</color>
+    <color name="green">#FF00FF00</color>
     <color name="blue">#16558F</color>
+    <color name="light_blue_50">#FFE1F5FE</color>
+    <color name="light_blue_200">#FF81D4FA</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+    <!-- main color -->
+    <color name="yale_blue">#FF16558F</color>
+    <color name="blue_cola">#FF0583D2</color>
+    <color name="tradewind">#FF61B0B7</color>
+    <color name="diamond">#FFB8E3FF</color>
 </resources>

@@ -93,7 +93,7 @@
           android:layout_marginStart="46dp"
           android:layout_marginTop="8dp"
           android:text="@string/changePicture"
-          android:textColor="@color/blueCola"
+          android:textColor="@color/blue_cola"
           android:textSize="8sp"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@+id/mockViewProfilePict" />
@@ -246,7 +246,7 @@
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        android:layout_marginBottom="60dp"
-       android:backgroundTint="@color/yaleBlue"
+       android:backgroundTint="@color/yale_blue"
        android:paddingHorizontal="40dp"
        android:text="@string/update"
        app:layout_constraintBottom_toBottomOf="parent"

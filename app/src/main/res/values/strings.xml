@@ -1,5 +1,45 @@
 <resources>
     <string name="app_name">wecare</string>
+    <string name="title_activity_relative_set_schedule">RelativeSetSchedule</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="appwidget_text">SOS</string>
+    <string name="add_widget">Add widget</string>
+    <string name="app_widget_description">Widget untuk meminta bantuan</string>
+    <string name="sos">SOS</string>
+    <string name="action_settings">Settings</string>
+    <string name="nama_obat">Nama Obat</string>
+    <string name="senin">Senin</string>
+    <string name="selasa">Selasa</string>
+    <string name="rabu">Rabu</string>
+    <string name="kamis">Kamis</string>
+    <string name="jum_at">Jum\'at</string>
+    <string name="sabtu">Sabtu</string>
+    <string name="minggu">Minggu</string>
+    <string name="btn_qrcode_description">Connect account by scanning QR Code</string>
+    <string name="jadwal_minum">Jadwal minum</string>
+    <string name="obat_selanjutnya">obat selanjutnya</string>
+    <string name="scan_qr_code_dibawah_ini">Scan QR code dibawah ini</string>
+    <string name="hubungkan_akun_dengan_menambahkan_elder_baru_pada_akun_relative">Hubungkan akun dengan menambahkan Elder baru pada akun Relative</string>
+    <string name="mulai_jam">Mulai jam</string>
+    <string name="set_jadwal_minum_obat">Set jadwal minum obat</string>
+    <string name="pilih_hari">Pilih hari:</string>
+    <string name="import_foto_obat">Import foto obat:</string>
+
+    <string-array name="angka">
+        <item>1x sehari</item>
+        <item>2x sehari</item>
+        <item>3x sehari</item>
+        <item>4x sehari</item>
+        <item>5x sehari</item>
+    </string-array>
+    
     <string name="hallo">Hallo,</string>
     <string name="selamat_datang">Selamat Datang</string>
     <string name="example_mail_com">example@mail.com</string>
