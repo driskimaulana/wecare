@@ -32,7 +32,7 @@ public class RelativeSetSchedule extends AppCompatActivity {
         // change the color of back button
         final Drawable backArrow = ContextCompat.getDrawable(this, R.drawable.ic_baseline_arrow_back_24);
         assert backArrow != null;
-        backArrow.setColorFilter(ContextCompat.getColor(this, R.color.lochmara), PorterDuff.Mode.SRC_ATOP);
+        backArrow.setColorFilter(ContextCompat.getColor(this, R.color.blue_cola), PorterDuff.Mode.SRC_ATOP);
         getSupportActionBar().setHomeAsUpIndicator(backArrow);
     }
 

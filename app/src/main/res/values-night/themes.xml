@@ -2,11 +2,11 @@
     <!-- Base application theme. -->
     <style name="Theme.Wecare" parent="Theme.MaterialComponents.Light">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/matisse</item>
-        <item name="colorPrimaryVariant">@color/french_pass</item>
+        <item name="colorPrimary">@color/yale_blue</item>
+        <item name="colorPrimaryVariant">@color/diamond</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/lochmara</item>
+        <item name="colorSecondary">@color/blue_cola</item>
         <item name="colorSecondaryVariant">@color/tradewind</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->

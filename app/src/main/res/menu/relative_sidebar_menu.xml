@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Pak Daniel R" android:icon="@drawable/ic_old" android:id="@+id/elder1" />
+    <item android:title="Elder 2" android:icon="@drawable/ic_old" android:id="@+id/elder2" />
+    <item android:title="Elder 3" android:icon="@drawable/ic_old" android:id="@+id/elder3" />
+</menu>

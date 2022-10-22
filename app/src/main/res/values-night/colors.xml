@@ -15,8 +15,8 @@
     <color name="light_blue_600">#FF039BE5</color>
     <color name="light_blue_900">#FF01579B</color>
     <!-- main color -->
-    <color name="matisse">#FF16558F</color>
-    <color name="lochmara">#FF0583D2</color>
+    <color name="yale_blue">#FF16558F</color>
+    <color name="blue_cola">#FF0583D2</color>
     <color name="tradewind">#FF61B0B7</color>
-    <color name="french_pass">#FFB8E3FF</color>
+    <color name="diamond">#FFB8E3FF</color>
 </resources>

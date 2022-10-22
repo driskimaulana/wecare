@@ -150,7 +150,7 @@
             android:background="@drawable/background_rounded_corner"
             android:padding="10dp"
             app:srcCompat="@drawable/ic_add_picture"
-            app:tint="@color/french_pass"/>
+            app:tint="@color/diamond"/>
 
         <Space
             android:layout_width="match_parent"
