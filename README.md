@@ -13,4 +13,5 @@ Joblist :
 - [x] UI Elder - Widget
 
 *W2 - 18 Oktober 2022*
-- [ ] Transfer from Activity based app to Fragment
+- [x] Migrating from Activity based app to Fragment
+- [x] Set Navigation for Elder

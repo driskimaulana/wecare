@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/elder_nav.xml"
+    app:startDestination="@id/elderHome">
+
+    <fragment
+        android:id="@+id/elderHome"
+        android:name="com.kelompok4.wecare.view.elder.ElderHome"
+        android:label="fragment_elder_home"
+        tools:layout="@layout/fragment_elder_home" >
+        <action
+            android:id="@+id/action_elderHome_to_elderAccountConnection"
+            app:destination="@id/elderAccountConnection"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/elderAccountConnection"
+        android:name="com.kelompok4.wecare.view.elder.ElderAccountConnection"
+        android:label="fragment_elder_account_connection"
+        tools:layout="@layout/fragment_elder_account_connection" />
+</navigation>

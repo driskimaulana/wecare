@@ -39,7 +39,7 @@
         <item>4x sehari</item>
         <item>5x sehari</item>
     </string-array>
-    
+
     <string name="hallo">Hallo,</string>
     <string name="selamat_datang">Selamat Datang</string>
     <string name="example_mail_com">example@mail.com</string>

@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#16558F"
+    android:background="@color/yale_blue"
+    android:theme="@style/Theme.Wecare.NoActionBar"
     tools:context=".view.elder.ElderHome">
 
     <ImageButton
@@ -13,7 +14,6 @@
         android:layout_width="61dp"
         android:layout_height="63dp"
         android:background="?attr/selectableItemBackgroundBorderless"
-        android:onClick="qrBtnClicked"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.953"
@@ -72,7 +72,6 @@
         android:layout_width="282dp"
         android:layout_height="298dp"
         android:background="@drawable/btn_sos_rounded"
-        android:onClick="sosBtnClicked"
         android:text="@string/sos"
         android:textAllCaps="true"
         android:textColor="#FFFFFF"

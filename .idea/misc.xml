@@ -18,6 +18,7 @@
         <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout-w936dp/content_scrolling.xml" value="0.14" />
         <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/activity_elder_account_connection.xml" value="0.2" />
         <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/activity_elder_home.xml" value="0.2" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/activity_elder_main.xml" value="0.16417272338606242" />
         <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/activity_login.xml" value="0.16417272338606242" />
         <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/activity_main.xml" value="0.16" />
         <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/activity_pengaturan_elder.xml" value="0.1" />
@@ -26,6 +27,10 @@
         <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/activity_relative_set_schedule.xml" value="0.22" />
         <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/content_scrolling.xml" value="0.22" />
         <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/elder_widget.xml" value="0.2" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/fragment_blank.xml" value="0.1526293287729799" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/fragment_elder_account_connection.xml" value="0.25" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/fragment_elder_home.xml" value="0.16417272338606242" />
+        <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/fragment_home_screen.xml" value="0.16417272338606242" />
         <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/layout/relative_set_schedule_content_scrolling.xml" value="0.2" />
         <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/menu/menu_relative_set_schedule.xml" value="0.2" />
       </map>

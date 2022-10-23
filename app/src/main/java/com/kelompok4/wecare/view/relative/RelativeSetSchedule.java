@@ -11,17 +11,17 @@ import androidx.fragment.app.DialogFragment;
 
 import com.kelompok4.wecare.R;
 import com.kelompok4.wecare.TimePickerFragment;
-import com.kelompok4.wecare.databinding.ActivityRelativeSetScheduleBinding;
+import com.kelompok4.wecare.databinding.FragmentRelativeSetScheduleBinding;
 
 public class RelativeSetSchedule extends AppCompatActivity {
 
-    private ActivityRelativeSetScheduleBinding binding;
+    private FragmentRelativeSetScheduleBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityRelativeSetScheduleBinding.inflate(getLayoutInflater());
+        binding = FragmentRelativeSetScheduleBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         // show back button to action bar

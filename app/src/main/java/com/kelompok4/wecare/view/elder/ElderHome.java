@@ -1,33 +1,32 @@
 package com.kelompok4.wecare.view.elder;
 
-import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
-import com.kelompok4.wecare.databinding.ActivityElderHomeBinding;
-import com.kelompok4.wecare.view.relative.RelativeSetSchedule;
+import com.kelompok4.wecare.R;
 
-public class ElderHome extends AppCompatActivity {
-    private ActivityElderHomeBinding binding;
+public class ElderHome extends Fragment {
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_elder_home, container, false);
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        binding = ActivityElderHomeBinding.inflate(getLayoutInflater());
-        View view = binding.getRoot();
-        setContentView(view);
-    }
-
-    public void qrBtnClicked(View v) {
-        Intent intent =  new Intent(this, ElderAccountConnection.class);
-        startActivity(intent);
-    }
-
-    public void sosBtnClicked(View v) {
-        Intent intent =  new Intent(this, RelativeSetSchedule.class);
-        startActivity(intent);
+        view.findViewById(R.id.btn_qrcode).setOnClickListener(v -> {
+            Navigation.findNavController(view).navigate(R.id.action_elderHome_to_elderAccountConnection);
+        });
     }
 }
