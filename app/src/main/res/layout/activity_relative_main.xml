@@ -36,6 +36,7 @@
                 android:textSize="8.1pt"
                 android:textStyle="bold"
                 app:cornerRadius="0dp"
+                android:onClick="handleElderSettingsButton"
                 app:layout_constraintBottom_toTopOf="@+id/btn_add_elder"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -61,6 +62,7 @@
                 android:backgroundTint="@color/diamond"
                 android:drawableLeft="@drawable/ic_baseline_add_comment_24"
                 android:insetTop="0dp"
+                android:onClick="handleAddEldersButton"
                 android:insetBottom="0dp"
                 android:minHeight="0dp"
                 android:text="Add Elder"

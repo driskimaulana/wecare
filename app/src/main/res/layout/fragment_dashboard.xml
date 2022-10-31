@@ -46,6 +46,15 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
+                <ImageButton
+                    android:id="@+id/btn_elder_settings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_elder_settings"
+                    android:backgroundTint="@color/transparent"
+                    app:layout_constraintTop_toTopOf="@id/elder_name"
+                    app:layout_constraintStart_toEndOf="@id/elder_name"
+                    app:layout_constraintBottom_toBottomOf="@id/elder_name"/>
                 <TextView
                     android:id="@+id/elder_age"
                     android:layout_width="wrap_content"

@@ -1,99 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.relative.HomeScreenFragment">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.relative.HomeScreenFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/name_container"
-        android:layout_width="330dp"
-        android:layout_height="76dp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="20dp"
-        android:layout_marginTop="70dp"
-        android:background="@drawable/shape_name_container"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/name_container"
+            android:layout_width="330dp"
+            android:layout_height="76dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="20dp"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/shape_name_container"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints">
+            app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/elder_name"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pak Danil R"
-                android:textColor="@color/blue"
-                android:textSize="10.8pt"
-                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:id="@+id/elder_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pak Danil R"
+                    android:textColor="@color/blue"
+                    android:textSize="10.8pt"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/btn_elder_settings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_elder_settings"
+                    android:backgroundTint="@color/transparent"
+                    app:layout_constraintTop_toTopOf="@id/elder_name"
+                    app:layout_constraintStart_toEndOf="@id/elder_name"
+                    app:layout_constraintBottom_toBottomOf="@id/elder_name"/>
+
+                <TextView
+                    android:id="@+id/elder_age"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="10dp"
+                    android:text="78 tahun"
+                    android:textColor="@color/blue"
+                    android:textSize="5.4pt"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/elder_name"
+                    app:layout_constraintStart_toStartOf="@+id/elder_name"
+                    app:layout_constraintTop_toBottomOf="@+id/elder_name" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/title_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Lokasi Saat Ini"
+            android:textColor="@color/blue"
+            android:textSize="7.5pt"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/name_container"
+            app:layout_constraintStart_toStartOf="@+id/name_container"
+            app:layout_constraintTop_toBottomOf="@+id/name_container" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="320dp"
+            android:layout_height="234dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/title_location"
+            app:layout_constraintStart_toStartOf="@id/title_location"
+            app:layout_constraintTop_toBottomOf="@id/title_location"
+            app:srcCompat="@mipmap/map_foreground"
+            tools:layout_editor_absoluteX="41dp"
+            tools:layout_editor_absoluteY="302dp" />
+
+        <Button
+            android:id="@+id/btn_set_medicine"
+            android:layout_width="187dp"
+            android:layout_height="48dp"
+            android:backgroundTint="@color/blue"
+            android:text="Set Jadwal Obat"
+            android:textAllCaps="false"
+            android:textSize="5.2pt"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/title_health_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Aktifitas Terbaru"
+            android:textColor="@color/blue"
+            android:textSize="7.6pt"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/name_container"
+            app:layout_constraintStart_toStartOf="@id/name_container"
+            app:layout_constraintTop_toBottomOf="@+id/btn_set_medicine" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_list_checkup_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape_dashboard_container"
+            android:padding="20dp"
+            app:layout_constraintEnd_toEndOf="@id/title_health_history"
+            app:layout_constraintStart_toStartOf="@id/title_health_history"
+            app:layout_constraintTop_toBottomOf="@id/title_health_history">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_checkup_history"
+                android:layout_width="wrap_content"
+                android:layout_height="330dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/elder_age"
-                android:layout_width="wrap_content"
-                android:layout_height="24dp"
-                android:layout_marginTop="10dp"
-                android:text="78 tahun"
-                android:textColor="@color/blue"
-                android:textSize="5.4pt"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/elder_name"
-                app:layout_constraintStart_toStartOf="@+id/elder_name"
-                app:layout_constraintTop_toBottomOf="@+id/elder_name" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/title_location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:text="Lokasi Saat Ini"
-        android:textColor="@color/blue"
-        android:textSize="7.5pt"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/name_container"
-        app:layout_constraintStart_toStartOf="@+id/name_container"
-        app:layout_constraintTop_toBottomOf="@+id/name_container" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="320dp"
-        android:layout_height="234dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/title_location"
-        app:layout_constraintStart_toStartOf="@id/title_location"
-        app:layout_constraintTop_toBottomOf="@id/title_location"
-        app:srcCompat="@mipmap/map_foreground"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="302dp" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="187dp"
-        android:layout_height="48dp"
-        android:backgroundTint="@color/blue"
-        android:text="Set Jadwal Obat"
-        android:textAllCaps="false"
-        android:textSize="5.2pt"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       app:layout_constraintBottom_toTopOf="@+id/buttonUpdate"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent">
+
+      <androidx.constraintlayout.utils.widget.MockView
+          android:id="@+id/mockViewProfilePict"
+          android:layout_width="100dp"
+          android:layout_height="100dp"
+          android:layout_marginStart="24dp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <TextView
+          android:id="@+id/textViewNama"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="24dp"
+          android:gravity="start"
+          android:text="@string/nama"
+          android:textSize="16sp"
+          app:layout_constraintStart_toEndOf="@+id/mockViewProfilePict"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <TextView
+          android:id="@+id/textViewNamaIsi"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="24dp"
+          android:text="@string/fulan"
+          android:textColor="@color/black"
+          android:textSize="24sp"
+          app:layout_constraintStart_toEndOf="@+id/mockViewProfilePict"
+          app:layout_constraintTop_toBottomOf="@+id/textViewNama" />
+
+      <TextView
+          android:id="@+id/textViewChangePicture"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="46dp"
+          android:layout_marginTop="8dp"
+          android:text="@string/changePicture"
+          android:textColor="@color/blue_cola"
+          android:textSize="8sp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/mockViewProfilePict" />
+
+      <!--tanggal lahir-->
+      <ImageView
+          android:id="@+id/imageViewGoSetTanggalLahir"
+          android:layout_width="35dp"
+          android:layout_height="35dp"
+          android:layout_marginStart="300dp"
+          android:layout_marginTop="92dp"
+          android:src="@drawable/ic_baseline_chevron_right_24"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/imageViewGoSetNama" />
+
+      <TextView
+          android:id="@+id/textViewTanggalLahir"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="24dp"
+          android:layout_marginTop="24dp"
+          android:text="@string/tanggalLahir"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/textViewChangePicture" />
+
+      <TextView
+          android:id="@+id/textViewTanggalLahirIsi"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="24dp"
+          android:text="@string/dateDummy"
+          android:textColor="@color/black"
+          android:textSize="20sp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/textViewTanggalLahir" />
+
+      <ImageView
+          android:id="@+id/imageViewGoSetNama"
+          android:layout_width="35dp"
+          android:layout_height="35dp"
+          android:layout_marginStart="300dp"
+          android:layout_marginTop="24dp"
+          android:src="@drawable/ic_baseline_chevron_right_24"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+
+      <TextView
+          android:id="@+id/textViewGolonganDarah"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="24dp"
+          android:layout_marginTop="16dp"
+          android:text="@string/golonganDarah"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/textViewTanggalLahirIsi" />
+
+      <TextView
+          android:id="@+id/textViewGolonganDarahIsi"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="24dp"
+          android:text="@string/goldarDummy"
+          android:textColor="@color/black"
+          android:textSize="20sp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/textViewGolonganDarah" />
+
+      <ImageView
+          android:id="@+id/imageViewGoSetGolonganDarah"
+          android:layout_width="35dp"
+          android:layout_height="35dp"
+          android:layout_marginStart="300dp"
+          android:layout_marginTop="28dp"
+          android:src="@drawable/ic_baseline_chevron_right_24"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/imageViewGoSetTanggalLahir" />
+
+      <TextView
+          android:id="@+id/textViewVirtualFence"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="24dp"
+          android:layout_marginTop="24dp"
+          android:text="@string/setVirtualFence"
+          android:textColor="@color/black"
+          android:textSize="18sp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/textViewGolonganDarahIsi" />
+
+      <ImageView
+          android:id="@+id/imageViewGoSetVirtualFence"
+          android:layout_width="35dp"
+          android:layout_height="35dp"
+          android:layout_marginStart="300dp"
+          android:layout_marginTop="26dp"
+          android:src="@drawable/ic_baseline_chevron_right_24"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/imageViewGoSetGolonganDarah" />
+
+      <TextView
+          android:id="@+id/textViewPanduanKesehatan"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="24dp"
+          android:layout_marginTop="24dp"
+          android:text="@string/setPanduanKesehatan"
+          android:textColor="@color/black"
+          android:textSize="18sp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/textViewVirtualFence" />
+
+      <ImageView
+          android:id="@+id/imageViewGoSetPanduanKesehatan"
+          android:layout_width="35dp"
+          android:layout_height="35dp"
+          android:layout_marginStart="300dp"
+          android:layout_marginTop="14dp"
+          android:src="@drawable/ic_baseline_chevron_right_24"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/imageViewGoSetVirtualFence" />
+
+      <TextView
+          android:id="@+id/textViewMedicalCheckup"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="24dp"
+          android:layout_marginTop="24dp"
+          android:text="@string/newMedicalCheckup"
+          android:textColor="@color/black"
+          android:textSize="18sp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/textViewPanduanKesehatan" />
+
+      <ImageView
+          android:id="@+id/textViewGoCheckMedicalCheckup"
+          android:layout_width="35dp"
+          android:layout_height="35dp"
+          android:layout_marginStart="300dp"
+          android:layout_marginTop="14dp"
+          android:src="@drawable/ic_baseline_chevron_right_24"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/imageViewGoSetPanduanKesehatan" />
+
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+   <Button
+       android:id="@+id/buttonUpdate"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginBottom="60dp"
+       android:backgroundTint="@color/yale_blue"
+       android:paddingHorizontal="40dp"
+       android:text="@string/update"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

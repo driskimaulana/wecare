@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<!--    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--        xmlns:tools="http://schemas.android.com/tools"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:fitsSystemWindows="true">-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="20dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/input_namaObat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#F3F3F3"
+                    android:ems="10"
+                    android:focusable="auto"
+                    android:hint="@string/nama_obat"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/pilih_hari"
+                android:textSize="20sp" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TableRow>
+                    <CheckBox
+                        android:id="@+id/checkBox_senin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/senin"
+                        android:textColor="@color/black" />
+
+                    <CheckBox
+                        android:id="@+id/checkBox_jumat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/jum_at"
+                        android:textColor="@color/black" />
+                </TableRow>
+
+                <TableRow>
+                    <CheckBox
+                        android:id="@+id/checkBox_selasa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/selasa"
+                        android:textColor="@color/black" />
+
+                    <CheckBox
+                        android:id="@+id/checkBox_sabtu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/sabtu"
+                        android:textColor="@color/black" />
+                </TableRow>
+
+                <TableRow>
+                    <CheckBox
+                        android:id="@+id/checkBox_rabu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/rabu"
+                        android:textColor="@color/black" />
+
+                    <CheckBox
+                        android:id="@+id/checkBox_minggu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/minggu"
+                        android:textColor="@color/black" />
+                </TableRow>
+
+                <TableRow>
+                    <CheckBox
+                        android:id="@+id/checkBox_kamis"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/kamis"
+                        android:textColor="@color/black" />
+                </TableRow>
+            </TableLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginVertical="20dp"
+                android:gravity="center_vertical">
+
+                <Button
+                    android:id="@+id/btn_setTime"
+                    android:background="@drawable/shape_dashboard_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:onClick="showTimePickerDialog"
+                    android:text="@string/mulai_jam"
+                    android:layout_marginEnd="20dp"/>
+
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:dropDownWidth="match_parent"
+                    android:entries="@array/angka"
+                    android:spinnerMode="dropdown"
+                    android:elevation="4dp"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:text="@string/import_foto_obat"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_rounded_corner"
+                android:padding="10dp"
+                app:srcCompat="@drawable/ic_add_picture"
+                app:tint="@color/diamond"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end">
+
+                <Button
+                    android:id="@+id/btn_back"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Batal"
+                    android:layout_marginEnd="10dp"
+                    android:textColor="@color/red" />
+
+                <Button
+                    android:id="@+id/btn_save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/blue"
+                    android:text="Simpan"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--    <include layout="@layout/relative_set_schedule_content_scrolling" />-->
+
+<!--    </androidx.coordinatorlayout.widget.CoordinatorLayout>-->
+
+</ScrollView>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/starting_nav"
+    app:startDestination="@id/introductionFragment">
+
+    <fragment
+        android:id="@+id/introductionFragment"
+        android:name="com.kelompok4.wecare.view.IntroductionFragment"
+        android:label="fragment_introduction"
+        tools:layout="@layout/fragment_introduction"
+        >
+
+        <action
+            android:id="@+id/navigateToLogin"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/navigateToSignup"
+            app:destination="@id/signupFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.kelompok4.wecare.view.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login"
+        >
+    </fragment>
+
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.kelompok4.wecare.view.SignupFragment"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup"
+        >
+        <action
+            android:id="@+id/navigateSignupToLogin"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/navigateToChooseRole"
+            app:destination="@id/chooseRoleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseRoleFragment"
+        android:name="com.kelompok4.wecare.view.ChooseRoleFragment"
+        android:label="fragment_choose_role"
+        tools:layout="@layout/fragment_choose_role" />
+
+
+</navigation>

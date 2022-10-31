@@ -39,7 +39,7 @@
         <item>4x sehari</item>
         <item>5x sehari</item>
     </string-array>
-    
+
     <string name="hallo">Hallo,</string>
     <string name="selamat_datang">Selamat Datang</string>
     <string name="example_mail_com">example@mail.com</string>
@@ -74,4 +74,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="elder">Elder</string>
+    <string name="relative">Relative</string>
 </resources>

@@ -8,9 +8,11 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.kelompok4.wecare.R;
 import com.kelompok4.wecare.databinding.FragmentDashboardBinding;
 import com.kelompok4.wecare.model.CheckUpHistoryModel;
 import com.kelompok4.wecare.model.FallHistoryModel;
@@ -64,5 +66,12 @@ public class DashboardFragment extends Fragment {
 
         FallHistoryAdapter fallHistoryAdapter = new FallHistoryAdapter(fallItems);
         binding.rvFallHistory.setAdapter(fallHistoryAdapter);
+
+        binding.btnElderSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.navigateDashboardToElderSettings);
+            }
+        });
     }
 }

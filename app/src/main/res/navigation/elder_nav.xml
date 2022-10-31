@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/elder_nav"
+    app:startDestination="@id/elderHomeFragment">
+
+    <fragment
+        android:id="@+id/elderHomeFragment"
+        android:name="com.kelompok4.wecare.view.elder.ElderHomeFragment"
+        android:label="ElderHomeFragment"
+        tools:layout="@layout/fragment_elder_home">
+        <action
+            android:id="@+id/navigateToElderQr"
+            app:destination="@id/elderQrCodeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/elderQrCodeFragment"
+        android:name="com.kelompok4.wecare.view.elder.ElderQrCodeFragment"
+        android:label="ElderQrCodeFragment"
+        tools:layout="@layout/fragment_elder_qr_code"/>
+</navigation>

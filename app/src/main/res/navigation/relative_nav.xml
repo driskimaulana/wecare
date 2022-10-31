@@ -8,15 +8,38 @@
         android:id="@+id/homeScreenFragment"
         android:name="com.kelompok4.wecare.view.relative.HomeScreenFragment"
         android:label="fragment_home_screen"
-        tools:layout="@layout/fragment_home_screen" />
+        tools:layout="@layout/fragment_home_screen" >
+        <action
+            android:id="@+id/navigateToSetMedicine"
+            app:destination="@id/setMedicineScheduleFragment" />
+        <action
+            android:id="@+id/navigateToElderSettings"
+            app:destination="@id/elderSettingsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/dashboardFragment"
         android:name="com.kelompok4.wecare.view.relative.DashboardFragment"
         android:label="fragment_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/navigateDashboardToElderSettings"
+            app:destination="@id/elderSettingsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/healthEducationFragment"
         android:name="com.kelompok4.wecare.view.relative.HealthEducationFragment"
         android:label="fragment_health_education"
         tools:layout="@layout/fragment_health_education" />
+    <fragment
+        android:id="@+id/setMedicineScheduleFragment"
+        android:name="com.kelompok4.wecare.view.relative.SetMedicineScheduleFragment"
+        android:label="SetMedicineScheduleFragment" >
+        <action
+            android:id="@+id/navigateToHomeScreen"
+            app:destination="@id/homeScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/elderSettingsFragment"
+        android:name="com.kelompok4.wecare.view.relative.ElderSettingsFragment"
+        android:label="ElderSettingsFragment" />
 </navigation>

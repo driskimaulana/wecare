@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".view.relative.RelativeSetSchedule"
-    tools:showIn="@layout/activity_relative_set_schedule">
+    tools:showIn="@layout/fragment_set_medicine_schedule">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="840dp"

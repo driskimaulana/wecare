@@ -1,23 +1,30 @@
 package com.kelompok4.wecare.view.relative;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 import com.kelompok4.wecare.R;
 import com.kelompok4.wecare.databinding.ActivityRelativeMainBinding;
 
-public class RelativeMainActivity extends AppCompatActivity {
+public class RelativeMainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private ActivityRelativeMainBinding binding;
 
@@ -26,6 +33,9 @@ public class RelativeMainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+//        setNavigationViewListener();
+
         binding = ActivityRelativeMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -48,14 +58,54 @@ public class RelativeMainActivity extends AppCompatActivity {
 
         toggle.syncState();
 
+        binding.btnElderSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(RelativeMainActivity.this, "Clicked", Toast.LENGTH_SHORT).show();
+                Navigation.findNavController(view).navigate(R.id.navigateToElderSettings);
+            }
+        });
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (toggle.onOptionsItemSelected(item)) {
+            Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show();
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
+
+    public void handleElderSettingsButton(View view) {
+        Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show();
+    }
+
+    public void handleAddEldersButton(View view) {
+        Intent intent = new Intent(this, AddElderActivity.class);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.elder1: {
+                Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show();
+                break;
+            }
+//            default:
+//                break;
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.layoutDrawer);
+        drawer.closeDrawer(GravityCompat.START);
+
+        return true;
+    }
+
+    private void setNavigationViewListener() {
+        NavigationView navigationView = (NavigationView) findViewById(R.id.navView);
+        navigationView.setNavigationItemSelectedListener(this);
+    }
+
 }
