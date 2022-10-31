@@ -1,26 +1,28 @@
-package com.kelompok4.wecare;
+package com.kelompok4.wecare.view.relative.settings;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
+import com.kelompok4.wecare.R;
 
-public class MainActivity extends AppCompatActivity {
+public class RelativePasswordSettings extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_relative_settings);
-        getSupportActionBar().hide();
+        setContentView(R.layout.activity_relative_password_settings);
 
-        LayoutInflater mInflater = LayoutInflater.from(this);
-        View mCustomView = mInflater.inflate(R.layout.activity_relative_settings, null);
+        //Backbutton
         ImageView backButton = (ImageView) this.findViewById(R.id.backButton);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(RelativePasswordSettings.this, "Clicked", Toast.LENGTH_LONG);
                 finish();
             }
         });

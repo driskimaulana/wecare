@@ -3,6 +3,33 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/drawable/background_input.xml" value="0.273" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/drawable/ripple_effect_circle.xml" value="0.272" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/drawable/settings_background_input.xml" value="0.273" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/drawable/shape_swipe_rounded.xml" value="0.272" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/drawable/shape_swipebutton.xml" value="0.272" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/RelativeSettings/activity_relative_name.xml" value="0.2682291666666667" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/activity_fall_alert.xml" value="0.33" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/activity_introduction.xml" value="0.2682291666666667" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/activity_login.xml" value="0.2682291666666667" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/activity_panduan_kesehatan.xml" value="0.33" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/activity_pengaturan_elder.xml" value="0.2682291666666667" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/activity_pengaturan_user.xml" value="0.2682291666666667" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/activity_relative_date_settings.xml" value="0.33" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/activity_relative_email_settings.xml" value="0.18802083333333333" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/activity_relative_main.xml" value="0.2682291666666667" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/activity_relative_name_settings.xml" value="0.22" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/activity_relative_password_settings.xml" value="0.25" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/activity_relative_set_schedule.xml" value="0.2682291666666667" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/activity_relative_settings.xml" value="0.25" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/checkup_history_item.xml" value="0.2713541666666667" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/fall_history_item.xml" value="0.2682291666666667" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/fragment_dashboard.xml" value="0.2713541666666667" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/fragment_health_education.xml" value="0.2682291666666667" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/fragment_home_screen.xml" value="0.2682291666666667" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/panduan_kesehatan_item.xml" value="0.5" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/relative_set_schedule_content_scrolling.xml" value="0.2713541666666667" />
         <entry key="..\:/Users/Hafizh/.gradle/caches/transforms-3/5d666d306352f7fdca8df50525096bc2/transformed/appcompat-1.5.1/res/layout/support_simple_spinner_dropdown_item.xml" value="0.17346014492753623" />
         <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/drawable-v21/app_widget_background.xml" value="0.196" />
         <entry key="..\:/Users/Hafizh/OneDrive/Desktop/Mobile Application Development/wecare/app/src/main/res/drawable-v21/app_widget_inner_view_background.xml" value="0.196" />

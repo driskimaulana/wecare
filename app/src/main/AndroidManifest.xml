@@ -12,34 +12,56 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         tools:targetApi="31">
-
+        <activity
+            android:name=".view.relative.settings.RelativeDateSettings"
+            android:exported="false"
+            android:theme="@style/Theme.Wecare.NoActionBar"/>
+        <activity
+            android:name=".view.relative.settings.RelativeEmailSettings"
+            android:exported="false"
+            android:theme="@style/Theme.Wecare.NoActionBar" />
+        <activity
+            android:name=".view.relative.settings.RelativePasswordSettings"
+            android:exported="false"
+            android:theme="@style/Theme.Wecare.NoActionBar" />
+         <activity
+        android:name=".view.relative.RelativeSettingsActivity"
+        android:exported="false"
+        android:label="@string/title_activity_relative_settings"
+        android:theme="@style/Theme.Wecare.NoActionBar" />
+        <activity
+            android:name=".view.relative.settings.RelativeNameSettings"
+            android:exported="false"
+            android:theme="@style/Theme.Wecare.NoActionBar" />
+        <activity
+            android:name=".view.relative.PanduanKesehatanActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Wecare.NoActionBar" />
+        <activity
+            android:name=".view.relative.FallAlertActivity"
+            android:exported="false" />
         <activity
             android:name=".ScannerActivity"
             android:exported="false" />
-        
         <activity
             android:name=".IntroductionActivity"
             android:exported="false" />
-        
         <activity
             android:name=".SignUpActivity"
             android:exported="false" />
-        
         <activity
             android:name=".LoginActivity"
             android:exported="true"
             android:theme="@style/Theme.Wecare.NoActionBar">
-
-             <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter>
-        </activity>
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".view.relative.RelativeMainActivity"
-            android:exported="true"/>
-
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="false">
@@ -49,16 +71,14 @@
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
-
         <activity
-        android:name=".view.relative.RelativeSetSchedule"
-        android:exported="true"
-        android:theme="@style/Theme.Wecare">
-
+            android:name=".view.relative.RelativeSetSchedule"
+            android:exported="true"
+            android:theme="@style/Theme.Wecare">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.elder.ElderHome" />
-                <!-- ^ TODO: PLACEHOLDER, CHANGE LATER! -->
+            <!-- ^ TODO: PLACEHOLDER, CHANGE LATER! -->
         </activity>
 
         <receiver
@@ -77,15 +97,12 @@
             android:name=".view.elder.ElderAccountConnection"
             android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.Wecare.NoActionBar">
-        </activity>
-
+            android:theme="@style/Theme.Wecare.NoActionBar" />
         <activity
             android:name=".view.elder.ElderHome"
             android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.Wecare.NoActionBar">
-        </activity>
+            android:theme="@style/Theme.Wecare.NoActionBar" />
     </application>
 
 </manifest>

@@ -35,6 +35,7 @@
 
         <ImageView
             android:id="@+id/backButton"
+            android:background="@drawable/ripple_effect_circle"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_marginTop="10dp"
@@ -73,14 +74,14 @@
             app:layout_constraintStart_toEndOf="@+id/mockViewProfilePict"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
+            <TextView
             android:id="@+id/textViewNamaIsi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:text="@string/fulan"
+            android:text="@string/nama"
             android:textColor="@color/black"
-            android:textSize="24sp"
+            android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/mockViewProfilePict"
             app:layout_constraintTop_toBottomOf="@+id/textViewNama" />
 
@@ -101,7 +102,8 @@
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_marginStart="300dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/ripple_effect_circle"
             android:src="@drawable/ic_baseline_chevron_right_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -112,7 +114,8 @@
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_marginStart="300dp"
-            android:layout_marginTop="92dp"
+            android:layout_marginTop="94dp"
+            android:background="@drawable/ripple_effect_circle"
             android:src="@drawable/ic_baseline_chevron_right_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageViewGoSetNama" />
@@ -145,7 +148,8 @@
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_marginStart="300dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/ripple_effect_circle"
             android:src="@drawable/ic_baseline_chevron_right_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageViewGoSetTanggalLahir" />
@@ -189,7 +193,8 @@
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_marginStart="300dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ripple_effect_circle"
             android:src="@drawable/ic_baseline_chevron_right_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageViewGoSetEmail" />
@@ -204,6 +209,7 @@
         android:backgroundTint="@color/yale_blue"
         android:paddingHorizontal="40dp"
         android:text="@string/update"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
