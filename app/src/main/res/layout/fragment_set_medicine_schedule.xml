@@ -127,7 +127,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:onClick="showTimePickerDialog"
                     android:text="@string/mulai_jam"
                     android:layout_marginEnd="20dp"/>
 
