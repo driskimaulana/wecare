@@ -15,6 +15,9 @@
         <action
             android:id="@+id/navigateToElderSettings"
             app:destination="@id/elderSettingsFragment" />
+        <action
+            android:id="@+id/navigateToAddElder"
+            app:destination="@id/addElderFragment" />
     </fragment>
     <fragment
         android:id="@+id/dashboardFragment"
@@ -24,12 +27,19 @@
         <action
             android:id="@+id/navigateDashboardToElderSettings"
             app:destination="@id/elderSettingsFragment" />
+        <action
+            android:id="@+id/navigateDashboardToAddElder"
+            app:destination="@id/addElderFragment" />
     </fragment>
     <fragment
         android:id="@+id/healthEducationFragment"
         android:name="com.kelompok4.wecare.view.relative.HealthEducationFragment"
         android:label="fragment_health_education"
-        tools:layout="@layout/fragment_health_education" />
+        tools:layout="@layout/fragment_health_education" >
+        <action
+            android:id="@+id/navigateToDetail"
+            app:destination="@id/healthEducationDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/setMedicineScheduleFragment"
         android:name="com.kelompok4.wecare.view.relative.SetMedicineScheduleFragment"
@@ -42,4 +52,12 @@
         android:id="@+id/elderSettingsFragment"
         android:name="com.kelompok4.wecare.view.relative.ElderSettingsFragment"
         android:label="ElderSettingsFragment" />
+    <fragment
+        android:id="@+id/healthEducationDetailFragment"
+        android:name="com.kelompok4.wecare.view.relative.HealthEducationDetailFragment"
+        android:label="HealthEducationDetailFragment" />
+    <fragment
+        android:id="@+id/addElderFragment"
+        android:name="com.kelompok4.wecare.view.relative.AddElderFragment"
+        android:label="AddElderFragment" />
 </navigation>
