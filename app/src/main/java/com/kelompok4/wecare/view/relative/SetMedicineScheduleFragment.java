@@ -1,19 +1,15 @@
 package com.kelompok4.wecare.view.relative;
 
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
-import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import com.kelompok4.wecare.R;
 import com.kelompok4.wecare.databinding.FragmentSetMedicineScheduleBinding;
@@ -48,6 +44,13 @@ public class SetMedicineScheduleFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.navigateToHomeScreen);
+            }
+        });
+
+        binding.btnSetTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTimePickerDialog(view);
             }
         });
 
