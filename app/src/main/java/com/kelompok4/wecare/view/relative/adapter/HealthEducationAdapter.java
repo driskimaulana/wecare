@@ -1,23 +1,25 @@
 package com.kelompok4.wecare.view.relative.adapter;
 
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.kelompok4.wecare.databinding.FallHistoryItemBinding;
+import com.kelompok4.wecare.R;
 import com.kelompok4.wecare.databinding.HealthEducationItemBinding;
-import com.kelompok4.wecare.model.HealthEducation;
+import com.kelompok4.wecare.model.HealthEducationModel;
 
 import java.util.List;
 
 
 public class HealthEducationAdapter extends RecyclerView.Adapter<HealthEducationAdapter.HealthEducationHolder> {
 
-    private final List<HealthEducation> items;
+    private final List<HealthEducationModel> items;
 
-    public HealthEducationAdapter(List<HealthEducation> items) {
+    public HealthEducationAdapter(List<HealthEducationModel> items) {
         this.items = items;
     }
 
@@ -31,6 +33,13 @@ public class HealthEducationAdapter extends RecyclerView.Adapter<HealthEducation
     public void onBindViewHolder(@NonNull HealthEducationHolder holder, int position) {
         holder.binding.tvTitle.setText(items.get(position).getTitle());
         holder.binding.tvDesc.setText(items.get(position).getDescription());
+
+        holder.binding.healthEducationItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.navigateToDetail);
+            }
+        });
     }
 
     @Override

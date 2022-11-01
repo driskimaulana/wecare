@@ -62,6 +62,13 @@ public class HomeScreenFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.navigateToElderSettings);
             }
         });
+
+        binding.btnAddElder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.navigateToAddElder);
+            }
+        });
     }
 
     @Override

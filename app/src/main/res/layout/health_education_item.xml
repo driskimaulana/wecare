@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/health_education_item"
     android:layout_width="380dp"
     android:layout_height="wrap_content"
     android:layout_marginBottom="10dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/shape_name_container">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,14 +14,13 @@
         android:paddingVertical="10dp">
 
         <ImageView
+            android:id="@+id/img_health_adu"
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:id="@+id/img_health_adu"
             android:src="@mipmap/health_edu_foreground"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_title"
@@ -28,9 +28,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:text="ini title"
+            android:textColor="@color/blue"
             android:textSize="6.3pt"
             android:textStyle="bold"
-            android:textColor="@color/blue"
             app:layout_constraintStart_toEndOf="@+id/img_health_adu"
             app:layout_constraintTop_toTopOf="@+id/img_health_adu" />
 

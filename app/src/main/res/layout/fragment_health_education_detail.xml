@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="65dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".view.relative.HealthEducationDetailFragment">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:id="@+id/img_detail"
+            android:src="@mipmap/health_edu_foreground"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/img_detail">
+
+            <TextView
+                android:id="@+id/tv_detail_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pelajari CPR untuk Selamatkan Nyawa Seseorang"
+                android:textColor="@color/blue"
+                android:textStyle="bold"
+                android:textSize="10pt"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/tv_detail_writer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tv_detail_title"
+                app:layout_constraintStart_toStartOf="@+id/tv_detail_title"
+                android:text="dituli AloDokter.com"
+                android:textSize="6pt"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CPR dilakukan terhadap orang yang tidak mampu bernapas atau mengalami henti jantung akibat suatu hal, misalnya tenggelam atau serangan jantung. Dengan mengembalikan fungsi napas dan jantung, CPR dapat menyelamatkan nyawa seseorang. \n\n
+
+CPR (cardiopulmonary resuscitation) atau dikenal juga dengan sebutan RJP (resusitasi jantung paru) adalah upaya pertolongan medis untuk mengembalikan kemampuan bernapas dan sirkulasi darah dalam tubuh.\n\n
+
+Pelajari CPR untuk Selamatkan Nyawa Seseorang - Alodokter\n\n
+
+Terhentinya aliran darah atau pernapasan bisa memicu kerusakan otak yang dapat mengakibatkan seseorang meninggal dalam hitungan 8–10 menit.\n\n
+
+Dengan pemberian CPR, aliran darah yang mengandung oksigen akan tetap tersalurkan ke otak dan seluruh tubuh hingga orang tersebut mendapatkan bantuan medis lebih lanjut.\n\n
+
+Beberapa Hal yang Perlu Diperhatikan Sebelum Melakukan CPR \n\n
+Sebelum memberikan CPR, ada beberapa hal yang harus Anda perhatikan, di antaranya:\n\n
+
+1. Periksa keamanan lokasi sekitar\n\n
+Pastikan lokasi dan lingkungan di sekitar orang yang tidak sadarkan diri tersebut aman. Misalnya, jika korban ditemukan di tengah jalan, lakukan evakuasi korban ke tempat yang lebih aman sebelum melakukan CPR.\n\n
+
+2. Periksa kesadaran orang yang akan ditolong\n\n
+Periksa tingkat kesadaran korban dengan mencoba menanyakan namanya dengan suara yang cukup lantang atau menggoyangkan tubuhnya secara perlahan. Jika ia merespons, upayakan agar korban tetap sadarkan diri hingga bantuan tiba. Namun, tetap periksa pernapasan, denyut nadi, dan tingkat responsnya.\n\n
+
+3. Evaluasi pernapasan \n\n
+Pastikan korban masih bernapas secara normal dengan melihat apakah dadanya bergerak naik-turun. Selanjutnya, dekatkan telinga Anda ke mulut dan hidung korban untuk mendengar suara napas dan merasakan embusan napasnya di pipi Anda.\n\n
+
+4. Periksa nadi\n\n
+Pastikan jantung korban tetap berdetak dengan memeriksa denyut nadi di pergelangan tangannya atau memeriksa denyut nadi di bagian sisi lehernya.\n\n
+
+5. Panggil bantuan medis\n\n
+Jika orang yang hendak ditolong tidak menunjukkan respons atau tidak sadarkan diri, segera hubungi tenaga medis di nomor 112 atau rumah sakit terdekat dan lakukan CPR hingga bantuan datang.\n\n
+
+Cara Melakukan CPR\n\n
+CPR dapat dilakukan oleh semua orang yang sudah terlatih. Teknik ini terbagi menjadi tiga tahapan yang dikenal dengan istilah C-A-B (compression, airways, breathing).\n\n
+
+Berikut ini adalah penjelasan tentang cara pemberian CPR kepada orang dewasa yang tidak sadarkan diri:\n\n
+
+Tahap kompresi dada (compression)\n\n
+Bila korban tidak sadarkan diri dan denyut jantungnya tidak terdeteksi, langkah awal CPR dapat dilakukan dengan tindakan kompresi dada. Berikut ini adalah cara melakukannya:\n\n
+
+Baringkan tubuh korban di atas permukaan yang keras dan datar, lalu posisikan diri Anda berlutut di samping leher dan bahu korban.\n\n
+Letakkan satu telapak tangan Anda di bagian tengah dada pasien, tepatnya di antara payudara.\n\n
+Posisikan telapak tangan Anda yang lain di atas tangan pertama. Pastikan posisi siku Anda lurus dan bahu berada tepat di atas tangan Anda.\n\n
+Tekan dada korban setidaknya 100–120 kali per menit, dengan kecepatan 1–2 tekanan per detik.\n\n
+Saat menekan, gunakan kekuatan tubuh bagian atas. Jangan hanya mengandalkan kekuatan lengan agar tekanan yang dihasilkan lebih kuat.\n\n
+Cek apakah terlihat tanda-tanda pasien bernapas atau menunjukkan respons. Jika belum, Anda bisa melanjutkan proses kompresi dada hingga tenaga medis datang atau mulai mencoba membuka jalur napas korban untuk memberikan napas buatan.\n\n
+
+Tahap membuka jalur napas (airways)\n\n
+Tahap ini biasanya dilakukan setelah tindakan kompresi. Untuk membuka jalur napas korban, Anda bisa mencoba untuk mendongakkan kepalanya, kemudian letakkan tangan Anda di dahirnya. Selanjutnya, angkat dagu pasien secara perlahan untuk membuka saluran napas.\n\n
+
+Tahap pemberian napas buatan dari mulut ke mulut (breathing)\n\n
+Setelah mengamankan saluran pernapasan korban, Anda bisa mulai memberikan napas buatan. Namun, langkah ini hanya dilakukan apabila Anda sudah terlatih.\n\n
+
+Pemberian napas buatan bisa dilakukan dari mulut ke mulut atau dari mulut ke hidung, terutama jika mulut terluka parah atau tidak bisa dibuka. Cara memberikan napas buatan adalah sebagai berikut:\n\n
+
+Jepit hidung korban, lalu tempatkan mulut Anda ke mulutnya.\n\n
+Berikan napas atau udara dari mulut Anda sebanyak 2 kali sambil melihat apakah bagian dadanya terangkat seperti orang bernapas atau belum. Jika belum, coba perbaiki posisi lehernya atau periksa kembali apakah terdapat sumbatan pada jalan napasnya.\n\n
+Ulangi proses kompresi dada sebanyak 30 kali yang diikuti oleh 2 kali pemberian napas buatan.\n\n
+Tidak ada salahnya membekali diri dengan pengetahuan mengenai cara melakukan CPR, karena bisa saja suatu saat Anda dihadapkan pada situasi di mana keterampilan ini sangat dibutuhkan untuk menyelamatkan nyawa orang lain.\n\n
+
+Pada kondisi di mana seseorang mengalami henti napas dan henti jantung, Anda dapat melakukan CPR hingga dokter atau tenaga medis tiba di lokasi.\n\n"
+                android:id="@+id/tv_detail_content"
+                app:layout_constraintTop_toBottomOf="@+id/tv_detail_writer"
+                app:layout_constraintStart_toStartOf="@id/tv_detail_writer"
+                android:layout_marginTop="30dp"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
