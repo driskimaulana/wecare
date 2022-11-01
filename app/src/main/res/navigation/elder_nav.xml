@@ -12,11 +12,21 @@
         tools:layout="@layout/fragment_elder_home">
         <action
             android:id="@+id/navigateToElderQr"
-            app:destination="@id/elderQrCodeFragment" />
+            app:destination="@id/elderQrCodeFragment"
+            app:popExitAnim="@android:anim/decelerate_interpolator" />
+        <action
+            android:id="@+id/navigateToMedicineList"
+            app:destination="@id/elderMedicineList" />
     </fragment>
+
     <fragment
         android:id="@+id/elderQrCodeFragment"
         android:name="com.kelompok4.wecare.view.elder.ElderQrCodeFragment"
         android:label="ElderQrCodeFragment"
         tools:layout="@layout/fragment_elder_qr_code"/>
+    <fragment
+        android:id="@+id/elderMedicineList"
+        android:name="com.kelompok4.wecare.view.elder.ElderMedicineList"
+        android:label="fragment_elder_medicine_list"
+        tools:layout="@layout/fragment_elder_medicine_list" />
 </navigation>

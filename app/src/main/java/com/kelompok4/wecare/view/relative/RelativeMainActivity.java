@@ -48,6 +48,7 @@ public class RelativeMainActivity extends AppCompatActivity implements Navigatio
         actionBar = getSupportActionBar();
         ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#16558F"));
 
+        assert actionBar != null;
         actionBar.setBackgroundDrawable(colorDrawable);
         actionBar.setTitle("WeCare");
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
@@ -66,7 +67,7 @@ public class RelativeMainActivity extends AppCompatActivity implements Navigatio
             }
         });
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
     @Override

@@ -11,7 +11,7 @@
     </style>
 
     <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
-        <item name="background">@color/white</item>
+        <item name="background">@color/blue</item>
     </style>
 
     <style name="roundedImageView">

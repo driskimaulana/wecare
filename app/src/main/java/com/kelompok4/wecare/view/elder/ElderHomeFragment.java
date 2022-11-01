@@ -1,16 +1,15 @@
 package com.kelompok4.wecare.view.elder;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.kelompok4.wecare.R;
 import com.kelompok4.wecare.databinding.FragmentElderHomeBinding;
@@ -56,10 +55,13 @@ public class ElderHomeFragment extends Fragment {
     }
 
     public void qrBtnClicked(View v) {
-        Toast.makeText(getActivity(), "SOS Clicked", Toast.LENGTH_SHORT).show();
         Navigation.findNavController(v).navigate(R.id.navigateToElderQr);
 //        Intent intent =  new Intent(this, ElderQrCodeFragment.class);
 //        startActivity(intent);
+    }
+
+    public void medicineListBtnClicked(View v) {
+        Navigation.findNavController(v).navigate(R.id.navigateToMedicineList);
     }
 
     public void sosBtnClicked(View v) {

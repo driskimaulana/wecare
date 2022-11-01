@@ -2,15 +2,15 @@
     <!-- Base application theme. -->
     <style name="Theme.Wecare" parent="Theme.MaterialComponents.Light">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/yale_blue</item>
+        <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryVariant">@color/diamond</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/blue_cola</item>
+        <item name="colorSecondary">@color/diamond</item>
         <item name="colorSecondaryVariant">@color/tradewind</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/blue</item>
         <!-- Customize your theme here. -->
         <item name="actionBarStyle">@style/MyActionBar</item>
     </style>
@@ -18,6 +18,17 @@
     <style name="Theme.Wecare.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/diamond</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/diamond</item>
+        <item name="colorSecondaryVariant">@color/tradewind</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
     </style>
 
     <style name="Theme.Wecare.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
