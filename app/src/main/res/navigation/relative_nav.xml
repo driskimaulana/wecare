@@ -30,6 +30,9 @@
         <action
             android:id="@+id/navigateDashboardToAddElder"
             app:destination="@id/addElderFragment" />
+        <action
+            android:id="@+id/navigateToAddCheckupHistory"
+            app:destination="@id/addCheckUpHistoryFragment" />
     </fragment>
     <fragment
         android:id="@+id/healthEducationFragment"
@@ -60,4 +63,8 @@
         android:id="@+id/addElderFragment"
         android:name="com.kelompok4.wecare.view.relative.AddElderFragment"
         android:label="AddElderFragment" />
+    <fragment
+        android:id="@+id/addCheckUpHistoryFragment"
+        android:name="com.kelompok4.wecare.view.relative.AddCheckUpHistoryFragment"
+        android:label="AddCheckUpHistoryFragment" />
 </navigation>

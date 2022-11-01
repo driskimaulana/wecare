@@ -80,5 +80,12 @@ public class DashboardFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.navigateDashboardToAddElder);
             }
         });
+
+        binding.btnAddCheckupHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.navigateToAddCheckupHistory);
+            }
+        });
     }
 }
