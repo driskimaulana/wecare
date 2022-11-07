@@ -3,6 +3,30 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/drawable/ripple_effect_circle.xml" value="0.359" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/drawable/settings_background_input.xml" value="0.359" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/activity_add_elder.xml" value="0.358695652173913" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/activity_elder_main.xml" value="0.358695652173913" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/activity_relative_main.xml" value="0.32135416666666666" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/fragment_add_check_up_history.xml" value="0.24114583333333334" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/fragment_choose_role.xml" value="0.32135416666666666" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/fragment_dashboard.xml" value="0.358695652173913" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/fragment_elder_birth_date.xml" value="0.3072916666666667" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/fragment_elder_blood_type.xml" value="0.25" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/fragment_elder_medicine_list.xml" value="0.32135416666666666" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/fragment_elder_name.xml" value="0.32135416666666666" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/fragment_elder_settings.xml" value="0.25" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/fragment_health_education.xml" value="0.32135416666666666" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/fragment_health_education_detail.xml" value="0.11727456940222898" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/fragment_home_screen.xml" value="0.358695652173913" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/fragment_introduction.xml" value="0.358695652173913" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/fragment_login.xml" value="0.358695652173913" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/fragment_relative_name.xml" value="0.32135416666666666" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/fragment_relative_settings.xml" value="0.358695652173913" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/fragment_set_medicine_schedule.xml" value="0.32135416666666666" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/fragment_signup.xml" value="0.358695652173913" />
+        <entry key="..\:/UPI/Sem 5/Mobdev/wecare/app/src/main/res/layout/health_education_item.xml" value="0.33" />
         <entry key="..\:/wecare/app/src/main/res/drawable/btn_sos_rounded.xml" value="0.2075" />
         <entry key="..\:/wecare/app/src/main/res/drawable/ic_arcticons_qr.xml" value="0.2075" />
         <entry key="..\:/wecare/app/src/main/res/drawable/ic_article.xml" value="0.1" />

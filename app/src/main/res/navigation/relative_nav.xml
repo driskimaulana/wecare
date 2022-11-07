@@ -54,7 +54,22 @@
     <fragment
         android:id="@+id/elderSettingsFragment"
         android:name="com.kelompok4.wecare.view.relative.ElderSettingsFragment"
-        android:label="ElderSettingsFragment" />
+        android:label="ElderSettingsFragment"
+        tools:layout="@layout/fragment_elder_settings"
+        >
+        <action
+            android:id="@+id/navigateToElderNameSettings"
+            app:destination="@id/elderNameFragment" />
+        <action
+            android:id="@+id/navigateToElderBirthDateSettings"
+            app:destination="@id/elderBirthDateFragment" />
+        <action
+            android:id="@+id/navigateToElderBloodTypeSettings"
+            app:destination="@id/elderBloodTypeFragment" />
+        <action
+            android:id="@+id/navigateToAddCheckupHistory"
+            app:destination="@id/addCheckUpHistoryFragment" />
+    </fragment>
     <fragment
         android:id="@+id/healthEducationDetailFragment"
         android:name="com.kelompok4.wecare.view.relative.HealthEducationDetailFragment"
@@ -67,4 +82,19 @@
         android:id="@+id/addCheckUpHistoryFragment"
         android:name="com.kelompok4.wecare.view.relative.AddCheckUpHistoryFragment"
         android:label="AddCheckUpHistoryFragment" />
+    <fragment
+        android:id="@+id/elderNameFragment"
+        android:name="com.kelompok4.wecare.view.elder.settings.ElderNameFragment"
+        android:label="fragment_elder_name"
+        tools:layout="@layout/fragment_elder_name" />
+    <fragment
+        android:id="@+id/elderBirthDateFragment"
+        android:name="com.kelompok4.wecare.view.elder.settings.ElderBirthDateFragment"
+        android:label="fragment_elder_birth_date"
+        tools:layout="@layout/fragment_elder_birth_date" />
+    <fragment
+        android:id="@+id/elderBloodTypeFragment"
+        android:name="com.kelompok4.wecare.view.elder.settings.ElderBloodTypeFragment"
+        android:label="ElderBloodTypeFragment"
+        tools:layout="@layout/fragment_elder_blood_type"/>
 </navigation>
