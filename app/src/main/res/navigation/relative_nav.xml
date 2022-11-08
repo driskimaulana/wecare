@@ -73,7 +73,8 @@
     <fragment
         android:id="@+id/healthEducationDetailFragment"
         android:name="com.kelompok4.wecare.view.relative.HealthEducationDetailFragment"
-        android:label="HealthEducationDetailFragment" />
+        android:label="HealthEducationDetailFragment" >
+    </fragment>
     <fragment
         android:id="@+id/addElderFragment"
         android:name="com.kelompok4.wecare.view.relative.AddElderFragment"

@@ -11,15 +11,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.kelompok4.wecare.R;
 import com.kelompok4.wecare.databinding.HealthEducationItemBinding;
 import com.kelompok4.wecare.model.HealthEducationModel;
+import com.kelompok4.wecare.model.healthEducation.HealthEducation;
 
 import java.util.List;
 
 
 public class HealthEducationAdapter extends RecyclerView.Adapter<HealthEducationAdapter.HealthEducationHolder> {
 
-    private final List<HealthEducationModel> items;
+    private final List<HealthEducation> items;
 
-    public HealthEducationAdapter(List<HealthEducationModel> items) {
+    public HealthEducationAdapter(List<HealthEducation> items) {
         this.items = items;
     }
 
