@@ -5,9 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.kelompok4.wecare.R;
+import com.kelompok4.wecare.databinding.FragmentElderMedicineListBinding;
 import com.kelompok4.wecare.model.MedicineModel;
 import com.kelompok4.wecare.view.elder.adapter.ElderMedicineListRecyclerViewAdapter;
 
@@ -16,6 +21,8 @@ import java.util.List;
 
 public class ElderMedicineList extends Fragment {
 
+    private FragmentElderMedicineListBinding binding;
+
     public ElderMedicineList() {
         // Required empty public constructor
     }
@@ -23,22 +30,30 @@ public class ElderMedicineList extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        List<MedicineModel> items = new ArrayList<MedicineModel>();
-        items.add(new MedicineModel("16:00", "Piroxicam", "Obat untuk asam urat"));
-        items.add(new MedicineModel("20:00", "Candesartan Cilexetil", "Obat untuk darah tinggi"));
-        items.add(new MedicineModel("7:30", "Piroxicam", "Obat untuk asam urat"));
-        items.add(new MedicineModel("12:00", "Candesartan Cilexetil", "Obat untuk darah tinggi"));
-        items.add(new MedicineModel("16:00", "Piroxicam", "Obat untuk asam urat"));
-
-        ElderMedicineListRecyclerViewAdapter adapter = new ElderMedicineListRecyclerViewAdapter(items);
-//        RecyclerView rv =
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_elder_medicine_list, container, false);
+        binding = FragmentElderMedicineListBinding.inflate(inflater, container, false);
+        return binding.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        RecyclerView.LayoutManager medicineListLayoutManager = new LinearLayoutManager(getContext());
+        binding.rvMedicineList.setLayoutManager(medicineListLayoutManager);
+
+        List<MedicineModel> items = new ArrayList<MedicineModel>();
+        items.add(new MedicineModel(R.mipmap.medicine_placeholder, "16:00", "Piroxicam", "Obat untuk asam urat"));
+        items.add(new MedicineModel(R.mipmap.medicine_placeholder2, "20:00", "Candesartan Cilexetil", "Obat untuk darah tinggi"));
+        items.add(new MedicineModel(R.mipmap.medicine_placeholder, "7:30", "Piroxicam", "Obat untuk asam urat"));
+        items.add(new MedicineModel(R.mipmap.medicine_placeholder2, "12:00", "Candesartan Cilexetil", "Obat untuk darah tinggi"));
+        items.add(new MedicineModel(R.mipmap.medicine_placeholder, "16:00", "Piroxicam", "Obat untuk asam urat"));
+
+        ElderMedicineListRecyclerViewAdapter adapter = new ElderMedicineListRecyclerViewAdapter(items);
+        binding.rvMedicineList.setAdapter(adapter);
     }
 }

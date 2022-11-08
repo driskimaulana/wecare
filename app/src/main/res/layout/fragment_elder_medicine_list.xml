@@ -8,7 +8,5 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_medicine_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/recycler_view_item"
-        tools:itemCount="4"/>
+        android:layout_height="match_parent"/>
 </FrameLayout>

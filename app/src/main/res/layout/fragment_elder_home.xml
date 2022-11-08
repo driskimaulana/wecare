@@ -25,6 +25,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/tv_minum_obat"
         android:layout_width="282dp"
+        android:clickable="true"
         android:layout_height="wrap_content"
         android:background="@drawable/shape_name_container"
         android:paddingHorizontal="20dp"
@@ -32,7 +33,8 @@
         app:layout_constraintBottom_toTopOf="@+id/btn_sos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_qrcode">
+        app:layout_constraintTop_toBottomOf="@+id/btn_qrcode"
+        android:focusable="true">
 
         <TextView
             android:id="@+id/textView2"

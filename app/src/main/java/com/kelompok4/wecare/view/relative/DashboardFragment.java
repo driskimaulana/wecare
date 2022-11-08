@@ -61,8 +61,8 @@ public class DashboardFragment extends Fragment {
         fallItems.add(new FallHistoryModel("20/10/2022", "-7.317044, 107.864453", "Diselamatkan"));
 
 
-        CheckUpHistoryAdapter checkhupAdapter = new CheckUpHistoryAdapter(items);
-        binding.rvCheckupHistory.setAdapter(checkhupAdapter);
+        CheckUpHistoryAdapter checkupAdapter = new CheckUpHistoryAdapter(items);
+        binding.rvCheckupHistory.setAdapter(checkupAdapter);
 
         FallHistoryAdapter fallHistoryAdapter = new FallHistoryAdapter(fallItems);
         binding.rvFallHistory.setAdapter(fallHistoryAdapter);
