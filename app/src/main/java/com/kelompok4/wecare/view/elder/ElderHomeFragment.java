@@ -44,6 +44,11 @@ public class ElderHomeFragment extends Fragment {
                 qrBtnClicked(view);
             }
         });
+
+        binding.tvMinumObat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { medicineListBtnClicked(view); }
+        });
     }
 
     @Override
@@ -60,9 +65,9 @@ public class ElderHomeFragment extends Fragment {
 //        startActivity(intent);
     }
 
-    public void medicineListBtnClicked(View v) {
-        Navigation.findNavController(v).navigate(R.id.navigateToMedicineList);
-    }
+//    public void medicineListBtnClicked(View v) {
+//        Navigation.findNavController(v).navigate(R.id.navigateToMedicineList);
+//    }
 
     public void sosBtnClicked(View v) {
         Toast.makeText(getActivity(), "SOS Clicked", Toast.LENGTH_SHORT).show();
@@ -70,4 +75,7 @@ public class ElderHomeFragment extends Fragment {
 //        startActivity(intent);
     }
 
+    public void medicineListBtnClicked(View v) {
+        Navigation.findNavController(v).navigate(R.id.navigateToMedicineList);
+    }
 }

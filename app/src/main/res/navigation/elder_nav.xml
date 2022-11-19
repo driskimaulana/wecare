@@ -12,8 +12,7 @@
         tools:layout="@layout/fragment_elder_home">
         <action
             android:id="@+id/navigateToElderQr"
-            app:destination="@id/elderQrCodeFragment"
-            app:popExitAnim="@android:anim/decelerate_interpolator" />
+            app:destination="@id/elderQrCodeFragment" />
         <action
             android:id="@+id/navigateToMedicineList"
             app:destination="@id/elderMedicineList" />
