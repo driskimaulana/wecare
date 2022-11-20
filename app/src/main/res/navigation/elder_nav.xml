@@ -16,6 +16,9 @@
         <action
             android:id="@+id/navigateToMedicineList"
             app:destination="@id/elderMedicineList" />
+        <action
+            android:id="@+id/navigateToWaitingResponseSosFragment"
+            app:destination="@id/waitingResponseSosFragment" />
     </fragment>
 
     <fragment
@@ -28,4 +31,9 @@
         android:name="com.kelompok4.wecare.view.elder.ElderMedicineList"
         android:label="fragment_elder_medicine_list"
         tools:layout="@layout/fragment_elder_medicine_list" />
+    <fragment
+        android:id="@+id/waitingResponseSosFragment"
+        android:name="com.kelompok4.wecare.view.elder.WaitingResponseSosFragment"
+        android:label="fragment_waiting_response_sos"
+        tools:layout="@layout/fragment_waiting_response_sos" />
 </navigation>

@@ -1,9 +1,8 @@
 package com.kelompok4.wecare.view.relative;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -12,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.graphics.drawable.DrawerArrowDrawable;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
@@ -46,16 +46,18 @@ public class RelativeMainActivity extends AppCompatActivity implements Navigatio
 
         ActionBar actionBar;
         actionBar = getSupportActionBar();
-        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#16558F"));
-
         assert actionBar != null;
-        actionBar.setBackgroundDrawable(colorDrawable);
-        actionBar.setTitle("WeCare");
+        actionBar.setTitle(Html.fromHtml("<font color='#ffffff'>WeCare</font>"));
+
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
 
 //        sidebar
         toggle = new ActionBarDrawerToggle(this, binding.layoutDrawer, R.string.open, R.string.close);
         binding.layoutDrawer.addDrawerListener(toggle);
+
+        DrawerArrowDrawable drawerIcon = toggle.getDrawerArrowDrawable();
+        drawerIcon.setColor(0xFFFFFFFF);
+        toggle.setDrawerArrowDrawable(drawerIcon);
 
         toggle.syncState();
 
