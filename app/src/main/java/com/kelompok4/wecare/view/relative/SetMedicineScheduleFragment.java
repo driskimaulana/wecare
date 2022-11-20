@@ -12,12 +12,12 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
 import com.kelompok4.wecare.R;
-import com.kelompok4.wecare.databinding.FragmentSetMedicineScheduleBinding;
+import com.kelompok4.wecare.databinding.FragmentRelativeSetMedicineScheduleBinding;
 import com.kelompok4.wecare.view.components.TimePickerFragment;
 
 public class SetMedicineScheduleFragment extends Fragment {
 
-    private FragmentSetMedicineScheduleBinding binding;
+    private FragmentRelativeSetMedicineScheduleBinding binding;
 
 
     public SetMedicineScheduleFragment() {
@@ -43,7 +43,7 @@ public class SetMedicineScheduleFragment extends Fragment {
         binding.btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.navigateToHomeScreen);
+                Navigation.findNavController(view).navigateUp();
             }
         });
 
@@ -70,7 +70,7 @@ public class SetMedicineScheduleFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentSetMedicineScheduleBinding.inflate(inflater, container, false);
+        binding = FragmentRelativeSetMedicineScheduleBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
