@@ -13,6 +13,11 @@ import android.view.ViewGroup;
 
 import com.kelompok4.wecare.R;
 import com.kelompok4.wecare.databinding.FragmentSignupBinding;
+import com.kelompok4.wecare.model.auth.UserSignin;
+import com.kelompok4.wecare.model.auth.UserSignup;
+import com.kelompok4.wecare.viewmodel.utils.GsonUtils;
+
+import java.util.regex.Pattern;
 
 public class SignupFragment extends Fragment {
 
@@ -41,7 +46,10 @@ public class SignupFragment extends Fragment {
         binding.btnCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.navigateToChooseRole);
+                if(!isInputValid()) return;
+
+                handleSignup(view);
+//                Navigation.findNavController(view).navigate(R.id.navigateToChooseRole);
             }
         });
 
@@ -51,6 +59,50 @@ public class SignupFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.navigateToChooseRole);
             }
         });
+    }
+
+    private boolean isInputValid() {
+        String name = binding.inputNama.getText().toString();
+        String email = binding.inputEmail.getText().toString();
+        String password = binding.inputPassword.getText().toString();
+        String confirmPassword = binding.inputConfirmPassword.getText().toString();
+
+        if (name.length() == 0) {
+            binding.inputNama.setError("Nama tidak boleh kosong.");
+            return false;
+        }
+
+        if (!Pattern.compile("^(.+)@(\\S+)$").matcher(email).matches()) {
+            binding.inputEmail.setError("Email tidak valid.");
+            return false;
+        }
+
+        if (password.length() == 0) {
+            binding.inputPassword.setError("Password tidak boleh kosong.");
+            return false;
+        }
+
+        if (!password.equals(confirmPassword)) {
+            binding.inputPassword.setError("Password tidak sama.");
+            binding.inputConfirmPassword.setError("Password tidak sama.");
+            return false;
+        }
+
+        return true;
+    }
+
+    private void handleSignup(View view) {
+        String nama = binding.inputNama.getText().toString();
+        String email = binding.inputEmail.getText().toString();
+        String password = binding.inputPassword.getText().toString();
+        UserSignup userSignup = new UserSignup(nama, email, password, "");
+
+        String userSignupJson = GsonUtils.getGson().toJson(userSignup);
+
+        Bundle bundle = new Bundle();
+        bundle.putString("SIGNUP_DATA", userSignupJson);
+
+        Navigation.findNavController(view).navigate(R.id.chooseRoleFragment, bundle);
     }
 
     @Override

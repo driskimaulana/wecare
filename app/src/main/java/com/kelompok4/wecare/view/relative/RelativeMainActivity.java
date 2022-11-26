@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -23,6 +24,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.kelompok4.wecare.R;
 import com.kelompok4.wecare.databinding.ActivityRelativeMainBinding;
+import com.kelompok4.wecare.model.user.User;
+import com.kelompok4.wecare.viewmodel.utils.GsonUtils;
 
 public class RelativeMainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -34,8 +37,6 @@ public class RelativeMainActivity extends AppCompatActivity implements Navigatio
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        setNavigationViewListener();
-
         binding = ActivityRelativeMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -43,6 +44,14 @@ public class RelativeMainActivity extends AppCompatActivity implements Navigatio
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView);
 //        NavController navController = Navigation.findNavController(binding.fragmentContainerView);
         NavController navController = navHostFragment.getNavController();
+
+//        bundle current user
+        Bundle bundle = getIntent().getExtras();
+        User currentUser = GsonUtils.getGson().fromJson(bundle.getString("USER_LOGGED_IN"), User.class);
+
+        Toast.makeText(this, currentUser.getName(), Toast.LENGTH_SHORT).show();
+
+        navController.setGraph(R.navigation.relative_nav, getIntent().getExtras());
 
         ActionBar actionBar;
         actionBar = getSupportActionBar();
@@ -54,6 +63,12 @@ public class RelativeMainActivity extends AppCompatActivity implements Navigatio
 //        sidebar
         toggle = new ActionBarDrawerToggle(this, binding.layoutDrawer, R.string.open, R.string.close);
         binding.layoutDrawer.addDrawerListener(toggle);
+
+//        get navigation view
+        NavigationView navigationView = findViewById(R.id.navView);
+        View header = navigationView.getHeaderView(0);
+        TextView profileName = header.findViewById(R.id.tv_profile_name);
+        profileName.setText(currentUser.getName());
 
         DrawerArrowDrawable drawerIcon = toggle.getDrawerArrowDrawable();
         drawerIcon.setColor(0xFFFFFFFF);

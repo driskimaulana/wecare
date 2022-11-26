@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.kelompok4.wecare">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -16,8 +16,11 @@
         android:theme="@style/Theme.Wecare"
         tools:targetApi="31">
         <activity
-            android:name=".AddElderActivity"
+            android:name=".view.WelcomeActivity"
             android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".AddElderActivity"-->
+<!--            android:exported="false" />-->
         <activity
             android:name=".view.elder.ElderMainActivity"
             android:exported="false" />

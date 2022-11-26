@@ -1,9 +1,13 @@
 package com.kelompok4.wecare.view.relative;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,18 +17,29 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kelompok4.wecare.R;
-
-
 import com.kelompok4.wecare.databinding.FragmentHomeScreenBinding;
 import com.kelompok4.wecare.model.CheckUpHistoryModel;
+import com.kelompok4.wecare.model.auth.AuthResponse;
+import com.kelompok4.wecare.model.user.User;
 import com.kelompok4.wecare.view.relative.adapter.CheckUpHistoryAdapter;
+import com.kelompok4.wecare.viewmodel.rest.ApiClient;
+import com.kelompok4.wecare.viewmodel.rest.ApiInterface;
+import com.kelompok4.wecare.viewmodel.utils.GsonUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class HomeScreenFragment extends Fragment {
 
     private FragmentHomeScreenBinding binding;
+    private User currentUser;
+    private User currentElder;
+
+    private ApiInterface mApiInterface;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,6 +49,41 @@ public class HomeScreenFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        mApiInterface = ApiClient.getClient().create(ApiInterface.class);
+
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(getString(R.string.const_sharedpref_key), Context.MODE_PRIVATE);
+        String token = sharedPreferences.getString(getString(R.string.const_token_key), "");
+
+        Bundle bundle = getActivity().getIntent().getExtras();
+//        currentUser = GsonUtils.getGson().fromJson(bundle.getString("USER_LOGGED_IN"), User.class);
+//
+//        if (currentUser != null) {
+//            binding.elderName.setText(currentUser.getName());
+//        }
+
+//        get current logged in user
+        currentUser = GsonUtils.getGson().fromJson(bundle.getString("USER_LOGGED_IN"), User.class);
+
+        //        get elder data that connected with current logged in relative
+        Call<AuthResponse> call = mApiInterface.getUserDetails(currentUser.getElderConnected().get(0), "Bearer " + token);
+        call.enqueue(new Callback<AuthResponse>() {
+            @Override
+            public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {
+                assert response.body() != null;
+                currentElder = response.body().getResult();
+                binding.elderName.setText(response.body().getResult().getName());
+                Log.d("HomeScreenFragment", "onResponse: " + response.body().getResult().toString());
+//                Toast.makeText(getActivity(), "SUKSES ", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<AuthResponse> call, Throwable t) {
+                Log.e("FAILEDDDDDD", "onFailure: " + t.toString());
+//                Toast.makeText(getActivity(), "FAILED", Toast.LENGTH_SHORT).show();
+            }
+        });
+//        binding.elderAge.setText(currentElder.getEmail());
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         binding.rvCheckupHistory.setLayoutManager(layoutManager);
