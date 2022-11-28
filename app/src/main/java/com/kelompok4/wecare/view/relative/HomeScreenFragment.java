@@ -16,6 +16,7 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.zxing.integration.android.IntentIntegrator;
 import com.kelompok4.wecare.R;
 import com.kelompok4.wecare.databinding.FragmentHomeScreenBinding;
 import com.kelompok4.wecare.model.CheckUpHistoryModel;
@@ -117,6 +118,25 @@ public class HomeScreenFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.navigateToAddElder);
+            }
+        });
+
+        //Add Elder QR
+        binding.btnAddElder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                IntentIntegrator intentIntegrator = new IntentIntegrator(
+                        getActivity()
+                );
+                intentIntegrator.setPrompt("Press 'VOLUME UP' to activate flash\nPress 'VOLUME DOWN' to deactivate flash.");
+                //Set beep
+                intentIntegrator.setBeepEnabled(true);
+                //lock orientation
+                intentIntegrator.setOrientationLocked(true);
+                //set capture activity
+                intentIntegrator.setCaptureActivity(Capture.class);
+                //Initiate scan
+                intentIntegrator.initiateScan();
             }
         });
     }

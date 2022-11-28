@@ -1,5 +1,8 @@
 package com.kelompok4.wecare.view.relative;
 
+import android.app.ActivityManager;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
@@ -9,8 +12,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.graphics.drawable.DrawerArrowDrawable;
 import androidx.core.view.GravityCompat;
@@ -22,6 +27,8 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 import com.kelompok4.wecare.R;
 import com.kelompok4.wecare.databinding.ActivityRelativeMainBinding;
 import com.kelompok4.wecare.model.user.User;
@@ -30,7 +37,7 @@ import com.kelompok4.wecare.viewmodel.utils.GsonUtils;
 public class RelativeMainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private ActivityRelativeMainBinding binding;
-
+    Context context = this;
     private ActionBarDrawerToggle toggle;
 
     @Override
@@ -85,6 +92,39 @@ public class RelativeMainActivity extends AppCompatActivity implements Navigatio
         });
 
         actionBar.setDisplayHomeAsUpEnabled(true);
+    }
+
+    //QR SCAN
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        //Initialize intent result
+        IntentResult intentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        //Check condition
+        if (intentResult.getContents() != null){
+            //Alert dialog
+            AlertDialog.Builder builder = new AlertDialog.Builder(
+                    RelativeMainActivity.this, R.style.DialogTheme
+            );
+            //Set title
+            builder.setTitle("Result");
+            //Set msg
+            builder.setMessage(intentResult.getContents());
+            //set positive button
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    //Dismiss dialog
+                    dialogInterface.dismiss();
+                }
+            });
+            //Show alert
+            builder.show();
+        } else {
+            //if content null
+            Toast.makeText(getApplicationContext(), "Did not scan anything", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
