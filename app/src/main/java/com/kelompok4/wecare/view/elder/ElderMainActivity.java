@@ -12,8 +12,11 @@ import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.kelompok4.wecare.R;
+import com.kelompok4.wecare.model.user.User;
+import com.kelompok4.wecare.viewmodel.utils.GsonUtils;
 
 import java.text.DecimalFormat;
 
@@ -66,6 +69,13 @@ public class ElderMainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_elder_main);
 
         getSupportActionBar().hide();
+
+        //        bundle current user
+        Bundle bundle = getIntent().getExtras();
+        User currentUser = GsonUtils.getGson().fromJson(bundle.getString("USER_LOGGED_IN"), User.class);
+
+        Toast.makeText(this, currentUser.getName(), Toast.LENGTH_SHORT).show();
+
 
         builder = new AlertDialog.Builder(this, R.style.DialogTheme);
 
