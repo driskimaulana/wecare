@@ -1,16 +1,18 @@
 package com.kelompok4.wecare.view.elder;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.kelompok4.wecare.R;
 import com.kelompok4.wecare.model.user.User;
@@ -68,6 +70,13 @@ public class ElderMainActivity extends AppCompatActivity {
 
         getSupportActionBar().hide();
 
+        //        bundle current user
+        Bundle bundle = getIntent().getExtras();
+        User currentUser = GsonUtils.getGson().fromJson(bundle.getString("USER_LOGGED_IN"), User.class);
+
+        Toast.makeText(this, currentUser.getName(), Toast.LENGTH_SHORT).show();
+
+
         builder = new AlertDialog.Builder(this, R.style.DialogTheme);
 
         alarm = MediaPlayer.create(this, R.raw.warning_alarm);
@@ -75,11 +84,6 @@ public class ElderMainActivity extends AppCompatActivity {
 
         mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-
-        Bundle bundle = getIntent().getExtras();
-        User currentUser = GsonUtils.getGson().fromJson(bundle.getString("USER_LOGGED_IN"), User.class);
-
-        Toast.makeText(this, currentUser.getName(), Toast.LENGTH_SHORT).show();
     }
 
     protected void onResume() {
