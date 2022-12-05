@@ -56,6 +56,9 @@ public class HomeScreenFragment extends Fragment {
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences(getString(R.string.const_sharedpref_key), Context.MODE_PRIVATE);
         String token = sharedPreferences.getString(getString(R.string.const_token_key), "");
 
+        Fragment fragment = new MapFragment();
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, fragment).commit();
+
         Bundle bundle = getActivity().getIntent().getExtras();
 //        currentUser = GsonUtils.getGson().fromJson(bundle.getString("USER_LOGGED_IN"), User.class);
 //
@@ -74,6 +77,7 @@ public class HomeScreenFragment extends Fragment {
                 assert response.body() != null;
                 currentElder = response.body().getResult();
                 binding.elderName.setText(response.body().getResult().getName());
+
                 Log.d("HomeScreenFragment", "onResponse: " + response.body().getResult().toString());
 //                Toast.makeText(getActivity(), "SUKSES ", Toast.LENGTH_SHORT).show();
             }
