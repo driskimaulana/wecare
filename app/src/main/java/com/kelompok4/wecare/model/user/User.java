@@ -1,7 +1,5 @@
 package com.kelompok4.wecare.model.user;
 
-import androidx.annotation.RawRes;
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -33,12 +31,15 @@ public class User {
     @SerializedName("createdAt")
     @Expose
     String createdAt;
+    @SerializedName("location")
+    @Expose
+    List<Double> location;
 
     public User() {
 
     }
 
-    public User(String id, String name, String email, String password, String role, List<String> elderConnected, List<String> relativeConnected, String createdAt) {
+    public User(String id, String name, String email, String password, String role, List<String> elderConnected, List<String> relativeConnected, String createdAt, List<Double> location) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -47,6 +48,7 @@ public class User {
         this.elderConnected = elderConnected;
         this.relativeConnected = relativeConnected;
         this.createdAt = createdAt;
+        this.location = location;
     }
 
     public String getId() {
@@ -111,5 +113,13 @@ public class User {
 
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public List<Double> getLocation() {
+        return location;
+    }
+
+    public void setLocation(List<Double> location) {
+        this.location = location;
     }
 }

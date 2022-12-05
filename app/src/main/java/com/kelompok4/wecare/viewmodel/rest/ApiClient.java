@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
 
-    public static final String BASE_URL = "https://api-wecare-mobapp.herokuapp.com/";
+    public static final String BASE_URL = "https://wecare-backend.vercel.app/";
 
     private static Retrofit retrofit = null;
     public static Retrofit getClient() {

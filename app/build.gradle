@@ -59,4 +59,8 @@ dependencies {
     // zxing
     implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
+
+//    maps
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+
 }

@@ -1,18 +1,27 @@
 package com.kelompok4.wecare.view;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.provider.Settings;
 import android.util.Log;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.kelompok4.wecare.R;
 import com.kelompok4.wecare.model.auth.AuthResponse;
+import com.kelompok4.wecare.model.location.MyLocation;
 import com.kelompok4.wecare.view.elder.ElderMainActivity;
 import com.kelompok4.wecare.view.relative.RelativeMainActivity;
 import com.kelompok4.wecare.viewmodel.rest.ApiClient;
@@ -25,6 +34,10 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
+    private MyLocation myLocation;
+    private static final int REQUEST_LOCATION = 1;
+    private LocationManager locationManager;
+
     private ApiInterface mApiInterface;
 
     @Override
@@ -32,6 +45,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
+        myLocation = new MyLocation(0, 0);
+
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
+
+
 
         mApiInterface = ApiClient.getClient().create(ApiInterface.class);
         SharedPreferences sharedPreferences = MainActivity.this.getSharedPreferences(getString(R.string.const_sharedpref_key), Context.MODE_PRIVATE);
@@ -46,13 +64,25 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             }, 3000);
+//            return;
+//            finish();
         }
 
-        Call<AuthResponse> getLoggedinUser = mApiInterface.getLoggedinUser("Bearer " + token);
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
+            OnGPS();
+        }else {
+            getLocation();
+        }
+
+        Call<AuthResponse> getLoggedinUser = mApiInterface.getLoggedinUser("Bearer " + token, myLocation);
         getLoggedinUser.enqueue(new Callback<AuthResponse>() {
             @Override
             public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {
                 Log.d("GetLoggedinUser", "SUKSES");
+                if (response.body() == null) {
+                    return;
+                }
                 Bundle bundle = new Bundle();
                 bundle.putString("USER_LOGGED_IN" , GsonUtils.getGson().toJson(response.body().getResult()));
 
@@ -74,15 +104,39 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-//        LayoutInflater mInflater = LayoutInflater.from(this);
-//        View mCustomView = mInflater.inflate(R.layout.activity_pengaturan_user, null);
-//        ImageView backButton = (ImageView) this.findViewById(R.id.backButton);
-//        backButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                finish();
-//            }
-//        });
     }
+
+    private void OnGPS() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Enable GPS").setCancelable(false).setPositiveButton("Yes", new  DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+            }
+        }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    private void getLocation() {
+        if (ActivityCompat.checkSelfPermission(
+                this,Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
+        } else {
+            Location locationGPS = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            if (locationGPS != null) {
+                myLocation.setLatitude(locationGPS.getLatitude());
+                myLocation.setLongitude(locationGPS.getLongitude());
+            } else {
+                Toast.makeText(this, "Unable to find location.", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
 }

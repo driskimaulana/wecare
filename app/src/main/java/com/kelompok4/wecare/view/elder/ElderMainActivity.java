@@ -1,21 +1,31 @@
 package com.kelompok4.wecare.view.elder;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.kelompok4.wecare.R;
 import com.kelompok4.wecare.model.user.User;
+import com.kelompok4.wecare.view.MainActivity;
 import com.kelompok4.wecare.viewmodel.utils.GsonUtils;
 
 import java.text.DecimalFormat;
@@ -95,4 +105,5 @@ public class ElderMainActivity extends AppCompatActivity {
         super.onPause();
         mSensorManager.unregisterListener(sensorEventListener);
     }
+
 }
