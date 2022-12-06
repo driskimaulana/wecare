@@ -15,13 +15,17 @@ import android.provider.Settings;
 import android.util.Log;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.kelompok4.wecare.R;
 import com.kelompok4.wecare.model.auth.AuthResponse;
-import com.kelompok4.wecare.model.location.MyLocation;
+import com.kelompok4.wecare.model.location.AlwaysUpdate;
 import com.kelompok4.wecare.view.elder.ElderMainActivity;
 import com.kelompok4.wecare.view.relative.RelativeMainActivity;
 import com.kelompok4.wecare.viewmodel.rest.ApiClient;
@@ -34,7 +38,7 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-    private MyLocation myLocation;
+    private AlwaysUpdate alwaysUpdate;
     private static final int REQUEST_LOCATION = 1;
     private LocationManager locationManager;
 
@@ -45,11 +49,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
-        myLocation = new MyLocation(0, 0);
+        alwaysUpdate = new AlwaysUpdate(0, 0, "");
 
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
-
-
 
         mApiInterface = ApiClient.getClient().create(ApiInterface.class);
         SharedPreferences sharedPreferences = MainActivity.this.getSharedPreferences(getString(R.string.const_sharedpref_key), Context.MODE_PRIVATE);
@@ -65,44 +67,67 @@ public class MainActivity extends AppCompatActivity {
                 }
             }, 3000);
 //            return;
-//            finish();
-        }
-
-        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
-            OnGPS();
         }else {
-            getLocation();
+
+
+//        generate token untuk device
+            FirebaseMessaging.getInstance().getToken()
+                    .addOnCompleteListener(new OnCompleteListener<String>() {
+                        @Override
+                        public void onComplete(@NonNull Task<String> task) {
+                            if (!task.isSuccessful()){
+                                Log.w("wecare_debug", "Fetching FCM token is failed.", task.getException());
+                                return;
+                            }
+
+                            // get new FCM token
+                            String fcmToken = task.getResult();
+
+                            Log.d("wecare_debug", fcmToken);
+                            alwaysUpdate.setFcmToken(fcmToken);
+                            locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+                            if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
+                                OnGPS();
+                            }else {
+                                getLocation();
+                            }
+
+                            Call<AuthResponse> getLoggedinUser = mApiInterface.getLoggedinUser("Bearer " + token, alwaysUpdate);
+                            getLoggedinUser.enqueue(new Callback<AuthResponse>() {
+                                @Override
+                                public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {
+                                    Log.d("GetLoggedinUser", "SUKSES");
+                                    if (response.body() == null) {
+                                        return;
+                                    }
+                                    Bundle bundle = new Bundle();
+                                    bundle.putString("USER_LOGGED_IN" , GsonUtils.getGson().toJson(response.body().getResult()));
+
+                                    Intent intent;
+                                    if (response.body().getResult().getRole().equals("Relative")) {
+                                        intent = new Intent(MainActivity.this, RelativeMainActivity.class);
+                                    }else {
+                                        intent = new Intent(MainActivity.this, ElderMainActivity.class);
+                                    }
+                                    intent.putExtras(bundle);
+                                    startActivity(intent);
+//                Toast.makeText(MainActivity.this, "Bisa " + response.body().getResult().getRole(), Toast.LENGTH_SHORT).show();
+                                }
+
+                                @Override
+                                public void onFailure(Call<AuthResponse> call, Throwable t) {
+                                    Log.e("GetLoggedinUser", "onFailure: ");
+                                    Toast.makeText(MainActivity.this, "gabisa :(", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+
+                            Toast.makeText(MainActivity.this, fcmToken, Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+
         }
 
-        Call<AuthResponse> getLoggedinUser = mApiInterface.getLoggedinUser("Bearer " + token, myLocation);
-        getLoggedinUser.enqueue(new Callback<AuthResponse>() {
-            @Override
-            public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {
-                Log.d("GetLoggedinUser", "SUKSES");
-                if (response.body() == null) {
-                    return;
-                }
-                Bundle bundle = new Bundle();
-                bundle.putString("USER_LOGGED_IN" , GsonUtils.getGson().toJson(response.body().getResult()));
-
-                Intent intent;
-                if (response.body().getResult().getRole().equals("Relative")) {
-                    intent = new Intent(MainActivity.this, RelativeMainActivity.class);
-                }else {
-                    intent = new Intent(MainActivity.this, ElderMainActivity.class);
-                }
-                intent.putExtras(bundle);
-                startActivity(intent);
-//                Toast.makeText(MainActivity.this, "Bisa " + response.body().getResult().getRole(), Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onFailure(Call<AuthResponse> call, Throwable t) {
-                Log.e("GetLoggedinUser", "onFailure: ");
-                Toast.makeText(MainActivity.this, "gabisa :(", Toast.LENGTH_SHORT).show();
-            }
-        });
 
     }
 
@@ -131,8 +156,8 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Location locationGPS = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
             if (locationGPS != null) {
-                myLocation.setLatitude(locationGPS.getLatitude());
-                myLocation.setLongitude(locationGPS.getLongitude());
+                alwaysUpdate.setLatitude(locationGPS.getLatitude());
+                alwaysUpdate.setLongitude(locationGPS.getLongitude());
             } else {
                 Toast.makeText(this, "Unable to find location.", Toast.LENGTH_SHORT).show();
             }

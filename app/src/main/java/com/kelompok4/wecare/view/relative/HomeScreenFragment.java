@@ -79,6 +79,12 @@ public class HomeScreenFragment extends Fragment {
                 assert response.body() != null;
                 currentElder = response.body().getResult();
                 binding.elderName.setText(response.body().getResult().getName());
+//                SharedPreferences sharedPreferences = getActivity().getSharedPreferences("LOCATION", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+//                save token to shared preferences
+                editor.putString("ELDER_LATITUDE", Double.toString(currentElder.getLocation().get(0)));
+                editor.putString("ELDER_LONGITUDE", Double.toString(currentElder.getLocation().get(1)));
+                editor.apply();
 //                showMaps();
 //                showMaps(currentElder);
 //                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, fragment).commit();

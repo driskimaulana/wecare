@@ -4,9 +4,7 @@ import com.kelompok4.wecare.model.auth.AuthResponse;
 import com.kelompok4.wecare.model.auth.UserSignin;
 import com.kelompok4.wecare.model.auth.UserSignup;
 import com.kelompok4.wecare.model.healthEducation.GetHealthEducation;
-import com.kelompok4.wecare.model.healthEducation.HealthEducation;
-import com.kelompok4.wecare.model.location.MyLocation;
-import com.kelompok4.wecare.model.user.User;
+import com.kelompok4.wecare.model.location.AlwaysUpdate;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -29,7 +27,7 @@ public interface ApiInterface {
 
     @Headers({ "Content-Type: application/json;charset=UTF-8" })
     @POST("user/getLoggedinUser")
-    Call<AuthResponse> getLoggedinUser(@Header("Authorization") String auth, @Body MyLocation myLocation);
+    Call<AuthResponse> getLoggedinUser(@Header("Authorization") String auth, @Body AlwaysUpdate alwaysUpdate);
 
     @Headers({ "Content-Type: application/json;charset=UTF-8" })
     @POST("user/userDetails/{id}")

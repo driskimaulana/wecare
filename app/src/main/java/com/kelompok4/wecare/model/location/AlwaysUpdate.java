@@ -3,7 +3,7 @@ package com.kelompok4.wecare.model.location;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class MyLocation {
+public class AlwaysUpdate {
 
     @SerializedName("latitude")
     @Expose
@@ -13,11 +13,16 @@ public class MyLocation {
     @Expose
     double longitude;
 
-    public MyLocation(){}
+    @SerializedName("fcmToken")
+    @Expose
+    String fcmToken;
 
-    public MyLocation(double latitude, double longitude) {
+    public AlwaysUpdate(){}
+
+    public AlwaysUpdate(double latitude, double longitude, String fcmToken) {
         this.latitude = latitude;
         this.longitude = longitude;
+        this.fcmToken = fcmToken;
     }
 
     public double getLatitude() {
@@ -34,5 +39,13 @@ public class MyLocation {
 
     public void setLongitude(double longitude) {
         this.longitude = longitude;
+    }
+
+    public String getFcmToken() {
+        return fcmToken;
+    }
+
+    public void setFcmToken(String fcmToken) {
+        this.fcmToken = fcmToken;
     }
 }
