@@ -56,15 +56,17 @@ public class HomeScreenFragment extends Fragment {
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences(getString(R.string.const_sharedpref_key), Context.MODE_PRIVATE);
         String token = sharedPreferences.getString(getString(R.string.const_token_key), "");
 
-        Fragment fragment = new MapFragment();
-        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, fragment).commit();
-
         Bundle bundle = getActivity().getIntent().getExtras();
 //        currentUser = GsonUtils.getGson().fromJson(bundle.getString("USER_LOGGED_IN"), User.class);
 //
 //        if (currentUser != null) {
 //            binding.elderName.setText(currentUser.getName());
 //        }
+
+//        Fragment fragment = new MapFragment();
+//        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, fragment).commit();
+
+        showMaps();
 
 //        get current logged in user
         currentUser = GsonUtils.getGson().fromJson(bundle.getString("USER_LOGGED_IN"), User.class);
@@ -77,6 +79,9 @@ public class HomeScreenFragment extends Fragment {
                 assert response.body() != null;
                 currentElder = response.body().getResult();
                 binding.elderName.setText(response.body().getResult().getName());
+//                showMaps();
+//                showMaps(currentElder);
+//                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, fragment).commit();
 
                 Log.d("HomeScreenFragment", "onResponse: " + response.body().getResult().toString());
 //                Toast.makeText(getActivity(), "SUKSES ", Toast.LENGTH_SHORT).show();
@@ -88,6 +93,7 @@ public class HomeScreenFragment extends Fragment {
 //                Toast.makeText(getActivity(), "FAILED", Toast.LENGTH_SHORT).show();
             }
         });
+//        Toast.makeText(getActivity(), currentElder.toString(), Toast.LENGTH_SHORT).show();
 //        binding.elderAge.setText(currentElder.getEmail());
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
@@ -151,5 +157,13 @@ public class HomeScreenFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentHomeScreenBinding.inflate(inflater, container, false);
         return binding.getRoot();
+    }
+
+    private void showMaps(){
+        Fragment fragment = new MapFragment();
+//        Bundle bundle = new Bundle();
+//        bundle.putString("MAPS_USER", GsonUtils.getGson().toJson(user));
+//        fragment.setArguments(bundle);
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, fragment).commit();
     }
 }
