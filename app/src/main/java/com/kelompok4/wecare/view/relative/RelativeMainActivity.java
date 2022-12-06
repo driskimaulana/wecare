@@ -1,6 +1,5 @@
 package com.kelompok4.wecare.view.relative;
 
-import android.app.ActivityManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -19,9 +18,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.graphics.drawable.DrawerArrowDrawable;
 import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
@@ -34,7 +31,7 @@ import com.kelompok4.wecare.databinding.ActivityRelativeMainBinding;
 import com.kelompok4.wecare.model.user.User;
 import com.kelompok4.wecare.viewmodel.utils.GsonUtils;
 
-public class RelativeMainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class RelativeMainActivity extends AppCompatActivity {
 
     private ActivityRelativeMainBinding binding;
     Context context = this;
@@ -83,12 +80,25 @@ public class RelativeMainActivity extends AppCompatActivity implements Navigatio
 
         toggle.syncState();
 
-        binding.btnElderSettings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(RelativeMainActivity.this, "Clicked", Toast.LENGTH_SHORT).show();
-                Navigation.findNavController(view).navigate(R.id.navigateToElderSettings);
+        // Drawer menu event listener
+        binding.navView.setNavigationItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.elder1:
+                    Toast.makeText(RelativeMainActivity.this, "elder1", Toast.LENGTH_SHORT).show();
+                    break;
+
+                case R.id.elder2:
+                    Toast.makeText(RelativeMainActivity.this, "elder2", Toast.LENGTH_SHORT).show();
+                    break;
+
+                case R.id.elder3:
+                    Toast.makeText(RelativeMainActivity.this, "elder3", Toast.LENGTH_SHORT).show();
+                    break;
+
+                default:
+                    return false;
             }
+            return true;
         });
 
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -130,40 +140,25 @@ public class RelativeMainActivity extends AppCompatActivity implements Navigatio
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (toggle.onOptionsItemSelected(item)) {
-            Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "drawer toggle clicked", Toast.LENGTH_SHORT).show();
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
     public void handleElderSettingsButton(View view) {
-        Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "settings", Toast.LENGTH_SHORT).show();
+
+        NavHostFragment hostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView);
+        NavController navCtrl = hostFragment.getNavController();
+
+        navCtrl.navigateUp();
+        navCtrl.navigate(R.id.elderSettingsFragment);
+
+        binding.layoutDrawer.closeDrawer(GravityCompat.START);
     }
 
     public void handleAddEldersButton(View view) {
-        Intent intent = new Intent(this, AddElderActivity.class);
+        Toast.makeText(this, "add elder", Toast.LENGTH_SHORT).show();
     }
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.elder1: {
-                Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show();
-                break;
-            }
-//            default:
-//                break;
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.layoutDrawer);
-        drawer.closeDrawer(GravityCompat.START);
-
-        return true;
-    }
-
-    private void setNavigationViewListener() {
-        NavigationView navigationView = (NavigationView) findViewById(R.id.navView);
-        navigationView.setNavigationItemSelectedListener(this);
-    }
-
 }
