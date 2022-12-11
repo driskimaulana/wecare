@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    tools:context=".view.relative.FallNotificationActivity">
 
     <TableLayout
         android:id="@+id/activityTitlePromptTerjatuhRect"
@@ -35,15 +35,25 @@
             android:textStyle="bold" />
     </TableLayout>
 
-    <androidx.constraintlayout.utils.widget.MockView
+    <ImageView
         android:id="@+id/mockViewPhotoElder"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="120dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
+        android:src="@mipmap/fall_icon_foreground"
         app:layout_constraintTop_toBottomOf="@+id/activityTitlePromptTerjatuhRect" />
+
+<!--    <androidx.constraintlayout.utils.widget.MockView-->
+<!--        android:id="@+id/mockViewPhotoElder"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="200dp"-->
+<!--        android:layout_marginTop="76dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.497"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/activityTitlePromptTerjatuhRect" />-->
 
     <TextView
         android:id="@+id/namaTerjatuh"
@@ -82,6 +92,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

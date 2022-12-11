@@ -7,13 +7,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kelompok4.wecare.databinding.RvRelativeListItemsBinding;
+import com.kelompok4.wecare.model.user.User;
 
 import java.util.List;
 
 public class ElderWaitingResponseSosRecyclerViewAdapter extends RecyclerView.Adapter<ElderWaitingResponseSosRecyclerViewAdapter.RelativeListHolder> {
-    private final List<String> items;
+    private final List<User> items;
 
-    public ElderWaitingResponseSosRecyclerViewAdapter(List<String> items) { this.items = items; }
+    public ElderWaitingResponseSosRecyclerViewAdapter(List<User> items) { this.items = items; }
 
     @NonNull
     @Override
@@ -23,7 +24,7 @@ public class ElderWaitingResponseSosRecyclerViewAdapter extends RecyclerView.Ada
 
     @Override
     public void onBindViewHolder(@NonNull ElderWaitingResponseSosRecyclerViewAdapter.RelativeListHolder holder, int position) {
-        holder.binding.tvRelativeName.setText("Relative 1");
+        holder.binding.tvRelativeName.setText(items.get(position).getName());
     }
 
     @Override

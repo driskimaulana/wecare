@@ -5,6 +5,8 @@ import com.kelompok4.wecare.model.auth.UserSignin;
 import com.kelompok4.wecare.model.auth.UserSignup;
 import com.kelompok4.wecare.model.healthEducation.GetHealthEducation;
 import com.kelompok4.wecare.model.location.AlwaysUpdate;
+import com.kelompok4.wecare.model.location.Location;
+import com.kelompok4.wecare.model.notification.DangerResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -32,5 +34,10 @@ public interface ApiInterface {
     @Headers({ "Content-Type: application/json;charset=UTF-8" })
     @POST("user/userDetails/{id}")
     Call<AuthResponse> getUserDetails(@Path("id") String id, @Header("Authorization") String auth);
+
+    @Headers({ "Content-Type: application/json;charset=UTF-8" })
+    @POST("notification/dangerSignal")
+    Call<DangerResponse> sendDangerSignal(@Header("Authorization") String auth, @Body Location location);
+
 
 }

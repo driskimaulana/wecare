@@ -26,7 +26,9 @@ import com.google.firebase.messaging.FirebaseMessaging;
 import com.kelompok4.wecare.R;
 import com.kelompok4.wecare.model.auth.AuthResponse;
 import com.kelompok4.wecare.model.location.AlwaysUpdate;
+import com.kelompok4.wecare.model.user.User;
 import com.kelompok4.wecare.view.elder.ElderMainActivity;
+import com.kelompok4.wecare.view.relative.FallNotificationActivity;
 import com.kelompok4.wecare.view.relative.RelativeMainActivity;
 import com.kelompok4.wecare.viewmodel.rest.ApiClient;
 import com.kelompok4.wecare.viewmodel.rest.ApiInterface;
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private AlwaysUpdate alwaysUpdate;
     private static final int REQUEST_LOCATION = 1;
     private LocationManager locationManager;
+    private User elderFall;
 
     private ApiInterface mApiInterface;
 
@@ -50,6 +53,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
         alwaysUpdate = new AlwaysUpdate(0, 0, "");
+
+        //        bundle current user
+        Bundle bundle = getIntent().getExtras();
+//        User elderFall = GsonUtils.getGson().fromJson(bundle.getString("data"), User.class);
+        if (bundle != null) {
+            if (bundle.getString("data") != null) {
+                elderFall = GsonUtils.getGson().fromJson(bundle.getString("data"), User.class);
+                Bundle elderFallen = new Bundle();
+                elderFallen.putString("ELDER_FALL", GsonUtils.getGson().toJson(elderFall));
+                Intent intent = new Intent(MainActivity.this, FallNotificationActivity.class);
+                intent.putExtras(elderFallen);
+                startActivity(intent);
+                Toast.makeText(this, "data: " + elderFall.getName(), Toast.LENGTH_SHORT).show();
+                return;
+            }
+        }
 
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
 
@@ -68,7 +87,6 @@ public class MainActivity extends AppCompatActivity {
             }, 3000);
 //            return;
         }else {
-
 
 //        generate token untuk device
             FirebaseMessaging.getInstance().getToken()
@@ -120,8 +138,6 @@ public class MainActivity extends AppCompatActivity {
                                     Toast.makeText(MainActivity.this, "gabisa :(", Toast.LENGTH_SHORT).show();
                                 }
                             });
-
-                            Toast.makeText(MainActivity.this, fcmToken, Toast.LENGTH_SHORT).show();
                         }
                     });
 

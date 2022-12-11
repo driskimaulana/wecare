@@ -38,6 +38,7 @@
         <entry key="..\:/wecare/app/src/main/res/layout/activity_elder_account_connection.xml" value="0.2" />
         <entry key="..\:/wecare/app/src/main/res/layout/activity_elder_home.xml" value="0.2" />
         <entry key="..\:/wecare/app/src/main/res/layout/activity_elder_main.xml" value="0.1" />
+        <entry key="..\:/wecare/app/src/main/res/layout/activity_fall_notification.xml" value="0.1" />
         <entry key="..\:/wecare/app/src/main/res/layout/activity_home_screen.xml" value="0.1" />
         <entry key="..\:/wecare/app/src/main/res/layout/activity_introduction.xml" value="0.2" />
         <entry key="..\:/wecare/app/src/main/res/layout/activity_login.xml" value="0.2" />
@@ -57,10 +58,12 @@
         <entry key="..\:/wecare/app/src/main/res/layout/fragment_add_elder.xml" value="0.1859375" />
         <entry key="..\:/wecare/app/src/main/res/layout/fragment_choose_role.xml" value="0.5" />
         <entry key="..\:/wecare/app/src/main/res/layout/fragment_dashboard.xml" value="0.18518518518518517" />
-        <entry key="..\:/wecare/app/src/main/res/layout/fragment_elder_home.xml" value="0.1" />
+        <entry key="..\:/wecare/app/src/main/res/layout/fragment_elder_home.xml" value="0.18" />
         <entry key="..\:/wecare/app/src/main/res/layout/fragment_elder_home_activity.xml" value="0.1859375" />
+        <entry key="..\:/wecare/app/src/main/res/layout/fragment_elder_medicine_list.xml" value="0.1" />
         <entry key="..\:/wecare/app/src/main/res/layout/fragment_elder_qr_code.xml" value="0.1859375" />
         <entry key="..\:/wecare/app/src/main/res/layout/fragment_elder_settings.xml" value="0.25" />
+        <entry key="..\:/wecare/app/src/main/res/layout/fragment_fall_detected_notification.xml" value="0.1" />
         <entry key="..\:/wecare/app/src/main/res/layout/fragment_health_education.xml" value="0.18518518518518517" />
         <entry key="..\:/wecare/app/src/main/res/layout/fragment_health_education_detail.xml" value="0.1762114537444934" />
         <entry key="..\:/wecare/app/src/main/res/layout/fragment_home_screen.xml" value="0.22668240850059032" />

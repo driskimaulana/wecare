@@ -34,12 +34,15 @@ public class User {
     @SerializedName("location")
     @Expose
     List<Double> location;
+    @SerializedName("fcmToken")
+    @Expose
+    String fcmToken;
 
     public User() {
 
     }
 
-    public User(String id, String name, String email, String password, String role, List<String> elderConnected, List<String> relativeConnected, String createdAt, List<Double> location) {
+    public User(String id, String name, String email, String password, String role, List<String> elderConnected, List<String> relativeConnected, String createdAt, List<Double> location, String fcmToken) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -49,6 +52,7 @@ public class User {
         this.relativeConnected = relativeConnected;
         this.createdAt = createdAt;
         this.location = location;
+        this.fcmToken = fcmToken;
     }
 
     public String getId() {
@@ -121,5 +125,13 @@ public class User {
 
     public void setLocation(List<Double> location) {
         this.location = location;
+    }
+
+    public String getFcmToken() {
+        return fcmToken;
+    }
+
+    public void setFcmToken(String fcmToken) {
+        this.fcmToken = fcmToken;
     }
 }

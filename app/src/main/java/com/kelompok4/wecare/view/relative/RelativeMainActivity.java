@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -48,6 +49,8 @@ public class RelativeMainActivity extends AppCompatActivity {
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView);
 //        NavController navController = Navigation.findNavController(binding.fragmentContainerView);
         NavController navController = navHostFragment.getNavController();
+
+        // check if there is notification
 
 //        bundle current user
         Bundle bundle = getIntent().getExtras();

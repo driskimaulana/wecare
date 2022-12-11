@@ -18,6 +18,9 @@
         <action
             android:id="@+id/navigateToAddElder"
             app:destination="@id/addElderFragment" />
+        <action
+            android:id="@+id/navigateHomeToFallNotification"
+            app:destination="@id/fallDetectedNotificationFragment" />
     </fragment>
     <fragment
         android:id="@+id/dashboardFragment"
@@ -98,4 +101,8 @@
         android:name="com.kelompok4.wecare.view.elder.settings.ElderBloodTypeFragment"
         android:label="ElderBloodTypeFragment"
         tools:layout="@layout/fragment_elder_blood_type"/>
+    <fragment
+        android:id="@+id/fallDetectedNotificationFragment"
+        android:name="com.kelompok4.wecare.view.relative.FallDetectedNotificationFragment"
+        android:label="FallDetectedNotificationFragment" />
 </navigation>
