@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+<com.kelompok4.wecare.view.relative.components.CustomScrollView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView_relative_home_screen"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:paddingBottom="65dp"
+    android:fillViewport="true"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -114,10 +117,10 @@
 <!--            tools:layout_editor_absoluteY="302dp" />-->
 
         <FrameLayout
-            android:id="@+id/frameLayout"
+            android:id="@+id/frameLayoutMaps"
             android:layout_width="320dp"
             android:layout_height="234dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="@+id/title_location"
             app:layout_constraintStart_toStartOf="@id/title_location"
             app:layout_constraintTop_toBottomOf="@id/title_location" />
@@ -127,13 +130,14 @@
             android:id="@+id/btn_set_medicine"
             android:layout_width="187dp"
             android:layout_height="48dp"
+            android:layout_marginTop="10dp"
             android:backgroundTint="@color/blue"
             android:text="Set Jadwal Obat"
             android:textAllCaps="false"
             android:textSize="5.2pt"
-            app:layout_constraintEnd_toEndOf="@+id/frameLayout"
-            app:layout_constraintStart_toStartOf="@+id/frameLayout"
-            app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+            app:layout_constraintEnd_toEndOf="@+id/frameLayoutMaps"
+            app:layout_constraintStart_toStartOf="@+id/frameLayoutMaps"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayoutMaps" />
 
         <TextView
             android:id="@+id/title_health_history"
@@ -171,4 +175,4 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</ScrollView>
+</com.kelompok4.wecare.view.relative.components.CustomScrollView>

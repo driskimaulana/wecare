@@ -1,9 +1,11 @@
 package com.kelompok4.wecare.view.relative;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,9 +17,14 @@ import com.kelompok4.wecare.R;
 import com.kelompok4.wecare.databinding.FragmentRelativeSetMedicineScheduleBinding;
 import com.kelompok4.wecare.view.components.TimePickerFragment;
 
-public class SetMedicineScheduleFragment extends Fragment {
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
 
+public class SetMedicineScheduleFragment extends Fragment {
     private FragmentRelativeSetMedicineScheduleBinding binding;
+    final Calendar calendar = Calendar.getInstance();
+    EditText dateStart, dateEnd;
 
 
     public SetMedicineScheduleFragment() {
@@ -32,6 +39,37 @@ public class SetMedicineScheduleFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        dateStart = binding.getRoot().findViewById(R.id.medicine_date_picker_start);
+        dateEnd = binding.getRoot().findViewById(R.id.medicine_date_picker_end);
+
+        DatePickerDialog.OnDateSetListener dateStartListener = (dateView, year, month, day) -> {
+            calendar.set(Calendar.YEAR, year);
+            calendar.set(Calendar.MONTH, month);
+            calendar.set(Calendar.DAY_OF_MONTH, day);
+            updateLabel(dateStart);
+        };
+
+        DatePickerDialog.OnDateSetListener dateEndListener = (dateView, year, month, day) -> {
+            calendar.set(Calendar.YEAR, year);
+            calendar.set(Calendar.MONTH, month);
+            calendar.set(Calendar.DAY_OF_MONTH, day);
+            updateLabel(dateEnd);
+        };
+
+        dateStart.setOnClickListener(dateStartView -> {
+            new DatePickerDialog(getContext(), R.style.DialogTheme, dateStartListener,
+                    calendar.get(Calendar.YEAR),
+                    calendar.get(Calendar.MONTH),
+                    calendar.get(Calendar.DAY_OF_MONTH)).show();
+        });
+
+        dateEnd.setOnClickListener(dateEndView -> {
+            new DatePickerDialog(getContext(), R.style.DialogTheme, dateEndListener,
+                    calendar.get(Calendar.YEAR),
+                    calendar.get(Calendar.MONTH),
+                    calendar.get(Calendar.DAY_OF_MONTH)).show();
+        });
 
         binding.btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,17 +91,6 @@ public class SetMedicineScheduleFragment extends Fragment {
                 showTimePickerDialog(view);
             }
         });
-
-//        // show back button to action bar
-//        assert getSupportActionBar() != null;
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        getSupportActionBar().setTitle(R.string.set_jadwal_minum_obat);
-//
-//        // change the color of back button
-//        final Drawable backArrow = ContextCompat.getDrawable(this, R.drawable.ic_baseline_arrow_back_24);
-//        assert backArrow != null;
-//        backArrow.setColorFilter(ContextCompat.getColor(this, R.color.blue_cola), PorterDuff.Mode.SRC_ATOP);
-//        getSupportActionBar().setHomeAsUpIndicator(backArrow);
     }
 
     @Override
@@ -77,5 +104,10 @@ public class SetMedicineScheduleFragment extends Fragment {
     public void showTimePickerDialog(View v) {
         DialogFragment newFragment = new TimePickerFragment();
         newFragment.show(getParentFragmentManager(), "timePicker");
+    }
+
+    public void updateLabel(EditText date) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.US);
+        date.setText(dateFormat.format(calendar.getTime()));
     }
 }
