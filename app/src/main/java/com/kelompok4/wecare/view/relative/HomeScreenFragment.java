@@ -1,5 +1,6 @@
 package com.kelompok4.wecare.view.relative;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -7,7 +8,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -47,6 +47,7 @@ public class HomeScreenFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -170,6 +171,6 @@ public class HomeScreenFragment extends Fragment {
 //        Bundle bundle = new Bundle();
 //        bundle.putString("MAPS_USER", GsonUtils.getGson().toJson(user));
 //        fragment.setArguments(bundle);
-        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, fragment).commit();
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayoutMaps, fragment).commit();
     }
 }

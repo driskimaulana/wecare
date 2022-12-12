@@ -80,4 +80,9 @@
     <string name="const_sharedpref_key">WeCare</string>
     <string name="peringatan_telah_dikirim_kepada_relative_bantuan_akan_segera_tiba">Peringatan telah dikirim kepada Relative, bantuan akan segera tiba!</string>
     <string name="batal">Batal</string>
+    <string name="tanggal_mulai">Tanggal Mulai</string>
+    <string name="tanggal_berakhir">Tanggal Berakhir</string>
+    <string name="sampai_dengan">s/d</string>
+    <string name="keterangan">Keterangan:</string>
+    <string name="keterangan_obat">Keterangan Obat</string>
 </resources>
