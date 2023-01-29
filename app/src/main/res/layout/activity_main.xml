@@ -17,4 +17,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/wecare_logo_foreground" />
 
+
 </androidx.constraintlayout.widget.ConstraintLayout>

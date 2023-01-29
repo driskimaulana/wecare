@@ -119,6 +119,7 @@ public class ElderHomeFragment extends Fragment {
 
     public void sosBtnClicked(View v) {
 //        mApiInterface.sendDangerSignal()
+        binding.progressBar2.setVisibility(View.VISIBLE);
         locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
         if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
             OnGPS();
@@ -133,9 +134,11 @@ public class ElderHomeFragment extends Fragment {
                 Bundle bundle = new Bundle();
                 bundle.putString("DANGER_SIGNAL_RESPONSE", dangerResponse);
                 Navigation.findNavController(v).navigate(R.id.waitingResponseSosFragment, bundle);
+                binding.progressBar2.setVisibility(View.GONE);
             }
             @Override
             public void onFailure(Call<DangerResponse> call, Throwable t) {
+                binding.progressBar2.setVisibility(View.GONE);
                 Toast.makeText(getActivity(), "Send danger signal failed.", Toast.LENGTH_SHORT).show();
                 Log.e("SOS Failed", "Send danger signal failed." );
             }

@@ -80,6 +80,12 @@
         <entry key="..\:/wecare/app/src/main/res/menu/relative_nav_menu.xml" value="0.2" />
         <entry key="..\:/wecare/app/src/main/res/menu/relative_sidebar_menu.xml" value="0.25" />
         <entry key="..\:/wecare/app/src/main/res/mipmap-anydpi-v26/map.xml" value="0.1" />
+        <entry key="..\:/wecare/wecare/app/src/main/res/layout/activity_connect_success.xml" value="0.125" />
+        <entry key="..\:/wecare/wecare/app/src/main/res/layout/activity_main.xml" value="0.2563405797101449" />
+        <entry key="..\:/wecare/wecare/app/src/main/res/layout/activity_relative_main.xml" value="0.2563405797101449" />
+        <entry key="..\:/wecare/wecare/app/src/main/res/layout/fragment_add_elder.xml" value="0.2563405797101449" />
+        <entry key="..\:/wecare/wecare/app/src/main/res/layout/fragment_elder_home.xml" value="0.2563405797101449" />
+        <entry key="..\:/wecare/wecare/app/src/main/res/layout/fragment_home_screen.xml" value="0.1" />
       </map>
     </option>
   </component>

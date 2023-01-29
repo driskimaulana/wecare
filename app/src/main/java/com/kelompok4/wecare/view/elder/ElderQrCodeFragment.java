@@ -53,7 +53,7 @@ public class ElderQrCodeFragment extends Fragment {
 //        get current logged in userW
         currentUser = GsonUtils.getGson().fromJson(bundle.getString("USER_LOGGED_IN"), User.class);
 
-        String urlConnect = "https://api-wecare-mobapp.herokuapp.com/user/connect/" + currentUser.getId();
+        String urlConnect = currentUser.getId();
         Toast.makeText(getActivity(), urlConnect, Toast.LENGTH_SHORT).show();
         try {
             BarcodeEncoder barcodeEncoder = new BarcodeEncoder();

@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -72,90 +73,121 @@ public class HomeScreenFragment extends Fragment {
 //        get current logged in user
         currentUser = GsonUtils.getGson().fromJson(bundle.getString("USER_LOGGED_IN"), User.class);
 
-        //        get elder data that connected with current logged in relative
-        Call<AuthResponse> call = mApiInterface.getUserDetails(currentUser.getElderConnected().get(0), "Bearer " + token);
-        call.enqueue(new Callback<AuthResponse>() {
-            @Override
-            public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {
-                assert response.body() != null;
-                currentElder = response.body().getResult();
-                binding.elderName.setText(response.body().getResult().getName());
+        if (currentUser.getElderConnected().size() == 0) {
+            binding.layoutThereIsElder.setVisibility(View.GONE);
+            binding.layoutNoElder.setVisibility(View.VISIBLE);
+
+            binding.btnAddNewElder.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(getContext(), "Clicked", Toast.LENGTH_SHORT).show();
+                    IntentIntegrator intentIntegrator = new IntentIntegrator(
+                            getActivity()
+                    );
+                    intentIntegrator.setPrompt("Press 'VOLUME UP' to activate flash\nPress 'VOLUME DOWN' to deactivate flash.");
+                    //Set beep
+                    intentIntegrator.setBeepEnabled(true);
+                    //lock orientation
+                    intentIntegrator.setOrientationLocked(true);
+                    //set capture activity
+                    intentIntegrator.setCaptureActivity(Capture.class);
+                    //Initiate scan
+                    intentIntegrator.initiateScan();
+                }
+            });
+        }else {
+            binding.layoutNoElder.setVisibility(View.GONE);
+            binding.layoutThereIsElder.setVisibility(View.VISIBLE);
+            //        get elder data that connected with current logged in relative
+            Call<AuthResponse> call = mApiInterface.getUserDetails(currentUser.getElderConnected().get(0), "Bearer " + token);
+            call.enqueue(new Callback<AuthResponse>() {
+                @Override
+                public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {
+                    assert response.body() != null;
+                    currentElder = response.body().getResult();
+                    binding.elderName.setText(response.body().getResult().getName());
 //                SharedPreferences sharedPreferences = getActivity().getSharedPreferences("LOCATION", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
 //                save token to shared preferences
-                editor.putString("ELDER_LATITUDE", Double.toString(currentElder.getLocation().get(0)));
-                editor.putString("ELDER_LONGITUDE", Double.toString(currentElder.getLocation().get(1)));
-                editor.apply();
+                    editor.putString("ELDER_LATITUDE", Double.toString(currentElder.getLocation().get(0)));
+                    editor.putString("ELDER_LONGITUDE", Double.toString(currentElder.getLocation().get(1)));
+                    editor.apply();
 //                showMaps();
 //                showMaps(currentElder);
 //                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, fragment).commit();
 
-                Log.d("HomeScreenFragment", "onResponse: " + response.body().getResult().toString());
+                    Log.d("HomeScreenFragment", "onResponse: " + response.body().getResult().toString());
 //                Toast.makeText(getActivity(), "SUKSES ", Toast.LENGTH_SHORT).show();
-            }
+                }
 
-            @Override
-            public void onFailure(Call<AuthResponse> call, Throwable t) {
-                Log.e("FAILEDDDDDD", "onFailure: " + t.toString());
+                @Override
+                public void onFailure(Call<AuthResponse> call, Throwable t) {
+                    Log.e("FAILEDDDDDD", "onFailure: " + t.toString());
 //                Toast.makeText(getActivity(), "FAILED", Toast.LENGTH_SHORT).show();
-            }
-        });
+                }
+            });
 //        Toast.makeText(getActivity(), currentElder.toString(), Toast.LENGTH_SHORT).show();
 //        binding.elderAge.setText(currentElder.getEmail());
 
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
-        binding.rvCheckupHistory.setLayoutManager(layoutManager);
+            RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
+            binding.rvCheckupHistory.setLayoutManager(layoutManager);
 
-        List<CheckUpHistoryModel> items = new ArrayList<CheckUpHistoryModel>();
-        items.add(new CheckUpHistoryModel(5.5, 7.2, 8.2, 4.2, "20/09/2021"));
-        items.add(new CheckUpHistoryModel(5.2, 2.2, 2.1, 7.3, "21/10/2021"));
-        items.add(new CheckUpHistoryModel(5.3, 4.3, 8.3, 3.2, "01/11/2021"));
-        items.add(new CheckUpHistoryModel(5.6, 3.1, 4.2, 5.6, "29/12/2021"));
-        items.add(new CheckUpHistoryModel(5.1, 6.2, 8.6, 6.2, "11/01/2022"));
+            List<CheckUpHistoryModel> items = new ArrayList<CheckUpHistoryModel>();
+            items.add(new CheckUpHistoryModel(5.5, 7.2, 8.2, 4.2, "20/09/2021"));
+            items.add(new CheckUpHistoryModel(5.2, 2.2, 2.1, 7.3, "21/10/2021"));
+            items.add(new CheckUpHistoryModel(5.3, 4.3, 8.3, 3.2, "01/11/2021"));
+            items.add(new CheckUpHistoryModel(5.6, 3.1, 4.2, 5.6, "29/12/2021"));
+            items.add(new CheckUpHistoryModel(5.1, 6.2, 8.6, 6.2, "11/01/2022"));
 
-        CheckUpHistoryAdapter adapter = new CheckUpHistoryAdapter(items);
+            CheckUpHistoryAdapter adapter = new CheckUpHistoryAdapter(items);
 
-        binding.rvCheckupHistory.setAdapter(adapter);
+            binding.rvCheckupHistory.setAdapter(adapter);
 
-        binding.btnSetMedicine.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.navigateToSetMedicine);
-            }
-        });
+            binding.btnSetMedicine.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Navigation.findNavController(view).navigate(R.id.navigateToSetMedicine);
+                }
+            });
 
-        binding.btnElderSettings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.navigateToElderSettings);
-            }
-        });
+            binding.btnElderSettings.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Navigation.findNavController(view).navigate(R.id.navigateToElderSettings);
+                }
+            });
 
-        binding.btnAddElder.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.navigateToAddElder);
-            }
-        });
+            binding.btnAddElder.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Navigation.findNavController(view).navigate(R.id.navigateToAddElder);
+                }
+            });
 
-        //Add Elder QR
-        binding.btnAddElder.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                IntentIntegrator intentIntegrator = new IntentIntegrator(
-                        getActivity()
-                );
-                intentIntegrator.setPrompt("Press 'VOLUME UP' to activate flash\nPress 'VOLUME DOWN' to deactivate flash.");
-                //Set beep
-                intentIntegrator.setBeepEnabled(true);
-                //lock orientation
-                intentIntegrator.setOrientationLocked(true);
-                //set capture activity
-                intentIntegrator.setCaptureActivity(Capture.class);
-                //Initiate scan
-                intentIntegrator.initiateScan();
-            }
-        });
+
+            //Add Elder QR
+            binding.btnAddElder.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    IntentIntegrator intentIntegrator = new IntentIntegrator(
+                            getActivity()
+                    );
+                    intentIntegrator.setPrompt("Press 'VOLUME UP' to activate flash\nPress 'VOLUME DOWN' to deactivate flash.");
+                    //Set beep
+                    intentIntegrator.setBeepEnabled(true);
+                    //lock orientation
+                    intentIntegrator.setOrientationLocked(true);
+                    //set capture activity
+                    intentIntegrator.setCaptureActivity(Capture.class);
+                    //Initiate scan
+                    intentIntegrator.initiateScan();
+                }
+            });
+
+
+        }
+
+
     }
 
     @Override

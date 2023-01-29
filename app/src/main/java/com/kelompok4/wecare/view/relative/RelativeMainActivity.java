@@ -3,6 +3,7 @@ package com.kelompok4.wecare.view.relative;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
@@ -29,14 +30,24 @@ import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 import com.kelompok4.wecare.R;
 import com.kelompok4.wecare.databinding.ActivityRelativeMainBinding;
+import com.kelompok4.wecare.model.user.ConnectResponse;
 import com.kelompok4.wecare.model.user.User;
+import com.kelompok4.wecare.viewmodel.rest.ApiClient;
+import com.kelompok4.wecare.viewmodel.rest.ApiInterface;
 import com.kelompok4.wecare.viewmodel.utils.GsonUtils;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class RelativeMainActivity extends AppCompatActivity {
 
     private ActivityRelativeMainBinding binding;
     Context context = this;
     private ActionBarDrawerToggle toggle;
+    ApiInterface mApiInterface;
+    private User currentUser;
+    private String jwtToken;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +55,11 @@ public class RelativeMainActivity extends AppCompatActivity {
 
         binding = ActivityRelativeMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        mApiInterface = ApiClient.getClient().create(ApiInterface.class);
+
+        // get jwt token from shared pref
+        SharedPreferences sharedPreferences = this.getSharedPreferences(getString(R.string.const_sharedpref_key), Context.MODE_PRIVATE);
+        jwtToken = sharedPreferences.getString(getString(R.string.const_token_key), "");
 
         BottomNavigationView bottomNavigationView = binding.bottomNavigationView;
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView);
@@ -54,7 +70,7 @@ public class RelativeMainActivity extends AppCompatActivity {
 
 //        bundle current user
         Bundle bundle = getIntent().getExtras();
-        User currentUser = GsonUtils.getGson().fromJson(bundle.getString("USER_LOGGED_IN"), User.class);
+        currentUser = GsonUtils.getGson().fromJson(bundle.getString("USER_LOGGED_IN"), User.class);
 
         Toast.makeText(this, currentUser.getName(), Toast.LENGTH_SHORT).show();
 
@@ -115,25 +131,48 @@ public class RelativeMainActivity extends AppCompatActivity {
         //Initialize intent result
         IntentResult intentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         //Check condition
+        Toast.makeText(context, "Scanned", Toast.LENGTH_SHORT).show();
+
         if (intentResult.getContents() != null){
-            //Alert dialog
-            AlertDialog.Builder builder = new AlertDialog.Builder(
-                    RelativeMainActivity.this, R.style.DialogTheme
-            );
-            //Set title
-            builder.setTitle("Result");
-            //Set msg
-            builder.setMessage(intentResult.getContents());
-            //set positive button
-            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            binding.loadingBar.setVisibility(View.VISIBLE);
+            Call<ConnectResponse> connectResponseCall = mApiInterface.connectAccount(intentResult.getContents(), "Bearer " + jwtToken);
+            connectResponseCall.enqueue(new Callback<ConnectResponse>() {
                 @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    //Dismiss dialog
-                    dialogInterface.dismiss();
+                public void onResponse(Call<ConnectResponse> call, Response<ConnectResponse> response) {
+                    if (response.body().getStatus() == 200) {
+                        Toast.makeText(context, intentResult.getContents(), Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(RelativeMainActivity.this, ConnectSuccessActivity.class);
+                        startActivity(intent);
+                        return;
+                    }else {
+                        Toast.makeText(RelativeMainActivity.this, "Failed to connect account. Network Error", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<ConnectResponse> call, Throwable t) {
+                    Toast.makeText(RelativeMainActivity.this, "Failed to connect account. Network Error", Toast.LENGTH_SHORT).show();
                 }
             });
-            //Show alert
-            builder.show();
+
+            //Alert dialog
+//            AlertDialog.Builder builder = new AlertDialog.Builder(
+//                    RelativeMainActivity.this, R.style.DialogTheme
+//            );
+//            //Set title
+//            builder.setTitle("Result");
+//            //Set msg
+//            builder.setMessage(intentResult.getContents());
+//            //set positive button
+//            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialogInterface, int i) {
+//                    //Dismiss dialog
+//                    dialogInterface.dismiss();
+//                }
+//            });
+//            //Show alert
+//            builder.show();
         } else {
             //if content null
             Toast.makeText(getApplicationContext(), "Did not scan anything", Toast.LENGTH_SHORT).show();

@@ -23,11 +23,14 @@ import androidx.core.app.ActivityCompat;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.zxing.integration.android.IntentIntegrator;
 import com.kelompok4.wecare.R;
 import com.kelompok4.wecare.model.auth.AuthResponse;
 import com.kelompok4.wecare.model.location.AlwaysUpdate;
 import com.kelompok4.wecare.model.user.User;
 import com.kelompok4.wecare.view.elder.ElderMainActivity;
+import com.kelompok4.wecare.view.relative.AddElderFragment;
+import com.kelompok4.wecare.view.relative.Capture;
 import com.kelompok4.wecare.view.relative.FallNotificationActivity;
 import com.kelompok4.wecare.view.relative.RelativeMainActivity;
 import com.kelompok4.wecare.viewmodel.rest.ApiClient;
@@ -123,7 +126,24 @@ public class MainActivity extends AppCompatActivity {
 
                                     Intent intent;
                                     if (response.body().getResult().getRole().equals("Relative")) {
-                                        intent = new Intent(MainActivity.this, RelativeMainActivity.class);
+//                                        if (response.body().getResult().getElderConnected().size() == 0){
+//                                            intent = new Intent();
+//                                            IntentIntegrator intentIntegrator = new IntentIntegrator(
+//                                                    MainActivity.this
+//                                            );
+//                                            intentIntegrator.setPrompt("Press 'VOLUME UP' to activate flash\nPress 'VOLUME DOWN' to deactivate flash.");
+//                                            //Set beep
+//                                            intentIntegrator.setBeepEnabled(true);
+//                                            //lock orientation
+//                                            intentIntegrator.setOrientationLocked(true);
+//                                            //set capture activity
+//                                            intentIntegrator.setCaptureActivity(Capture.class);
+//                                            //Initiate scan
+//                                            intentIntegrator.initiateScan();
+//                                            return;
+//                                        }else {
+                                            intent = new Intent(MainActivity.this, RelativeMainActivity.class);
+//                                        }
                                     }else {
                                         intent = new Intent(MainActivity.this, ElderMainActivity.class);
                                     }
