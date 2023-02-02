@@ -124,6 +124,7 @@
             app:layout_constraintStart_toStartOf="@id/title_health_history"
             app:layout_constraintTop_toBottomOf="@id/title_health_history">
 
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_checkup_history"
                 android:layout_width="wrap_content"
@@ -131,6 +132,18 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <ProgressBar
+                android:id="@+id/progressbarcheckup"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="21dp"
+                tools:layout_editor_absoluteY="93dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

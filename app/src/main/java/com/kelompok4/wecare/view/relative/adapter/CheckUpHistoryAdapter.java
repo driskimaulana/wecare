@@ -8,14 +8,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.kelompok4.wecare.databinding.CheckupHistoryItemBinding;
 import com.kelompok4.wecare.model.CheckUpHistoryModel;
+import com.kelompok4.wecare.model.checkupHistory.CheckupHistoryResponse;
+import com.kelompok4.wecare.model.checkupHistory.ListCheckupHistory;
 
 import java.util.List;
 
 public class CheckUpHistoryAdapter extends RecyclerView.Adapter<CheckUpHistoryAdapter.CheckUpHistoryHolder> {
 
-    private final List<CheckUpHistoryModel> items;
+    private final List<CheckupHistoryResponse> items;
 
-    public CheckUpHistoryAdapter(List<CheckUpHistoryModel> histories) {
+    public CheckUpHistoryAdapter(List<CheckupHistoryResponse> histories) {
         items = histories;
     }
 
@@ -28,11 +30,11 @@ public class CheckUpHistoryAdapter extends RecyclerView.Adapter<CheckUpHistoryAd
 
     @Override
     public void onBindViewHolder(@NonNull CheckUpHistoryAdapter.CheckUpHistoryHolder holder, int position) {
-        holder.binding.tvTanggal.setText(items.get(position).getTanggal());
-        holder.binding.tvAsamUrat.setText("Asam Urat: " + items.get(position).getAsamUrat());
-        holder.binding.tvGulaDarah.setText("Gula Darah: " + items.get(position).getGulaDarah());
+        holder.binding.tvTanggal.setText(items.get(position).getDate());
+        holder.binding.tvAsamUrat.setText("Asam Urat: " + items.get(position).getGout());
+        holder.binding.tvGulaDarah.setText("Gula Darah: " + items.get(position).getBloodSugar());
         holder.binding.tvHemoglobin.setText("Hemoglobin: " + items.get(position).getHemoglobin());
-        holder.binding.tvKolesterol.setText("Kolesterol: " + items.get(position).getKolesterol());
+        holder.binding.tvKolesterol.setText("Kolesterol: " + items.get(position).getCholesterol());
     }
 
     @Override

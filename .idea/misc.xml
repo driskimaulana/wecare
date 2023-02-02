@@ -82,10 +82,19 @@
         <entry key="..\:/wecare/app/src/main/res/mipmap-anydpi-v26/map.xml" value="0.1" />
         <entry key="..\:/wecare/wecare/app/src/main/res/layout/activity_connect_success.xml" value="0.125" />
         <entry key="..\:/wecare/wecare/app/src/main/res/layout/activity_main.xml" value="0.2563405797101449" />
-        <entry key="..\:/wecare/wecare/app/src/main/res/layout/activity_relative_main.xml" value="0.2563405797101449" />
+        <entry key="..\:/wecare/wecare/app/src/main/res/layout/activity_relative_main.xml" value="0.1" />
+        <entry key="..\:/wecare/wecare/app/src/main/res/layout/checkup_history_item.xml" value="0.335" />
+        <entry key="..\:/wecare/wecare/app/src/main/res/layout/fragment_add_check_up_history.xml" value="0.14010416666666667" />
         <entry key="..\:/wecare/wecare/app/src/main/res/layout/fragment_add_elder.xml" value="0.2563405797101449" />
+        <entry key="..\:/wecare/wecare/app/src/main/res/layout/fragment_dashboard.xml" value="0.14010416666666667" />
         <entry key="..\:/wecare/wecare/app/src/main/res/layout/fragment_elder_home.xml" value="0.2563405797101449" />
         <entry key="..\:/wecare/wecare/app/src/main/res/layout/fragment_home_screen.xml" value="0.1" />
+        <entry key="..\:/wecare/wecare/app/src/main/res/layout/fragment_map.xml" value="0.14010416666666667" />
+        <entry key="..\:/wecare/wecare/app/src/main/res/layout/fragment_relative_set_medicine_schedule.xml" value="0.14010416666666667" />
+        <entry key="..\:/wecare/wecare/app/src/main/res/layout/health_education_item.xml" value="0.14010416666666667" />
+        <entry key="..\:/wecare/wecare/app/src/main/res/layout/medicine_item.xml" value="0.14010416666666667" />
+        <entry key="..\:/wecare/wecare/app/src/main/res/layout/rv_relative_list_items.xml" value="0.14010416666666667" />
+        <entry key="..\:/wecare/wecare/app/src/main/res/layout/sidebar_profile.xml" value="0.14010416666666667" />
       </map>
     </option>
   </component>

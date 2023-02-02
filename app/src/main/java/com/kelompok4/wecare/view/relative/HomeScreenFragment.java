@@ -132,16 +132,16 @@ public class HomeScreenFragment extends Fragment {
             RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
             binding.rvCheckupHistory.setLayoutManager(layoutManager);
 
-            List<CheckUpHistoryModel> items = new ArrayList<CheckUpHistoryModel>();
-            items.add(new CheckUpHistoryModel(5.5, 7.2, 8.2, 4.2, "20/09/2021"));
-            items.add(new CheckUpHistoryModel(5.2, 2.2, 2.1, 7.3, "21/10/2021"));
-            items.add(new CheckUpHistoryModel(5.3, 4.3, 8.3, 3.2, "01/11/2021"));
-            items.add(new CheckUpHistoryModel(5.6, 3.1, 4.2, 5.6, "29/12/2021"));
-            items.add(new CheckUpHistoryModel(5.1, 6.2, 8.6, 6.2, "11/01/2022"));
+//            List<CheckUpHistoryModel> items = new ArrayList<CheckUpHistoryModel>();
+//            items.add(new CheckUpHistoryModel(5.5, 7.2, 8.2, 4.2, "20/09/2021"));
+//            items.add(new CheckUpHistoryModel(5.2, 2.2, 2.1, 7.3, "21/10/2021"));
+//            items.add(new CheckUpHistoryModel(5.3, 4.3, 8.3, 3.2, "01/11/2021"));
+//            items.add(new CheckUpHistoryModel(5.6, 3.1, 4.2, 5.6, "29/12/2021"));
+//            items.add(new CheckUpHistoryModel(5.1, 6.2, 8.6, 6.2, "11/01/2022"));
+//
+//            CheckUpHistoryAdapter adapter = new CheckUpHistoryAdapter(items);
 
-            CheckUpHistoryAdapter adapter = new CheckUpHistoryAdapter(items);
-
-            binding.rvCheckupHistory.setAdapter(adapter);
+//            binding.rvCheckupHistory.setAdapter(adapter);
 
             binding.btnSetMedicine.setOnClickListener(new View.OnClickListener() {
                 @Override

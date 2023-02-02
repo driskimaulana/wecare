@@ -1,9 +1,9 @@
-package com.kelompok4.wecare.model.user;
+package com.kelompok4.wecare.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class ConnectResponse {
+public class BasicResponse {
 
     @SerializedName("status")
     @Expose
@@ -12,7 +12,7 @@ public class ConnectResponse {
     @Expose
     String message;
 
-    public ConnectResponse(int status, String message) {
+    public BasicResponse(int status, String message) {
         this.status = status;
         this.message = message;
     }

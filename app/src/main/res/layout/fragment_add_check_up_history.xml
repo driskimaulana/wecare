@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="60dp"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:paddingBottom="60dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -33,131 +33,160 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_add_history_title">
 
             <TextView
+                android:id="@+id/tv_tanggal_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tanggal"
                 android:textSize="8pt"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
                 android:textStyle="bold"
-                android:id="@+id/tv_tanggal_label"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
+                android:id="@+id/edt_tanggal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:layout_marginTop="16dp"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:hint="@string/tanggal_mulai"
+                android:inputType="date"
+                android:background="#F3F3F3"
+                android:padding="10dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_tanggal_label"
-                android:id="@+id/edt_tanggal"/>
+                app:layout_constraintTop_toBottomOf="@+id/tv_tanggal_label" />
 
             <TextView
+                android:id="@+id/tv_tempat_checkup_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:text="Tempat Checkup"
                 android:textSize="8pt"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/edt_tanggal"
                 android:textStyle="bold"
-                android:layout_marginTop="16dp"
-                android:id="@+id/tv_tempat_checkup_label"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edt_tanggal" />
 
             <EditText
+                android:id="@+id/edt_tempat_checkup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_tempat_checkup_label"
-                android:id="@+id/edt_tempat_checkup"/>
+                app:layout_constraintTop_toBottomOf="@id/tv_tempat_checkup_label" />
 
 
             <TextView
+                android:id="@+id/tv_doctor_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:text="Nama Doctor"
                 android:textSize="8pt"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/edt_tempat_checkup"
                 android:textStyle="bold"
-                android:layout_marginTop="16dp"
-                android:id="@+id/tv_doctor_label"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edt_tempat_checkup" />
 
             <EditText
+                android:id="@+id/edt_doctor_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_doctor_label"
-                android:id="@+id/edt_doctor_name"/>
+                app:layout_constraintTop_toBottomOf="@id/tv_doctor_label" />
 
             <TextView
+                android:id="@+id/tv_kolesterol_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:text="Kolesterol"
                 android:textSize="8pt"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/edt_doctor_name"
                 android:textStyle="bold"
-                android:layout_marginTop="16dp"
-                android:id="@+id/tv_kolesterol_label"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edt_doctor_name" />
 
             <EditText
+                android:id="@+id/edt_tekanan_darah"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_kolesterol_label"
-                android:id="@+id/edt_tekanan_darah"/>
+                app:layout_constraintTop_toBottomOf="@id/tv_kolesterol_label" />
 
             <TextView
+                android:id="@+id/tv_gula_darah_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:text="Gula Darah"
                 android:textSize="8pt"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/edt_tekanan_darah"
                 android:textStyle="bold"
-                android:layout_marginTop="16dp"
-                android:id="@+id/tv_gula_darah_label"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edt_tekanan_darah" />
 
             <EditText
+                android:id="@+id/edt_gula_darah"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_gula_darah_label"
-                android:id="@+id/edt_gula_darah"/>
+                app:layout_constraintTop_toBottomOf="@id/tv_gula_darah_label" />
 
             <TextView
+                android:id="@+id/tv_hemoglobin_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:text="Hemoglobin"
                 android:textSize="8pt"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/edt_gula_darah"
                 android:textStyle="bold"
-                android:layout_marginTop="16dp"
-                android:id="@+id/tv_hemoglobin_label"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edt_gula_darah" />
 
             <EditText
+                android:id="@+id/edt_hemoglobin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_hemoglobin_label"
-                android:id="@+id/edt_hemoglobin"/>
+                app:layout_constraintTop_toBottomOf="@id/tv_hemoglobin_label" />
+
+            <TextView
+                android:id="@+id/tv_gout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Asam Urat"
+                android:textSize="8pt"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edt_hemoglobin" />
+
+            <EditText
+                android:id="@+id/edt_gout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_gout" />
+
 
             <Button
                 android:id="@+id/btn_save"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="8dp"
+                android:layout_marginBottom="60dp"
                 android:backgroundTint="@color/blue"
                 android:text="Simpan"
-                app:layout_constraintTop_toBottomOf="@+id/edt_hemoglobin"
-                app:layout_constraintStart_toStartOf="@id/edt_hemoglobin"
-                app:layout_constraintEnd_toEndOf="@id/edt_hemoglobin"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="60dp"/>
+                app:layout_constraintEnd_toEndOf="@id/edt_gout"
+                app:layout_constraintStart_toStartOf="@id/edt_gout"
+                app:layout_constraintTop_toBottomOf="@+id/edt_gout" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 

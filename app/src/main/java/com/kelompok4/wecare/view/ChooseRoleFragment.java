@@ -1,5 +1,6 @@
 package com.kelompok4.wecare.view;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -35,6 +36,7 @@ public class ChooseRoleFragment extends Fragment {
     private FragmentChooseRoleBinding binding;
     private ApiInterface mApiInterface;
     private UserSignup userSignup;
+    private ProgressDialog pd;
 
     public ChooseRoleFragment() {
         // Required empty public constructor
@@ -78,6 +80,7 @@ public class ChooseRoleFragment extends Fragment {
     }
 
     private void handleSignup(View view) {
+        pd = ProgressDialog.show(getContext(), "Loading", "Sign Up ...", false);
         Call<AuthResponse> signupCall = mApiInterface.signup(userSignup);
         signupCall.enqueue(new Callback<AuthResponse>() {
             @Override
@@ -100,12 +103,14 @@ public class ChooseRoleFragment extends Fragment {
                         intent.putExtras(bundle);
                         startActivity(intent);
                     }
+                    pd.dismiss();
                     Toast.makeText(getActivity(), "Register Sukses.", Toast.LENGTH_LONG).show();
                 }
             }
 
             @Override
             public void onFailure(Call<AuthResponse> call, Throwable t) {
+                pd.dismiss();
                 Toast.makeText(getActivity(), "Register Gagal", Toast.LENGTH_SHORT).show();
                 Log.e("Error", "onFailure: "+ t.toString() );
             }

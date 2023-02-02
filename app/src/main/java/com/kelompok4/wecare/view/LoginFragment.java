@@ -1,5 +1,6 @@
 package com.kelompok4.wecare.view;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -35,6 +36,7 @@ public class LoginFragment extends Fragment {
 
     FragmentLoginBinding binding;
     ApiInterface mApiInterface;
+    private ProgressDialog pd;
 
     public LoginFragment() {
         // Required empty public constructor
@@ -61,6 +63,7 @@ public class LoginFragment extends Fragment {
     }
 
     private void handleLogin(View view) {
+        pd = ProgressDialog.show(getContext(), "Loading", "Login...", false);
         UserSignin userSignin = new UserSignin(binding.inputEmail.getText().toString(), binding.inputPassword.getText().toString());
         Call<AuthResponse> signinCall = mApiInterface.signin(userSignin);
         signinCall.enqueue(new Callback<AuthResponse>() {
@@ -70,8 +73,10 @@ public class LoginFragment extends Fragment {
                 SharedPreferences sharedPreferences = getActivity().getSharedPreferences(getString(R.string.const_sharedpref_key), Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
 //                save token to shared preferences
-                editor.putString(getString(R.string.const_token_key), response.body().getToken());
-                editor.apply();
+                if (response.body() != null) {
+                    editor.putString(getString(R.string.const_token_key), response.body().getToken());
+                    editor.apply();
+                }
 
 //                send logged in user to activity based on their role
                 Bundle bundle = new Bundle();
@@ -89,6 +94,7 @@ public class LoginFragment extends Fragment {
             @Override
             public void onFailure(Call<AuthResponse> call, Throwable t) {
                 Log.e("Error", "onFailure: "+ t.toString() );
+                pd.dismiss();
                 Toast.makeText(getActivity(), "ga bisaa :(", Toast.LENGTH_SHORT).show();
             }
         });

@@ -2,6 +2,7 @@ package com.kelompok4.wecare.model;
 
 public class CheckUpHistoryModel {
 
+
     private double asamUrat;
     private double gulaDarah;
     private double kolesterol;

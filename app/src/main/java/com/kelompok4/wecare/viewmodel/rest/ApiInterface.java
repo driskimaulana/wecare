@@ -3,11 +3,13 @@ package com.kelompok4.wecare.viewmodel.rest;
 import com.kelompok4.wecare.model.auth.AuthResponse;
 import com.kelompok4.wecare.model.auth.UserSignin;
 import com.kelompok4.wecare.model.auth.UserSignup;
+import com.kelompok4.wecare.model.checkupHistory.CheckupHistoryModel;
+import com.kelompok4.wecare.model.checkupHistory.ListCheckupHistory;
 import com.kelompok4.wecare.model.healthEducation.GetHealthEducation;
 import com.kelompok4.wecare.model.location.AlwaysUpdate;
 import com.kelompok4.wecare.model.location.Location;
 import com.kelompok4.wecare.model.notification.DangerResponse;
-import com.kelompok4.wecare.model.user.ConnectResponse;
+import com.kelompok4.wecare.model.BasicResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -43,7 +45,13 @@ public interface ApiInterface {
 
     @Headers({ "Content-Type: application/json;charset=UTF-8" })
     @PATCH("user/connect/{id}")
-    Call<ConnectResponse> connectAccount(@Path("id") String id, @Header("Authorization") String auth);
+    Call<BasicResponse> connectAccount(@Path("id") String id, @Header("Authorization") String auth);
 
+    @Headers({ "Content-Type: application/json;charser=UTF-8" })
+    @POST("checkupHistory/addNewCheckupHistory")
+    Call<BasicResponse> addNewCheckupHistory(@Header("Authorization") String auth, @Body CheckupHistoryModel checkupHistoryRequest);
 
+    @Headers({ "Content-Type: application/json;charser=UTF-8" })
+    @GET("checkupHistory/getCheckupHistories/{id}")
+    Call<ListCheckupHistory> getListCheckupHistory(@Path("id") String id, @Header("Authorization") String auth);
 }

@@ -1,7 +1,6 @@
 package com.kelompok4.wecare.view.relative;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -9,6 +8,7 @@ import android.text.Html;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,7 +16,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.graphics.drawable.DrawerArrowDrawable;
 import androidx.core.view.GravityCompat;
@@ -30,8 +29,9 @@ import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 import com.kelompok4.wecare.R;
 import com.kelompok4.wecare.databinding.ActivityRelativeMainBinding;
-import com.kelompok4.wecare.model.user.ConnectResponse;
+import com.kelompok4.wecare.model.BasicResponse;
 import com.kelompok4.wecare.model.user.User;
+import com.kelompok4.wecare.view.MainActivity;
 import com.kelompok4.wecare.viewmodel.rest.ApiClient;
 import com.kelompok4.wecare.viewmodel.rest.ApiInterface;
 import com.kelompok4.wecare.viewmodel.utils.GsonUtils;
@@ -93,6 +93,15 @@ public class RelativeMainActivity extends AppCompatActivity {
         TextView profileName = header.findViewById(R.id.tv_profile_name);
         profileName.setText(currentUser.getName());
 
+        ImageButton logoutButton = header.findViewById(R.id.btn_profile_logout);
+
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                handleLogout();
+            }
+        });
+
         DrawerArrowDrawable drawerIcon = toggle.getDrawerArrowDrawable();
         drawerIcon.setColor(0xFFFFFFFF);
         toggle.setDrawerArrowDrawable(drawerIcon);
@@ -133,46 +142,27 @@ public class RelativeMainActivity extends AppCompatActivity {
         //Check condition
         Toast.makeText(context, "Scanned", Toast.LENGTH_SHORT).show();
 
-        if (intentResult.getContents() != null){
+        if (intentResult.getContents() != null) {
             binding.loadingBar.setVisibility(View.VISIBLE);
-            Call<ConnectResponse> connectResponseCall = mApiInterface.connectAccount(intentResult.getContents(), "Bearer " + jwtToken);
-            connectResponseCall.enqueue(new Callback<ConnectResponse>() {
+            Call<BasicResponse> connectResponseCall = mApiInterface.connectAccount(intentResult.getContents(), "Bearer " + jwtToken);
+            connectResponseCall.enqueue(new Callback<BasicResponse>() {
                 @Override
-                public void onResponse(Call<ConnectResponse> call, Response<ConnectResponse> response) {
+                public void onResponse(Call<BasicResponse> call, Response<BasicResponse> response) {
                     if (response.body().getStatus() == 200) {
                         Toast.makeText(context, intentResult.getContents(), Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(RelativeMainActivity.this, ConnectSuccessActivity.class);
                         startActivity(intent);
                         return;
-                    }else {
+                    } else {
                         Toast.makeText(RelativeMainActivity.this, "Failed to connect account. Network Error", Toast.LENGTH_SHORT).show();
                     }
                 }
 
                 @Override
-                public void onFailure(Call<ConnectResponse> call, Throwable t) {
+                public void onFailure(Call<BasicResponse> call, Throwable t) {
                     Toast.makeText(RelativeMainActivity.this, "Failed to connect account. Network Error", Toast.LENGTH_SHORT).show();
                 }
             });
-
-            //Alert dialog
-//            AlertDialog.Builder builder = new AlertDialog.Builder(
-//                    RelativeMainActivity.this, R.style.DialogTheme
-//            );
-//            //Set title
-//            builder.setTitle("Result");
-//            //Set msg
-//            builder.setMessage(intentResult.getContents());
-//            //set positive button
-//            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-//                @Override
-//                public void onClick(DialogInterface dialogInterface, int i) {
-//                    //Dismiss dialog
-//                    dialogInterface.dismiss();
-//                }
-//            });
-//            //Show alert
-//            builder.show();
         } else {
             //if content null
             Toast.makeText(getApplicationContext(), "Did not scan anything", Toast.LENGTH_SHORT).show();
@@ -203,4 +193,18 @@ public class RelativeMainActivity extends AppCompatActivity {
     public void handleAddEldersButton(View view) {
         Toast.makeText(this, "add elder", Toast.LENGTH_SHORT).show();
     }
+
+    private void handleLogout() {
+        Log.d("driskidebug", "onClick: Logout");
+        SharedPreferences sharedPreferences = context.getSharedPreferences(getString(R.string.const_sharedpref_key), Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.commit();
+        Intent intent = new Intent(context, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        context.startActivity(intent);
+        Runtime.getRuntime().exit(0);
+        Toast.makeText(context, "Logout button clicked!", Toast.LENGTH_SHORT).show();
+    }
+
 }
