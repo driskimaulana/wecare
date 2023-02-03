@@ -1,6 +1,7 @@
 package com.kelompok4.wecare.view.elder;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -43,6 +44,7 @@ public class ElderHomeFragment extends Fragment {
     private FragmentElderHomeBinding binding;
     private ApiInterface mApiInterface;
     private User currentUser;
+    private ProgressDialog pd;
 
     private com.kelompok4.wecare.model.location.Location myLocation;
     private static final int REQUEST_LOCATION = 1;
@@ -119,7 +121,7 @@ public class ElderHomeFragment extends Fragment {
 
     public void sosBtnClicked(View v) {
 //        mApiInterface.sendDangerSignal()
-        binding.progressBar2.setVisibility(View.VISIBLE);
+        pd = ProgressDialog.show(getContext(), "Loading...", "Mengirim sinyal bahaya", false);
         locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
         if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
             OnGPS();
@@ -134,11 +136,11 @@ public class ElderHomeFragment extends Fragment {
                 Bundle bundle = new Bundle();
                 bundle.putString("DANGER_SIGNAL_RESPONSE", dangerResponse);
                 Navigation.findNavController(v).navigate(R.id.waitingResponseSosFragment, bundle);
-                binding.progressBar2.setVisibility(View.GONE);
+                pd.dismiss();
             }
             @Override
             public void onFailure(Call<DangerResponse> call, Throwable t) {
-                binding.progressBar2.setVisibility(View.GONE);
+                pd.dismiss();
                 Toast.makeText(getActivity(), "Send danger signal failed.", Toast.LENGTH_SHORT).show();
                 Log.e("SOS Failed", "Send danger signal failed." );
             }

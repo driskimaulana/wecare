@@ -192,39 +192,6 @@
                 app:layout_constraintStart_toStartOf="@+id/frameLayoutMaps"
                 app:layout_constraintTop_toBottomOf="@+id/frameLayoutMaps" />
 
-            <TextView
-                android:id="@+id/title_health_history"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:text="Aktifitas Terbaru"
-                android:textColor="@color/blue"
-                android:textSize="7.6pt"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/name_container"
-                app:layout_constraintStart_toStartOf="@id/name_container"
-                app:layout_constraintTop_toBottomOf="@+id/btn_set_medicine" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/container_list_checkup_history"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/shape_dashboard_container"
-                android:padding="20dp"
-                app:layout_constraintEnd_toEndOf="@id/title_health_history"
-                app:layout_constraintStart_toStartOf="@id/title_health_history"
-                app:layout_constraintTop_toBottomOf="@id/title_health_history">
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_checkup_history"
-                    android:layout_width="wrap_content"
-                    android:layout_height="330dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

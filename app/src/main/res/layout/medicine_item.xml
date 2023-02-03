@@ -1,40 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:orientation="horizontal"
-              android:padding="20dp"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content">
-  <ImageView
-      android:id="@+id/img_medicine"
-      android:layout_width="150dp"
-      android:layout_height="150dp"
-      tools:src="@mipmap/medicine_placeholder"/>
-  <LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:padding="20dp"
+    android:background="@drawable/shape_name_container"
+    android:layout_width="match_parent"
+    android:layout_margin="5dp"
+    android:layout_height="wrap_content">
+  
+  <TextView
+      android:id="@+id/tv_med_name"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_gravity="center"
-      android:padding="20dp"
-      android:orientation="vertical">
-    <TextView
-        android:id="@+id/tv_medicine_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="16:00"
-        android:textSize="40sp"
-        android:textStyle="bold"/>
-    <TextView
-        android:id="@+id/tv_medicine_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="Nama Obat"
-        android:textSize="25sp"/>
-    <TextView
-        android:id="@+id/tv_medicine_desc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="Ini adalah deskripsi dari obat yang harus diminum oleh Elder"
-        android:textSize="18sp"
-        android:textStyle="italic"/>
-  </LinearLayout>
-</LinearLayout>
+      android:text="Medicine Name"
+      android:textColor="@color/blue"
+      android:textSize="9pt"
+      android:textStyle="bold"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      />
+
+  <TextView
+      android:id="@+id/tv_eat_time"
+      android:layout_marginTop="4dp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="20:00"
+      android:textSize="18pt"
+      android:textColor="@color/blue"
+      android:textStyle="bold"
+      app:layout_constraintTop_toBottomOf="@id/tv_med_name"
+      app:layout_constraintStart_toStartOf="parent"
+      />
+
+  <TextView
+      android:id="@+id/tv_note"
+      android:layout_marginTop="4dp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Catatan"
+      android:textSize="6pt"
+      android:textColor="@color/blue"
+      app:layout_constraintTop_toBottomOf="@id/tv_eat_time"
+      app:layout_constraintStart_toStartOf="parent"
+      />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

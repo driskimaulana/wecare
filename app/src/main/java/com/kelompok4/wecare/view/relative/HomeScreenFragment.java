@@ -17,6 +17,7 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.kelompok4.wecare.R;
 import com.kelompok4.wecare.databinding.FragmentHomeScreenBinding;
@@ -53,20 +54,16 @@ public class HomeScreenFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottomNavigationView);
+
+        bottomNavigationView.setVisibility(View.VISIBLE);
+
         mApiInterface = ApiClient.getClient().create(ApiInterface.class);
 
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences(getString(R.string.const_sharedpref_key), Context.MODE_PRIVATE);
         String token = sharedPreferences.getString(getString(R.string.const_token_key), "");
 
         Bundle bundle = getActivity().getIntent().getExtras();
-//        currentUser = GsonUtils.getGson().fromJson(bundle.getString("USER_LOGGED_IN"), User.class);
-//
-//        if (currentUser != null) {
-//            binding.elderName.setText(currentUser.getName());
-//        }
-
-//        Fragment fragment = new MapFragment();
-//        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, fragment).commit();
 
         showMaps();
 
@@ -130,7 +127,6 @@ public class HomeScreenFragment extends Fragment {
 //        binding.elderAge.setText(currentElder.getEmail());
 
             RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
-            binding.rvCheckupHistory.setLayoutManager(layoutManager);
 
 //            List<CheckUpHistoryModel> items = new ArrayList<CheckUpHistoryModel>();
 //            items.add(new CheckUpHistoryModel(5.5, 7.2, 8.2, 4.2, "20/09/2021"));

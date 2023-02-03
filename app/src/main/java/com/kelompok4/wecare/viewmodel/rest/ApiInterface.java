@@ -8,6 +8,8 @@ import com.kelompok4.wecare.model.checkupHistory.ListCheckupHistory;
 import com.kelompok4.wecare.model.healthEducation.GetHealthEducation;
 import com.kelompok4.wecare.model.location.AlwaysUpdate;
 import com.kelompok4.wecare.model.location.Location;
+import com.kelompok4.wecare.model.medicineSchedule.MedicineSchedule;
+import com.kelompok4.wecare.model.medicineSchedule.MedicineScheduleList;
 import com.kelompok4.wecare.model.notification.DangerResponse;
 import com.kelompok4.wecare.model.BasicResponse;
 
@@ -54,4 +56,13 @@ public interface ApiInterface {
     @Headers({ "Content-Type: application/json;charser=UTF-8" })
     @GET("checkupHistory/getCheckupHistories/{id}")
     Call<ListCheckupHistory> getListCheckupHistory(@Path("id") String id, @Header("Authorization") String auth);
+
+    @Headers({ "Content-Type: application/json;charset=UTF-8" })
+    @POST("medicineSchedules/addMedicineSchedule")
+    Call<BasicResponse> addNewMedicineSchedules(@Header("Authorization") String auth, @Body MedicineSchedule medicineSchedule);
+
+    @Headers({ "Content-Type: application/json;charset=UTF-8" })
+    @GET("medicineSchedules/getTodayMedicineSchedules")
+    Call<MedicineScheduleList> getTodayMedicineSchedules(@Header("Authorization") String auth);
+
 }

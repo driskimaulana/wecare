@@ -1,6 +1,7 @@
 package com.kelompok4.wecare.view.elder;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -53,6 +54,8 @@ public class ElderMainActivity extends AppCompatActivity {
     private ApiInterface mApiInterface;
     private String jwtToken;
 
+    private ProgressDialog pd;
+
     private com.kelompok4.wecare.model.location.Location myLocation;
     private static final int REQUEST_LOCATION = 1;
     private LocationManager locationManager;
@@ -70,6 +73,8 @@ public class ElderMainActivity extends AppCompatActivity {
             double finalAcc = Double.parseDouble(numberFormat.format(acceleration));
 
             if (!limit && finalAcc < 3) {
+                pd = ProgressDialog.show(ElderMainActivity.this, "Loading ...", "Mengirim sinyal bahaya.", false);
+
                 locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
                 if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
                     OnGPS();
@@ -92,30 +97,6 @@ public class ElderMainActivity extends AppCompatActivity {
                         Log.e("SOS Failed", "Send danger signal failed." );
                     }
                 });
-
-//                builder.setTitle("Alert!!!").setMessage("Take me home i'm fallin'").setCancelable(false).setPositiveButton("Kirim Signal", new DialogInterface.OnClickListener() {
-//
-//                    LayoutInflater li = LayoutInflater.from(ElderMainActivity.this);
-//                    final View myView = li.inflate(R.layout.activity_elder_main, null);
-//
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int i) {
-//
-//                    }
-//                });
-//                builder.setNegativeButton("Saya Baik.", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int i) {
-//                        dialogInterface.cancel();
-//
-//                        alarm.stop();
-//                        alarm.prepareAsync();
-//
-//                        limit = false;
-//                    }
-//                });
-//                builder.show();
-//                alarm.start();
                 limit = true;
             }
         }
@@ -136,9 +117,7 @@ public class ElderMainActivity extends AppCompatActivity {
         // get navcontroller
         NavHostFragment hostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView2);
         navController = hostFragment.getNavController();
-
-//        navController = Navigation.findNavController(ElderMainActivity.this, R.id.fragmentContainerView2);
-
+        
         mApiInterface = ApiClient.getClient().create(ApiInterface.class);
 
         myLocation = new com.kelompok4.wecare.model.location.Location(0, 0);

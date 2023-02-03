@@ -8,13 +8,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.kelompok4.wecare.databinding.MedicineItemBinding;
 import com.kelompok4.wecare.model.MedicineModel;
+import com.kelompok4.wecare.model.medicineSchedule.MedicineSchedule;
+import com.kelompok4.wecare.model.medicineSchedule.MedicineScheduleList;
 
 import java.util.List;
 
 public class ElderMedicineListRecyclerViewAdapter extends RecyclerView.Adapter<ElderMedicineListRecyclerViewAdapter.ElderMedicineHolder> {
-    private final List<MedicineModel> items;
+    private final List<MedicineSchedule> items;
 
-    public ElderMedicineListRecyclerViewAdapter(List<MedicineModel> items) {
+    public ElderMedicineListRecyclerViewAdapter(List<MedicineSchedule> items) {
         this.items = items;
     }
 
@@ -26,10 +28,9 @@ public class ElderMedicineListRecyclerViewAdapter extends RecyclerView.Adapter<E
 
     @Override
     public void onBindViewHolder(@NonNull ElderMedicineListRecyclerViewAdapter.ElderMedicineHolder holder, int position) {
-        holder.binding.imgMedicine.setImageResource(items.get(position).getImageId());
-        holder.binding.tvMedicineTime.setText(items.get(position).getTime());
-        holder.binding.tvMedicineName.setText(items.get(position).getName());
-        holder.binding.tvMedicineDesc.setText(items.get(position).getDesc());
+        holder.binding.tvEatTime.setText(items.get(position).getEatTime());
+        holder.binding.tvMedName.setText(items.get(position).getMedicineName());
+        holder.binding.tvNote.setText(items.get(position).getNote());
     }
 
     @Override
@@ -46,7 +47,4 @@ public class ElderMedicineListRecyclerViewAdapter extends RecyclerView.Adapter<E
         }
     }
 
-    MedicineModel getItem(int id) {
-        return items.get(id);
-    }
 }

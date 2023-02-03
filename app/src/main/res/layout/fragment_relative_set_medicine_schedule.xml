@@ -97,31 +97,22 @@
 
                 <Button
                     android:id="@+id/btn_setTime"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
-                    android:background="@drawable/shape_dashboard_container"
-                    android:text="Pilih Jam"
-                    android:textColor="@color/black" />
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/blue_cola"
+                    android:text="Pilih Jam"/>
+
+<!--                <Button-->
+<!--                    android:id="@+id/btn_setTime"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginEnd="20dp"-->
+<!--                    android:background="@drawable/shape_dashboard_container"-->
+<!--                    android:text="Pilih Jam"-->
+<!--                    android:textColor="@color/black" />-->
 
             </LinearLayout>
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="10dp"
-                android:text="@string/import_foto_obat"
-                android:textSize="20sp" />
-
-            <ImageButton
-                android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/background_rounded_corner"
-                android:padding="10dp"
-                app:srcCompat="@drawable/ic_add_picture"
-                app:tint="@color/diamond"/>
 
             <TextView
                 android:id="@+id/tv_set_detail_obat"
@@ -133,7 +124,7 @@
                 android:layout_marginBottom="10dp" />
 
             <EditText
-                android:id="@+id/editTextTextMultiLine"
+                android:id="@+id/tv_note"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:padding="10dp"
