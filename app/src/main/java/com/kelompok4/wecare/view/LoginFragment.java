@@ -83,6 +83,8 @@ public class LoginFragment extends Fragment {
                 bundle.putString("USER_LOGGED_IN", GsonUtils.getGson().toJson(response.body().getResult()));
                 Intent intent;
                 if (response.body().getResult().getRole().equals("Relative")) {
+                    editor.putInt(getString(R.string.ELDER_KEY), 0);
+                    editor.apply();
                     intent = new Intent(getActivity(), RelativeMainActivity.class);
                 }else {
                     intent = new Intent(getActivity(), ElderMainActivity.class);

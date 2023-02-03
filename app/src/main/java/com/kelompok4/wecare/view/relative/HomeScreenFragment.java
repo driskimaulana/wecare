@@ -42,6 +42,8 @@ public class HomeScreenFragment extends Fragment {
     private User currentUser;
     private User currentElder;
 
+    private int elderKey;
+
     private ApiInterface mApiInterface;
 
     @Override
@@ -62,6 +64,13 @@ public class HomeScreenFragment extends Fragment {
 
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences(getString(R.string.const_sharedpref_key), Context.MODE_PRIVATE);
         String token = sharedPreferences.getString(getString(R.string.const_token_key), "");
+        String elderName = sharedPreferences.getString("ELDER_NAME", "");
+
+        if (elderName.length() != 0 ) {
+            binding.elderName.setText(elderName);
+        }
+
+        int elderKey = sharedPreferences.getInt(getString(R.string.ELDER_KEY), 0);
 
         Bundle bundle = getActivity().getIntent().getExtras();
 
@@ -96,7 +105,7 @@ public class HomeScreenFragment extends Fragment {
             binding.layoutNoElder.setVisibility(View.GONE);
             binding.layoutThereIsElder.setVisibility(View.VISIBLE);
             //        get elder data that connected with current logged in relative
-            Call<AuthResponse> call = mApiInterface.getUserDetails(currentUser.getElderConnected().get(0), "Bearer " + token);
+            Call<AuthResponse> call = mApiInterface.getUserDetails(currentUser.getElderConnected().get(elderKey), "Bearer " + token);
             call.enqueue(new Callback<AuthResponse>() {
                 @Override
                 public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {
@@ -105,6 +114,8 @@ public class HomeScreenFragment extends Fragment {
                     binding.elderName.setText(response.body().getResult().getName());
 //                SharedPreferences sharedPreferences = getActivity().getSharedPreferences("LOCATION", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                    editor.putString("ELDER_NAME", response.body().getResult().getName());
 //                save token to shared preferences
                     editor.putString("ELDER_LATITUDE", Double.toString(currentElder.getLocation().get(0)));
                     editor.putString("ELDER_LONGITUDE", Double.toString(currentElder.getLocation().get(1)));

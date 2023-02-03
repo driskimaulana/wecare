@@ -65,6 +65,8 @@ public class DashboardFragment extends Fragment {
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences(getString(R.string.const_sharedpref_key), Context.MODE_PRIVATE);
         token = sharedPreferences.getString(getString(R.string.const_token_key), "");
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
+        String elderName = sharedPreferences.getString("ELDER_NAME", "");
+        binding.elderName.setText(elderName);
 
         Bundle bundle = getActivity().getIntent().getExtras();
 

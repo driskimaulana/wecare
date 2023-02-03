@@ -85,4 +85,5 @@
     <string name="sampai_dengan">s/d</string>
     <string name="keterangan">Keterangan:</string>
     <string name="keterangan_obat">Keterangan Obat</string>
+    <string name="ELDER_KEY">ELDER_ACTIVE_KEY</string>
 </resources>
