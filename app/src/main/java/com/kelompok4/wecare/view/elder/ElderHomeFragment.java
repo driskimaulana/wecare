@@ -80,25 +80,42 @@ public class ElderHomeFragment extends Fragment {
         Bundle bundle = getActivity().getIntent().getExtras();
         currentUser = GsonUtils.getGson().fromJson(bundle.getString("USER_LOGGED_IN"), User.class);
 
-        binding.btnSos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        if (currentUser.getRelativeConnected().size() == 0) {
+            binding.layoutNoRelative.setVisibility(View.VISIBLE);
+            binding.layoutYesRelative.setVisibility(view.GONE);
+
+            binding.btnAddNewRelative.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    qrBtnClicked(view);
+                }
+            });
+        }else {
+            binding.layoutNoRelative.setVisibility(View.GONE);
+            binding.layoutYesRelative.setVisibility(view.VISIBLE);
+
+            binding.btnSos.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
 //                Toast.makeText(getActivity(), currentUser.getName(), Toast.LENGTH_SHORT).show();
-                sosBtnClicked(view);
-            }
-        });
+                    sosBtnClicked(view);
+                }
+            });
 
-        binding.btnQrcode.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                qrBtnClicked(view);
-            }
-        });
+            binding.btnQrcode.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    qrBtnClicked(view);
+                }
+            });
 
-        binding.tvMinumObat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) { medicineListBtnClicked(view); }
-        });
+            binding.tvMinumObat.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) { medicineListBtnClicked(view); }
+            });
+
+        }
+
     }
 
     @Override

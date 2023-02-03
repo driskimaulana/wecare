@@ -7,75 +7,133 @@
     android:layout_height="match_parent"
     tools:context=".view.elder.ElderHomeFragment">
 
-    <ImageButton
-        android:id="@+id/btn_qrcode"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:contentDescription="@string/btn_qrcode_description"
-        android:onClick="qrBtnClicked"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.953"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024"
-        app:srcCompat="@drawable/ic_arcticons_qr" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/tv_minum_obat"
-        android:layout_width="282dp"
-        android:clickable="true"
-        android:layout_height="wrap_content"
-        android:background="@drawable/shape_name_container"
-        android:paddingHorizontal="20dp"
-        android:paddingVertical="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_sos"
+        android:id="@+id/layout_no_relative"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_qrcode"
-        android:focusable="true">
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tv_no_elder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Jadwal Obat"
-            android:textColor="@color/blue"
+            android:layout_marginTop="100dp"
+            android:text="Belum ada elder yang terhubung :("
+            android:textColor="@color/white"
             android:textSize="10pt"
             android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/transparent"
-            android:src="@drawable/ic_baseline_chevron_right_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/iv_no_elder"
+            android:layout_width="318dp"
+            android:layout_height="260dp"
+            android:src="@mipmap/zero_elder2_foreground"
+            app:layout_constraintEnd_toEndOf="@id/tv_no_elder"
+            app:layout_constraintStart_toStartOf="@id/tv_no_elder"
+            app:layout_constraintTop_toBottomOf="@id/tv_no_elder" />
+
+        <Button
+            android:id="@+id/btn_add_new_relative"
+            android:layout_width="187dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/white"
+            android:text="Hubungkan"
+            android:textAllCaps="false"
+            android:textColor="@color/blue"
+            android:textSize="5.2pt"
+            app:layout_constraintTop_toBottomOf="@id/iv_no_elder"
+            app:layout_constraintStart_toStartOf="@id/iv_no_elder"
+            app:layout_constraintEnd_toEndOf="@id/iv_no_elder"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_sos"
-        android:layout_width="282dp"
-        android:layout_height="298dp"
-        android:layout_marginBottom="120dp"
-        android:background="@drawable/btn_sos_rounded"
-        android:onClick="sosBtnClicked"
-        android:text="@string/sos"
-        android:textAllCaps="true"
-        android:textColor="#FFFFFF"
-        android:textSize="60sp"
-        android:textStyle="bold"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_yes_relative"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_qrcode"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/btn_qrcode_description"
+            android:onClick="qrBtnClicked"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.953"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.024"
+            app:srcCompat="@drawable/ic_arcticons_qr" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tv_minum_obat"
+            android:layout_width="282dp"
+            android:clickable="true"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_name_container"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_sos"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_qrcode"
+            android:focusable="true">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jadwal Obat"
+                android:textColor="@color/blue"
+                android:textSize="10pt"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:src="@drawable/ic_baseline_chevron_right_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_sos"
+            android:layout_width="282dp"
+            android:layout_height="298dp"
+            android:layout_marginBottom="120dp"
+            android:background="@drawable/btn_sos_rounded"
+            android:onClick="sosBtnClicked"
+            android:text="@string/sos"
+            android:textAllCaps="true"
+            android:textColor="#FFFFFF"
+            android:textSize="60sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent" />
 
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

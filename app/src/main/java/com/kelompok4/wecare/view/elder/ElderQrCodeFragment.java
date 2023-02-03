@@ -1,5 +1,6 @@
 package com.kelompok4.wecare.view.elder;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,6 +18,7 @@ import com.journeyapps.barcodescanner.BarcodeEncoder;
 import com.kelompok4.wecare.R;
 import com.kelompok4.wecare.databinding.FragmentElderQrCodeBinding;
 import com.kelompok4.wecare.model.user.User;
+import com.kelompok4.wecare.view.MainActivity;
 import com.kelompok4.wecare.viewmodel.utils.GsonUtils;
 
 public class ElderQrCodeFragment extends Fragment {
@@ -36,7 +38,8 @@ public class ElderQrCodeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_elder_qr_code, container, false);
+        binding = FragmentElderQrCodeBinding.inflate(inflater);
+        return binding.getRoot();
     }
 
     @Override
@@ -44,11 +47,6 @@ public class ElderQrCodeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         Bundle bundle = getActivity().getIntent().getExtras();
-//        currentUser = GsonUtils.getGson().fromJson(bundle.getString("USER_LOGGED_IN"), User.class);
-//
-//        if (currentUser != null) {
-//            binding.elderName.setText(currentUser.getName());
-//        }
 
 //        get current logged in userW
         currentUser = GsonUtils.getGson().fromJson(bundle.getString("USER_LOGGED_IN"), User.class);
@@ -65,5 +63,15 @@ public class ElderQrCodeFragment extends Fragment {
         } catch(Exception e) {
             e.printStackTrace();
         }
+
+        binding.btnRestart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                getActivity().startActivity(intent);
+                Runtime.getRuntime().exit(0);
+            }
+        });
     }
 }
