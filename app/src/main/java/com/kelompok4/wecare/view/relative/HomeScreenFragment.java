@@ -70,8 +70,9 @@ public class HomeScreenFragment extends Fragment {
             binding.elderName.setText(elderName);
         }
 
-        int elderKey = sharedPreferences.getInt(getString(R.string.ELDER_KEY), 0);
+        elderKey = sharedPreferences.getInt(getString(R.string.ELDER_KEY), 1);
 
+        Log.d("debugdriski", "onViewCreated: " + elderKey);
         Bundle bundle = getActivity().getIntent().getExtras();
 
         showMaps();
@@ -164,32 +165,32 @@ public class HomeScreenFragment extends Fragment {
                 }
             });
 
-            binding.btnAddElder.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Navigation.findNavController(view).navigate(R.id.navigateToAddElder);
-                }
-            });
+//            binding.btnAddElder.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    Navigation.findNavController(view).navigate(R.id.navigateToAddElder);
+//                }
+//            });
 
 
             //Add Elder QR
-            binding.btnAddElder.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    IntentIntegrator intentIntegrator = new IntentIntegrator(
-                            getActivity()
-                    );
-                    intentIntegrator.setPrompt("Press 'VOLUME UP' to activate flash\nPress 'VOLUME DOWN' to deactivate flash.");
-                    //Set beep
-                    intentIntegrator.setBeepEnabled(true);
-                    //lock orientation
-                    intentIntegrator.setOrientationLocked(true);
-                    //set capture activity
-                    intentIntegrator.setCaptureActivity(Capture.class);
-                    //Initiate scan
-                    intentIntegrator.initiateScan();
-                }
-            });
+//            binding.btnAddElder.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    IntentIntegrator intentIntegrator = new IntentIntegrator(
+//                            getActivity()
+//                    );
+//                    intentIntegrator.setPrompt("Press 'VOLUME UP' to activate flash\nPress 'VOLUME DOWN' to deactivate flash.");
+//                    //Set beep
+//                    intentIntegrator.setBeepEnabled(true);
+//                    //lock orientation
+//                    intentIntegrator.setOrientationLocked(true);
+//                    //set capture activity
+//                    intentIntegrator.setCaptureActivity(Capture.class);
+//                    //Initiate scan
+//                    intentIntegrator.initiateScan();
+//                }
+//            });
 
 
         }

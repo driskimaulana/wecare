@@ -31,7 +31,7 @@
             android:id="@+id/navigateDashboardToElderSettings"
             app:destination="@id/elderSettingsFragment" />
         <action
-            android:id="@+id/navigateDashboardToAddElder"
+            android:id="@+id/navigateToAddElder"
             app:destination="@id/addElderFragment" />
         <action
             android:id="@+id/navigateToAddCheckupHistory"

@@ -12,6 +12,7 @@ import com.kelompok4.wecare.model.medicineSchedule.MedicineSchedule;
 import com.kelompok4.wecare.model.medicineSchedule.MedicineScheduleList;
 import com.kelompok4.wecare.model.notification.DangerResponse;
 import com.kelompok4.wecare.model.BasicResponse;
+import com.kelompok4.wecare.model.user.ListElderConnected;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -64,5 +65,8 @@ public interface ApiInterface {
     @Headers({ "Content-Type: application/json;charset=UTF-8" })
     @GET("medicineSchedules/getTodayMedicineSchedules")
     Call<MedicineScheduleList> getTodayMedicineSchedules(@Header("Authorization") String auth);
+
+    @GET("user/getElderConnected")
+    Call<ListElderConnected> getElderConnected(@Header("Authorization") String auth);
 
 }

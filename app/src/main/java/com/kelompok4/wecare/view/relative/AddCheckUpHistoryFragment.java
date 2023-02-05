@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.kelompok4.wecare.R;
 import com.kelompok4.wecare.databinding.FragmentAddCheckUpHistoryBinding;
 import com.kelompok4.wecare.model.BasicResponse;
@@ -43,6 +44,7 @@ public class AddCheckUpHistoryFragment extends Fragment {
     private ApiInterface apiInterface;
     private String token;
     private ProgressDialog pd;
+    private int elderKey;
 
     public AddCheckUpHistoryFragment() {
         // Required empty public constructor
@@ -66,6 +68,7 @@ public class AddCheckUpHistoryFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences(getString(R.string.const_sharedpref_key), Context.MODE_PRIVATE);
+        elderKey = sharedPreferences.getInt(getString(R.string.ELDER_KEY), 0);
         token = sharedPreferences.getString(getString(R.string.const_token_key), "");
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
 
@@ -102,6 +105,13 @@ public class AddCheckUpHistoryFragment extends Fragment {
             }
         });
 
+        binding.btnBack1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigateUp();
+            }
+        });
+
     }
 
     private void handleSaveNewCheckupHistory() {
@@ -116,7 +126,7 @@ public class AddCheckUpHistoryFragment extends Fragment {
         checkupHistoryRequest.setBloodSugar(Double.parseDouble(binding.edtGulaDarah.getText().toString()));
         checkupHistoryRequest.setHemoglobin(Double.parseDouble(binding.edtHemoglobin.getText().toString()));
         checkupHistoryRequest.setGout(Double.parseDouble(binding.edtGout.getText().toString()));
-        checkupHistoryRequest.setElderId(currentUser.getElderConnected().get(0));
+        checkupHistoryRequest.setElderId(currentUser.getElderConnected().get(elderKey));
         Log.d("debugdriski", "handleSaveNewCheckupHistory: " + checkupHistoryRequest.getDate());
 
         Call<BasicResponse> call = apiInterface.addNewCheckupHistory("Bearer " + token, checkupHistoryRequest);

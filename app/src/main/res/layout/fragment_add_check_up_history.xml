@@ -73,8 +73,17 @@
             <EditText
                 android:id="@+id/edt_tempat_checkup"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:layout_height="54dp"
+                android:background="@drawable/background_input"
+                android:hint="Cth: RS Harapan Sehat"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="textEmailAddress"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="#000000"
+                android:textSize="13sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_tempat_checkup_label" />
 
@@ -93,8 +102,17 @@
             <EditText
                 android:id="@+id/edt_doctor_name"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:layout_height="54dp"
+                android:background="@drawable/background_input"
+                android:hint="Cth: Dr. D'Riski M"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="textEmailAddress"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="#000000"
+                android:textSize="13sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_doctor_label" />
 
@@ -112,7 +130,16 @@
             <EditText
                 android:id="@+id/edt_tekanan_darah"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="54dp"
+                android:background="@drawable/background_input"
+                android:hint="Cth: 12.4"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="textEmailAddress"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="#000000"
+                android:textSize="13sp"
                 android:layout_marginTop="16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_kolesterol_label" />
@@ -131,7 +158,16 @@
             <EditText
                 android:id="@+id/edt_gula_darah"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="54dp"
+                android:background="@drawable/background_input"
+                android:hint="Cth: 12.4"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="textEmailAddress"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="#000000"
+                android:textSize="13sp"
                 android:layout_marginTop="16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_gula_darah_label" />
@@ -150,7 +186,16 @@
             <EditText
                 android:id="@+id/edt_hemoglobin"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="54dp"
+                android:background="@drawable/background_input"
+                android:hint="Cth: 12.4"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="textEmailAddress"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="#000000"
+                android:textSize="13sp"
                 android:layout_marginTop="16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_hemoglobin_label" />
@@ -161,6 +206,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Asam Urat"
+
                 android:textSize="8pt"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -169,24 +215,60 @@
             <EditText
                 android:id="@+id/edt_gout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="54dp"
+                android:background="@drawable/background_input"
+                android:hint="Cth: 12.4"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="textEmailAddress"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="#000000"
+                android:textSize="13sp"
                 android:layout_marginTop="16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_gout" />
 
 
-            <Button
-                android:id="@+id/btn_save"
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="60dp"
-                android:backgroundTint="@color/blue"
-                android:text="Simpan"
-                app:layout_constraintEnd_toEndOf="@id/edt_gout"
-                app:layout_constraintStart_toStartOf="@id/edt_gout"
-                app:layout_constraintTop_toBottomOf="@+id/edt_gout" />
+                app:layout_constraintTop_toBottomOf="@+id/edt_gout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="5dp"
+                >
+
+                <Button
+                    android:id="@+id/btn_back_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="60dp"
+                    android:backgroundTint="@color/red"
+                    android:text="Back"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_save"
+                     />
+
+                <Button
+                    android:id="@+id/btn_save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="60dp"
+                    android:backgroundTint="@color/blue"
+                    android:text="Simpan"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginLeft="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                     />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 

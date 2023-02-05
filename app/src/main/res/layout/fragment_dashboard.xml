@@ -59,17 +59,17 @@
                     app:layout_constraintStart_toEndOf="@id/elder_name"
                     app:layout_constraintTop_toTopOf="@id/elder_name" />
 
-                <ImageButton
-                    android:id="@+id/btn_add_elder"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:backgroundTint="@color/transparent"
-                    android:padding="0dp"
-                    android:src="@drawable/ic_baseline_add_comment_24"
-                    app:layout_constraintBottom_toBottomOf="@id/elder_name"
-                    app:layout_constraintStart_toEndOf="@id/btn_elder_settings"
-                    app:layout_constraintTop_toTopOf="@id/elder_name" />
+<!--                <ImageButton-->
+<!--                    android:id="@+id/btn_add_elder"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="8dp"-->
+<!--                    android:backgroundTint="@color/transparent"-->
+<!--                    android:padding="0dp"-->
+<!--                    android:src="@drawable/ic_baseline_add_comment_24"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@id/elder_name"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/btn_elder_settings"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/elder_name" />-->
 
 
                 <TextView
@@ -123,6 +123,20 @@
             app:layout_constraintEnd_toEndOf="@id/title_health_history"
             app:layout_constraintStart_toStartOf="@id/title_health_history"
             app:layout_constraintTop_toBottomOf="@id/title_health_history">
+
+            <TextView
+                android:id="@+id/tv_no_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Belum ada riwayat kesehatan :("
+                android:textColor="@color/blue"
+                android:textSize="7pt"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
             <androidx.recyclerview.widget.RecyclerView

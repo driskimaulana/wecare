@@ -22,6 +22,8 @@ import androidx.core.view.GravityCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
@@ -30,17 +32,20 @@ import com.google.zxing.integration.android.IntentResult;
 import com.kelompok4.wecare.R;
 import com.kelompok4.wecare.databinding.ActivityRelativeMainBinding;
 import com.kelompok4.wecare.model.BasicResponse;
+import com.kelompok4.wecare.model.user.ListElderConnected;
 import com.kelompok4.wecare.model.user.User;
 import com.kelompok4.wecare.view.MainActivity;
+import com.kelompok4.wecare.view.relative.adapter.ElderListAdapter;
 import com.kelompok4.wecare.viewmodel.rest.ApiClient;
 import com.kelompok4.wecare.viewmodel.rest.ApiInterface;
 import com.kelompok4.wecare.viewmodel.utils.GsonUtils;
+import com.kelompok4.wecare.viewmodel.utils.SelectListener;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class RelativeMainActivity extends AppCompatActivity {
+public class RelativeMainActivity extends AppCompatActivity implements SelectListener {
 
     private ActivityRelativeMainBinding binding;
     Context context = this;
@@ -48,6 +53,7 @@ public class RelativeMainActivity extends AppCompatActivity {
     ApiInterface mApiInterface;
     private User currentUser;
     private String jwtToken;
+    private NavController navController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +70,7 @@ public class RelativeMainActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = binding.bottomNavigationView;
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView);
 //        NavController navController = Navigation.findNavController(binding.fragmentContainerView);
-        NavController navController = navHostFragment.getNavController();
+        navController = navHostFragment.getNavController();
 
         // check if there is notification
 
@@ -87,6 +93,33 @@ public class RelativeMainActivity extends AppCompatActivity {
         toggle = new ActionBarDrawerToggle(this, binding.layoutDrawer, R.string.open, R.string.close);
         binding.layoutDrawer.addDrawerListener(toggle);
 
+        // side bar elder lists
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(context);
+        binding.rvElderList.setLayoutManager(layoutManager);
+
+        Call<ListElderConnected> call = mApiInterface.getElderConnected("Bearer " + jwtToken);
+
+        call.enqueue(new Callback<ListElderConnected>() {
+            @Override
+            public void onResponse(Call<ListElderConnected> call, Response<ListElderConnected> response) {
+                if (response.body().getStatus() != 200){
+                    Log.d("debugdriski", "onResponse: Fail to get elder connected data.");
+                    Toast.makeText(RelativeMainActivity.this, "Gagal mendapatkan data elder.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                ElderListAdapter adapter = new ElderListAdapter(response.body().getListElderConnected(), RelativeMainActivity.this);
+                binding.rvElderList.setAdapter(adapter);
+            }
+
+            @Override
+            public void onFailure(Call<ListElderConnected> call, Throwable t) {
+                Log.d("debugdriski", "onResponse: Fail to get elder connected data.");
+                Toast.makeText(RelativeMainActivity.this, "Gagal mendapatkan data elder.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
 //        get navigation view
         NavigationView navigationView = findViewById(R.id.navView);
         View header = navigationView.getHeaderView(0);
@@ -107,6 +140,13 @@ public class RelativeMainActivity extends AppCompatActivity {
         toggle.setDrawerArrowDrawable(drawerIcon);
 
         toggle.syncState();
+
+        binding.btnAddElder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                handleAddEldersButton(view);
+            }
+        });
 
         // Drawer menu event listener
         binding.navView.setNavigationItemSelectedListener(item -> {
@@ -191,6 +231,21 @@ public class RelativeMainActivity extends AppCompatActivity {
     }
 
     public void handleAddEldersButton(View view) {
+        Log.d("debugdriski", "handleAddEldersButton: add clicked");
+//        navController.navigate(R.id.navigateToAddElder);
+        IntentIntegrator intentIntegrator = new IntentIntegrator(
+                RelativeMainActivity.this
+        );
+        intentIntegrator.setPrompt("Press 'VOLUME UP' to activate flash\nPress 'VOLUME DOWN' to deactivate flash.");
+        //Set beep
+        intentIntegrator.setBeepEnabled(true);
+        //lock orientation
+        intentIntegrator.setOrientationLocked(true);
+        //set capture activity
+        intentIntegrator.setCaptureActivity(Capture.class);
+        //Initiate scan
+        intentIntegrator.initiateScan();
+//        Navigation.findNavController(view).navigate(R.id.navigateDashboardToAddElder);
         Toast.makeText(this, "add elder", Toast.LENGTH_SHORT).show();
     }
 
@@ -206,4 +261,19 @@ public class RelativeMainActivity extends AppCompatActivity {
         Runtime.getRuntime().exit(0);
     }
 
+    @Override
+    public void onItemClicked(User user, int position) {
+        Log.d("debugdriski", "onItemClicked: clicked rv " + user.getName() + position);
+        Toast.makeText(context, "toast", Toast.LENGTH_SHORT).show();
+
+        SharedPreferences sharedPreferences = context.getSharedPreferences(getString(R.string.const_sharedpref_key), Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(getString(R.string.ELDER_KEY), position);
+        editor.apply();
+
+        Intent intent = new Intent(context, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+//        Runtime.getRuntime().exit(0);
+    }
 }
