@@ -122,7 +122,8 @@ public class RelativeSettings extends Fragment {
                 }
 
 
-                Toast.makeText(getContext(), "Sukses mengubah password.", Toast.LENGTH_SHORT).show();
+                Snackbar snackbar = Snackbar.make(getView(), "Sukses update password.", Snackbar.LENGTH_SHORT);
+                snackbar.show();
                 Navigation.findNavController(getView()).navigateUp();
             }
 
