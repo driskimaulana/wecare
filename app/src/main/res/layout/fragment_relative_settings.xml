@@ -3,209 +3,148 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintActionBar"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/tv_reset_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Reset Password"
+        android:textSize="12pt"
+        android:textStyle="bold"
+        android:textColor="@color/blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-        <View
-            android:id="@+id/view"
-            android:layout_width="match_parent"
-            android:layout_height="3dp"
-            android:layout_marginTop="44dp"
-            android:background="@color/diamond"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp" />
 
-        <TextView
-            android:id="@+id/titlePengaturanUser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="62dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:text="@string/pengaturanSaya"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/view"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/backButton"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="10dp"
-            android:src="@drawable/ic_back_foreground"
-            app:layout_constraintBottom_toTopOf="@+id/view"
-            app:layout_constraintEnd_toStartOf="@+id/titlePengaturanUser"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/constraintActionBar">
-        <!-- nama -->
-        <androidx.constraintlayout.utils.widget.MockView
-            android:id="@+id/mockViewProfilePict"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="24dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textViewNama"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:gravity="start"
-            android:text="@string/nama"
-            android:textSize="16sp"
-            app:layout_constraintStart_toEndOf="@+id/mockViewProfilePict"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textViewNamaIsi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:text="@string/fulan"
-            android:textColor="@color/black"
-            android:textSize="24sp"
-            app:layout_constraintStart_toEndOf="@+id/mockViewProfilePict"
-            app:layout_constraintTop_toBottomOf="@+id/textViewNama" />
-
-        <TextView
-            android:id="@+id/textViewChangePicture"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="46dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/changePicture"
-            android:textColor="@color/blue_cola"
-            android:textSize="8sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mockViewProfilePict" />
-
-        <ImageView
-            android:id="@+id/imageViewGoSetNama"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="300dp"
-            android:layout_marginTop="24dp"
-            android:src="@drawable/ic_baseline_chevron_right_24"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <!--tanggal lahir-->
-        <ImageView
-            android:id="@+id/imageViewGoSetTanggalLahir"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="300dp"
-            android:layout_marginTop="92dp"
-            android:src="@drawable/ic_baseline_chevron_right_24"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewGoSetNama" />
-
-        <TextView
-            android:id="@+id/textViewTanggalLahir"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
-            android:text="@string/tanggalLahir"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewChangePicture" />
-
-        <TextView
-            android:id="@+id/textViewTanggalLahirIsi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:text="@string/dateDummy"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewTanggalLahir" />
-
-        <!--email-->
-
-        <ImageView
-            android:id="@+id/imageViewGoSetEmail"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="300dp"
-            android:layout_marginTop="28dp"
-            android:src="@drawable/ic_baseline_chevron_right_24"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewGoSetTanggalLahir" />
-
-        <TextView
-            android:id="@+id/textViewEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/email"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewTanggalLahirIsi" />
-
-        <TextView
-            android:id="@+id/textViewEmailIsi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:text="@string/emailDummy"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewEmail" />
-
-        <!--update password-->
-        <TextView
-            android:id="@+id/textViewUpdatePassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
-            android:text="@string/updatePassword"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewEmailIsi" />
-
-        <ImageView
-            android:id="@+id/imageViewGoUpdatePassword"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="300dp"
-            android:layout_marginTop="30dp"
-            android:src="@drawable/ic_baseline_chevron_right_24"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewGoSetEmail" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    <Button
-        android:id="@+id/buttonUpdate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
-        android:backgroundTint="@color/yale_blue"
-        android:paddingHorizontal="40dp"
-        android:text="@string/update"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/tv_old_password"
+        app:layout_constraintTop_toBottomOf="@+id/tv_reset_title"
+        android:text="Password Lama"
+        android:layout_marginVertical="20dp"
+        android:textColor="@color/blue"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/edt_old_password"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_input"
+        android:hint="Password Lama"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColor="#000000"
+        android:textSize="13sp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_old_password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_new_password_1"
+        app:layout_constraintTop_toBottomOf="@+id/edt_old_password"
+        android:text="Password Baru"
+        android:layout_marginVertical="20dp"
+        android:textColor="@color/blue"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/edt_new_password_1"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_input"
+        android:hint="Password Baru"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColor="#000000"
+        android:textSize="13sp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_new_password_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_new_password_2"
+        app:layout_constraintTop_toBottomOf="@+id/edt_new_password_1"
+        android:text="Masukkan Kembali Password Baru"
+        android:layout_marginVertical="20dp"
+        android:textColor="@color/blue"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/edt_new_password_2"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_input"
+        android:hint="Password Baru"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColor="#000000"
+        android:textSize="13sp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_new_password_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/edt_new_password_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        >
+
+        <Button
+            android:id="@+id/btn_back_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="60dp"
+            android:backgroundTint="@color/red"
+            android:text="Back"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_save"
+            />
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="60dp"
+            android:backgroundTint="@color/blue"
+            android:text="Simpan"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

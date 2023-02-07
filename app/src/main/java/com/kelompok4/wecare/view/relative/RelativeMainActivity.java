@@ -218,14 +218,14 @@ public class RelativeMainActivity extends AppCompatActivity implements SelectLis
         return super.onOptionsItemSelected(item);
     }
 
-    public void handleElderSettingsButton(View view) {
+    public void handleRelativeSettingsButton(View view) {
         Toast.makeText(this, "settings", Toast.LENGTH_SHORT).show();
 
         NavHostFragment hostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView);
         NavController navCtrl = hostFragment.getNavController();
 
         navCtrl.navigateUp();
-        navCtrl.navigate(R.id.elderSettingsFragment);
+        navCtrl.navigate(R.id.navigateToResetPassword);
 
         binding.layoutDrawer.closeDrawer(GravityCompat.START);
     }

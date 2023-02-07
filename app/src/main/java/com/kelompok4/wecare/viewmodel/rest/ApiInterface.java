@@ -13,6 +13,7 @@ import com.kelompok4.wecare.model.medicineSchedule.MedicineScheduleList;
 import com.kelompok4.wecare.model.notification.DangerResponse;
 import com.kelompok4.wecare.model.BasicResponse;
 import com.kelompok4.wecare.model.user.ListElderConnected;
+import com.kelompok4.wecare.model.user.ResetPasswordRequest;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -68,5 +69,9 @@ public interface ApiInterface {
 
     @GET("user/getElderConnected")
     Call<ListElderConnected> getElderConnected(@Header("Authorization") String auth);
+
+    @Headers({ "Content-Type: application/json;charset=UTF-8" })
+    @PATCH("user/resetPassword")
+    Call<BasicResponse> resetRelativePassword(@Header("Authorization") String auth, @Body ResetPasswordRequest resetPasswordRequest);
 
 }

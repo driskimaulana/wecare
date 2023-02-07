@@ -1,5 +1,6 @@
 package com.kelompok4.wecare.view;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -14,8 +15,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.kelompok4.wecare.R;
 import com.kelompok4.wecare.databinding.FragmentChooseRoleBinding;
 import com.kelompok4.wecare.model.auth.AuthResponse;
@@ -73,8 +76,6 @@ public class ChooseRoleFragment extends Fragment {
                 userSignup.setRole("Relative");
                 Toast.makeText(getActivity(), "clicked", Toast.LENGTH_SHORT).show();
                 handleSignup(view);
-//                Intent intent = new Intent(getActivity(), RelativeMainActivity.class);
-//                startActivity(intent);
             }
         });
     }
@@ -85,27 +86,36 @@ public class ChooseRoleFragment extends Fragment {
         signupCall.enqueue(new Callback<AuthResponse>() {
             @Override
             public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {
-                if (response.message().equals("Bad Request")) {
-                    Toast.makeText(getActivity(), "Register Failed. Try another email.", Toast.LENGTH_LONG).show();
-                }else {
-                    if (response.body().getResult().getRole().equals("Relative")) {
-                        String userLoggedin = GsonUtils.getGson().toJson(response.body().getResult());
+                pd.dismiss();
+                InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Activity.INPUT_METHOD_SERVICE);
 
-                        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(getString(R.string.const_sharedpref_key), Context.MODE_PRIVATE);
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putString(getString(R.string.const_token_key), response.body().getToken());
-                        editor.apply();
+                imm.hideSoftInputFromWindow(getView().getWindowToken(), 0);
 
-                        Bundle bundle = new Bundle();
-                        bundle.putString("USER_LOGGED_IN", userLoggedin);
-
-                        Intent intent = new Intent(getActivity(), RelativeMainActivity.class);
-                        intent.putExtras(bundle);
-                        startActivity(intent);
-                    }
-                    pd.dismiss();
-                    Toast.makeText(getActivity(), "Register Sukses.", Toast.LENGTH_LONG).show();
+                if (response.body() == null) {
+                    Log.e("debugdriski", "onResponse: body null");
+                    Snackbar snackbar = Snackbar.make(getView(), "Email telah digunakan.", Snackbar.LENGTH_SHORT);
+                    snackbar.show();
+                    return;
                 }
+
+                String userLoggedin = GsonUtils.getGson().toJson(response.body().getResult());
+
+                SharedPreferences sharedPreferences = getActivity().getSharedPreferences(getString(R.string.const_sharedpref_key), Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString(getString(R.string.const_token_key), response.body().getToken());
+                editor.apply();
+
+                Bundle bundle = new Bundle();
+                bundle.putString("USER_LOGGED_IN", userLoggedin);
+                Intent intent;
+                if (response.body().getResult().getRole().equals("Relative")) {
+
+                    intent = new Intent(getActivity(), RelativeMainActivity.class);
+                }else {
+                    intent = new Intent(getActivity(), ElderMainActivity.class);
+                }
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
 
             @Override

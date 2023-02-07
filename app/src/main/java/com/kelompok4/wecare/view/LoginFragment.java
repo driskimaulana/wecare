@@ -1,5 +1,6 @@
 package com.kelompok4.wecare.view;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -14,8 +15,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.kelompok4.wecare.R;
 import com.kelompok4.wecare.databinding.FragmentLoginBinding;
 import com.kelompok4.wecare.model.auth.AuthResponse;
@@ -69,6 +72,16 @@ public class LoginFragment extends Fragment {
         signinCall.enqueue(new Callback<AuthResponse>() {
             @Override
             public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {
+                pd.dismiss();
+                InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Activity.INPUT_METHOD_SERVICE);
+
+                imm.hideSoftInputFromWindow(getView().getWindowToken(), 0);
+                if (response.body() == null) {
+                    Snackbar snackbar = Snackbar.make(getView(), "Password lama salah.", Snackbar.LENGTH_SHORT);
+                    snackbar.show();
+
+                    return;
+                }
 
                 SharedPreferences sharedPreferences = getActivity().getSharedPreferences(getString(R.string.const_sharedpref_key), Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();

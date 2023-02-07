@@ -88,11 +88,11 @@
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:minHeight="0dp"
-                android:text="Pengaturan Elder"
+                android:text="Reset Password"
                 android:textSize="8.1pt"
                 android:textStyle="bold"
                 app:cornerRadius="0dp"
-                android:onClick="handleElderSettingsButton"
+                android:onClick="handleRelativeSettingsButton"
                 app:layout_constraintBottom_toTopOf="@+id/btn_add_elder"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />

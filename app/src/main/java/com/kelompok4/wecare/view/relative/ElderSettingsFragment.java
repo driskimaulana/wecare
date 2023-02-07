@@ -42,30 +42,30 @@ public class ElderSettingsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        binding.imageViewGoSetNama.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.navigateToElderNameSettings);
-            }
-        });
-        binding.imageViewGoSetTanggalLahir.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.navigateToElderBirthDateSettings);
-            }
-        });
-        binding.imageViewGoSetGolonganDarah.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.navigateToElderBloodTypeSettings);
-            }
-        });
-        binding.textViewGoCheckMedicalCheckup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.navigateToAddCheckupHistory);
-            }
-        });
+//
+//        binding.imageViewGoSetNama.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Navigation.findNavController(view).navigate(R.id.navigateToElderNameSettings);
+//            }
+//        });
+//        binding.imageViewGoSetTanggalLahir.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Navigation.findNavController(view).navigate(R.id.navigateToElderBirthDateSettings);
+//            }
+//        });
+//        binding.imageViewGoSetGolonganDarah.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Navigation.findNavController(view).navigate(R.id.navigateToElderBloodTypeSettings);
+//            }
+//        });
+//        binding.textViewGoCheckMedicalCheckup.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Navigation.findNavController(view).navigate(R.id.navigateToAddCheckupHistory);
+//            }
+//        });
     }
 }

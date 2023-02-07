@@ -21,6 +21,9 @@
         <action
             android:id="@+id/navigateHomeToFallNotification"
             app:destination="@id/fallDetectedNotificationFragment" />
+        <action
+            android:id="@+id/navigateToResetPassword"
+            app:destination="@id/relativeSettings" />
     </fragment>
     <fragment
         android:id="@+id/dashboardFragment"
@@ -105,4 +108,8 @@
         android:id="@+id/fallDetectedNotificationFragment"
         android:name="com.kelompok4.wecare.view.relative.FallDetectedNotificationFragment"
         android:label="FallDetectedNotificationFragment" />
+    <fragment
+        android:id="@+id/relativeSettings"
+        android:name="com.kelompok4.wecare.view.relative.RelativeSettings"
+        android:label="RelativeSettings" />
 </navigation>

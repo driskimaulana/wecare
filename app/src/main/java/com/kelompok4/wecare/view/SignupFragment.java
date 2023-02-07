@@ -52,13 +52,6 @@ public class SignupFragment extends Fragment {
 //                Navigation.findNavController(view).navigate(R.id.navigateToChooseRole);
             }
         });
-
-        binding.btnSignupGoogle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.navigateToChooseRole);
-            }
-        });
     }
 
     private boolean isInputValid() {
