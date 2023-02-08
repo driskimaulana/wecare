@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="284dp"
-    android:layout_height="65dp"
+    android:layout_height="78dp"
     android:layout_marginBottom="10dp"
     android:background="@drawable/shape_name_container">
 
@@ -19,7 +19,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/place_layout">
 
 
             <TextView
@@ -96,6 +96,69 @@
             app:layout_constraintStart_toStartOf="@+id/constraintLayout"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/place_layout"
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tv_tanggal"
+            app:layout_constraintStart_toStartOf="@+id/constraintLayout">
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="142dp" />
+
+
+
+            <ImageView
+                android:id="@+id/ic_place"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:src="@drawable/ic_place"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_hospital"
+                app:layout_constraintBottom_toBottomOf="@id/tv_hospital"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="5dp"/>
+
+            <TextView
+                android:id="@+id/tv_hospital"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="RSUD Dr. Selamet"
+                android:textColor="@color/blue"
+                android:textSize="4pt"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/ic_place"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ic_doctor"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:src="@drawable/ic_doctor"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="@id/guideline3"
+                app:layout_constraintTop_toTopOf="@id/tv_hospital"
+                app:layout_constraintBottom_toBottomOf="@id/tv_hospital"/>
+
+            <TextView
+                android:id="@+id/tv_doctor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Dr. Riski"
+                android:textColor="@color/blue"
+                android:textSize="4pt"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/ic_doctor"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

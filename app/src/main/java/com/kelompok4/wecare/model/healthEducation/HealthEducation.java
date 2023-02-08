@@ -15,7 +15,7 @@ public class HealthEducation {
     private String description;
     @SerializedName("content")
     private String content;
-    @SerializedName("author")
+    @SerializedName("writer")
     private String author;
     @SerializedName("imgUrl")
     private String imgUrl;

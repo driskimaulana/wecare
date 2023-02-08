@@ -52,7 +52,6 @@ public class DashboardFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentDashboardBinding.inflate(inflater, container, false);
         return binding.getRoot();
-//        return inflater.inflate(R.layout.fragment_dashboard, container, false);
     }
 
     @Override
@@ -72,17 +71,7 @@ public class DashboardFragment extends Fragment {
         //        get current logged in user
         currentUser = GsonUtils.getGson().fromJson(bundle.getString("USER_LOGGED_IN"), User.class);
 
-        RecyclerView.LayoutManager fallLayoutManager = new LinearLayoutManager(getContext());
-        binding.rvFallHistory.setLayoutManager(fallLayoutManager);
-
-        List<FallHistoryModel> fallItems = new ArrayList<FallHistoryModel>();
-        fallItems.add(new FallHistoryModel("12/10/2021", "-7.317044, 107.864453", "Diselamatkan"));
-        fallItems.add(new FallHistoryModel("20/10/2022", "-7.317044, 107.864453", "Diselamatkan"));
-
         refresh();
-
-        FallHistoryAdapter fallHistoryAdapter = new FallHistoryAdapter(fallItems);
-        binding.rvFallHistory.setAdapter(fallHistoryAdapter);
 
         binding.btnElderSettings.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,13 +79,6 @@ public class DashboardFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.navigateDashboardToElderSettings);
             }
         });
-
-//        binding.btnAddElder.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Navigation.findNavController(view).navigate(R.id.navigateToAddElder);
-//            }
-//        });
 
         binding.btnAddCheckupHistory.setOnClickListener(new View.OnClickListener() {
             @Override

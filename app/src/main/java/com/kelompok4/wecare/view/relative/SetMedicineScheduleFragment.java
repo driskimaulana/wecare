@@ -21,6 +21,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.snackbar.Snackbar;
 import com.kelompok4.wecare.R;
 import com.kelompok4.wecare.databinding.FragmentRelativeSetMedicineScheduleBinding;
 import com.kelompok4.wecare.model.BasicResponse;
@@ -151,6 +152,9 @@ public class SetMedicineScheduleFragment extends Fragment {
                 || binding.medicineDatePickerEnd.getText().length() == 0
                 || timePicked.length() == 0
         ) {
+            pd.dismiss();
+            Snackbar snackbar = Snackbar.make(getView(), "Silakan lengkapi data.", Snackbar.LENGTH_SHORT);
+            snackbar.show();
             Toast.makeText(getContext(), "Silakan lengkapi data!", Toast.LENGTH_SHORT).show();
             return;
         }

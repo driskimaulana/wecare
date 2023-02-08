@@ -161,41 +161,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TextView
-            android:id="@+id/title_fall_history"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Riwayat Jatuh"
-            android:textColor="@color/blue"
-            android:textSize="7.6pt"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/container_list_checkup_history" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/shape_dashboard_container"
-            android:padding="20dp"
-            app:layout_constraintEnd_toEndOf="@+id/title_fall_history"
-            app:layout_constraintStart_toStartOf="@+id/title_fall_history"
-            app:layout_constraintTop_toBottomOf="@+id/title_fall_history">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_fall_history"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
