@@ -5,7 +5,7 @@ import com.kelompok4.wecare.model.auth.UserSignin;
 import com.kelompok4.wecare.model.auth.UserSignup;
 import com.kelompok4.wecare.model.checkupHistory.CheckupHistoryModel;
 import com.kelompok4.wecare.model.checkupHistory.ListCheckupHistory;
-import com.kelompok4.wecare.model.healthEducation.GetHealthEducation;
+import com.kelompok4.wecare.model.healthEducation.HealthEducationList;
 import com.kelompok4.wecare.model.location.AlwaysUpdate;
 import com.kelompok4.wecare.model.location.Location;
 import com.kelompok4.wecare.model.medicineSchedule.MedicineSchedule;
@@ -28,7 +28,7 @@ import retrofit2.http.Path;
 public interface ApiInterface {
 
     @GET("healthEducations")
-    Call<GetHealthEducation> getHealthEducation();
+    Call<HealthEducationList> getHealthEducation();
 
     @POST("user/signin")
     Call<AuthResponse> signin(@Body UserSignin userSignin);

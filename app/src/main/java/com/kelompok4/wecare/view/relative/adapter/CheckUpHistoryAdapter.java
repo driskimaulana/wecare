@@ -1,6 +1,5 @@
 package com.kelompok4.wecare.view.relative.adapter;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -8,13 +7,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kelompok4.wecare.databinding.CheckupHistoryItemBinding;
-import com.kelompok4.wecare.model.CheckUpHistoryModel;
 import com.kelompok4.wecare.model.checkupHistory.CheckupHistoryResponse;
-import com.kelompok4.wecare.model.checkupHistory.ListCheckupHistory;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 public class CheckUpHistoryAdapter extends RecyclerView.Adapter<CheckUpHistoryAdapter.CheckUpHistoryHolder> {

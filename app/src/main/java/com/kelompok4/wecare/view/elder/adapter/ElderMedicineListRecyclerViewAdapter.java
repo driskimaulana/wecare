@@ -7,9 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kelompok4.wecare.databinding.MedicineItemBinding;
-import com.kelompok4.wecare.model.MedicineModel;
 import com.kelompok4.wecare.model.medicineSchedule.MedicineSchedule;
-import com.kelompok4.wecare.model.medicineSchedule.MedicineScheduleList;
 
 import java.util.List;
 

@@ -9,10 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.gson.Gson;
 import com.kelompok4.wecare.R;
 import com.kelompok4.wecare.databinding.HealthEducationItemBinding;
-import com.kelompok4.wecare.model.HealthEducationModel;
 import com.kelompok4.wecare.model.healthEducation.HealthEducation;
 import com.kelompok4.wecare.viewmodel.utils.GsonUtils;
 import com.squareup.picasso.Picasso;

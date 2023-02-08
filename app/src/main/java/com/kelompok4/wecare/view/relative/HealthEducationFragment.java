@@ -5,7 +5,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,13 +13,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kelompok4.wecare.databinding.FragmentHealthEducationBinding;
-import com.kelompok4.wecare.model.healthEducation.GetHealthEducation;
+import com.kelompok4.wecare.model.healthEducation.HealthEducationList;
 import com.kelompok4.wecare.model.healthEducation.HealthEducation;
 import com.kelompok4.wecare.view.relative.adapter.HealthEducationAdapter;
 import com.kelompok4.wecare.viewmodel.rest.ApiClient;
 import com.kelompok4.wecare.viewmodel.rest.ApiInterface;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -57,11 +55,11 @@ public class HealthEducationFragment extends Fragment {
     }
 
     private void refresh() {
-        Call<GetHealthEducation> healthEducationCall = mApiInterface.getHealthEducation();
-        healthEducationCall.enqueue(new Callback<GetHealthEducation>() {
+        Call<HealthEducationList> healthEducationCall = mApiInterface.getHealthEducation();
+        healthEducationCall.enqueue(new Callback<HealthEducationList>() {
 
             @Override
-            public void onResponse(Call<GetHealthEducation> call, Response<GetHealthEducation> response) {
+            public void onResponse(Call<HealthEducationList> call, Response<HealthEducationList> response) {
                 List<HealthEducation> HealthEducationList = response.body().getListHealthEducations();
                 Log.d("Retrofit GET", "jumlah healthEducation data: " + String.valueOf(HealthEducationList.size()));
                 adapter = new HealthEducationAdapter(HealthEducationList);
@@ -70,7 +68,7 @@ public class HealthEducationFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<GetHealthEducation> call, Throwable t) {
+            public void onFailure(Call<HealthEducationList> call, Throwable t) {
                 Log.e("Retrofit GET", "onFailure: " + t.toString());
             }
 

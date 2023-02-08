@@ -18,17 +18,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.kelompok4.wecare.R;
 import com.kelompok4.wecare.databinding.FragmentDashboardBinding;
-import com.kelompok4.wecare.model.FallHistoryModel;
 import com.kelompok4.wecare.model.checkupHistory.ListCheckupHistory;
 import com.kelompok4.wecare.model.user.User;
 import com.kelompok4.wecare.view.relative.adapter.CheckUpHistoryAdapter;
-import com.kelompok4.wecare.view.relative.adapter.FallHistoryAdapter;
 import com.kelompok4.wecare.viewmodel.rest.ApiClient;
 import com.kelompok4.wecare.viewmodel.rest.ApiInterface;
 import com.kelompok4.wecare.viewmodel.utils.GsonUtils;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;

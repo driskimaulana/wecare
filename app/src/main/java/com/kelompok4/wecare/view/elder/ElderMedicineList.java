@@ -21,17 +21,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.kelompok4.wecare.R;
 import com.kelompok4.wecare.databinding.FragmentElderMedicineListBinding;
-import com.kelompok4.wecare.model.MedicineModel;
-import com.kelompok4.wecare.model.medicineSchedule.MedicineSchedule;
 import com.kelompok4.wecare.model.medicineSchedule.MedicineScheduleList;
 import com.kelompok4.wecare.model.user.User;
 import com.kelompok4.wecare.view.elder.adapter.ElderMedicineListRecyclerViewAdapter;
 import com.kelompok4.wecare.viewmodel.rest.ApiClient;
 import com.kelompok4.wecare.viewmodel.rest.ApiInterface;
 import com.kelompok4.wecare.viewmodel.utils.GsonUtils;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;

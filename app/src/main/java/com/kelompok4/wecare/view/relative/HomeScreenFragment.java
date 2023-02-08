@@ -21,16 +21,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.kelompok4.wecare.R;
 import com.kelompok4.wecare.databinding.FragmentHomeScreenBinding;
-import com.kelompok4.wecare.model.CheckUpHistoryModel;
 import com.kelompok4.wecare.model.auth.AuthResponse;
 import com.kelompok4.wecare.model.user.User;
-import com.kelompok4.wecare.view.relative.adapter.CheckUpHistoryAdapter;
 import com.kelompok4.wecare.viewmodel.rest.ApiClient;
 import com.kelompok4.wecare.viewmodel.rest.ApiInterface;
 import com.kelompok4.wecare.viewmodel.utils.GsonUtils;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
